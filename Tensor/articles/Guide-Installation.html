@@ -1,0 +1,196 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Installation and testing | Tensor for F# </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Installation and testing | Tensor for F# ">
+    <meta name="generator" content="docfx 2.35.0.0">
+    
+    <link rel="shortcut icon" href="../images/tensor.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/tensor.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="installation-and-testing">Installation and testing</h1>
+
+<p>This page guides you through installing the Tensor library and creating a skeleton project for experimentation.</p>
+<h2 id="system-requirements">System requirements</h2>
+<p>The following system requirements must be met.</p>
+<ul>
+<li>System architecture: x86-64 (AMD64 or Intel 64)</li>
+<li>Operating system: Linux, MacOS or Microsoft Windows</li>
+<li>Microsoft .NET Standard 2.0 implementation<ul>
+<li>Recommended platform is <a href="https://www.microsoft.com/net/learn/get-started">.NET Core &gt;= 2.0</a></li>
+<li>.NET Framework &gt;= 4.7 is supported</li>
+<li><a href="https://www.mono-project.com/download/stable/">Mono</a> &gt;= 5.10 is supported, but significantly slower</li>
+</ul>
+</li>
+<li>For MacOS<ul>
+<li><a href="https://support.hdfgroup.org/HDF5/">HDF5 libraries</a> (install from <a href="https://brew.sh/">Homebrew</a> by running <code>brew install hdf5</code>)</li>
+</ul>
+</li>
+<li>For GPU acceleration (optional)<ul>
+<li>nVidia GPU supporting <a href="https://developer.nvidia.com/cuda-gpus">CUDA compute capability</a> 3.5 or higher</li>
+<li><a href="https://developer.nvidia.com/cuda-80-ga2-download-archive">CUDA SDK 8.0</a> installed (exact version)</li>
+<li>CUDA driver installed and working</li>
+</ul>
+</li>
+</ul>
+<h2 id="installation">Installation</h2>
+<p>The library is provided as a NuGet package.
+Since we have made modifications (porting to .NET core) to our dependencies and these changes have not yet been merged upstream, a <a href="https://myget.org/">MyGet</a> feed is currently used to deliever the library and its modified dependencies.
+Once all necessary modifications have been merged upstream, the Tensor library will be delivered via standard <a href="https://nuget.org">NuGet</a>.</p>
+<p>For MacOS you must make sure that the HDF5 libraries are installed on your system.
+They can be installed via <a href="https://brew.sh/">Homebrew</a> by running <code>brew install hdf5</code>.</p>
+<p>The library is deliverd in two NuGet packages.
+The <a href="https://www.myget.org/feed/coreports/package/nuget/Tensor">Tensor NuGet package</a> provides the <a class="xref" href="../api/Tensor.Tensor-1.html">Tensor&lt;&#39;T&gt;</a> type and all core functions.
+Additional algorithms and data exchange methods are provided in the <a href="https://www.myget.org/feed/coreports/package/nuget/Tensor.Algorithm">Tensor.Algorithm NuGet package</a>.</p>
+<p>The packages can be installed into your project by performing the following steps.</p>
+<ol>
+<li><p>Add the NuGet feed <a href="https://www.myget.org/feed/Packages/coreports">https://www.myget.org/feed/Packages/coreports</a> to your project. 
+This can be done by adding the line <code>&lt;add key=&quot;CorePorts&quot; value=&quot;https://www.myget.org/F/coreports/api/v3/index.json&quot;/&gt;</code> to the <code>packageSources</code> section of your project <code>NuGet.config</code> file.</p>
+</li>
+<li><p>Install the <code>Tensor</code> and <code>Tensor.Algorithm</code> using the NuGet package manager (either via command line or graphical interface).</p>
+</li>
+</ol>
+<h2 id="skeleton-project-for-net-core">Skeleton project for .NET Core</h2>
+<p>In the course of this tutorial you will use the following skeleton project for experimentation.
+We assume that you are using <a href="https://www.microsoft.com/net/learn/get-started">.NET Core 2.0</a> on either Linux or Windows for the rest of the tutorial.</p>
+<p>To create the skeleton project run the following commands.</p>
+<pre><code>$ mkdir tutorial
+$ cd tutorial
+$ dotnet new console -lang F#
+</code></pre><p>Then, create the file <code>NuGet.config</code> in the project directory with the following contents.</p>
+<pre><code class="lang-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;configuration&gt;
+    &lt;packageSources&gt;
+        &lt;add key=&quot;CorePorts&quot; value=&quot;https://www.myget.org/F/coreports/api/v3/index.json&quot; /&gt;
+    &lt;/packageSources&gt;
+&lt;/configuration&gt;
+</code></pre><p>Finally run the following commands to install the Tensor library into your project.</p>
+<pre><code>$ dotnet add package Tensor
+$ dotnet add package Tensor.Algorithm
+</code></pre><h3 id="basic-verificiation-test">Basic verificiation test</h3>
+<p>To verify that the installation was successful you can perform a basic test of the library.
+Place the following code into <code>Program.fs</code>.</p>
+<pre><code class="lang-fsharp">open Tensor
+[&lt;EntryPoint&gt;]
+let main argv =
+    let x = HostTensor.counting 6L
+    printfn &quot;x = %A&quot; x
+    0
+</code></pre><p>If everything works fine, <code>dotnet run</code> automatically builds your project and produces the following output.</p>
+<pre><code>$ dotnet run
+x = [   0    1    2    3    4    5]
+</code></pre><h3 id="gpu-acceleration-verification-test">GPU acceleration verification test</h3>
+<p>By changing <code>HostTensor</code> to <code>CudaTensor</code> inside <code>Program.fs</code> and executing <code>dotnet run</code>, you can test if GPU acceleration works properly.</p>
+<h2 id="source-code-and-issues">Source code and issues</h2>
+<p>The source code of the Tensor library is available at <a href="https://github.com/DeepMLNet/DeepNet">https://github.com/DeepMLNet/DeepNet</a>.</p>
+<p>You can also directly reference the <code>Tensor.fsproj</code> and <code>Tensor.Algorithm.fsproj</code> projects inside the source tree from your project by using <code>dotnet add reference &lt;path&gt;</code>.
+This is useful if you want to modify the Tensor library itself or for debugging.</p>
+<p>Please report issues via <a href="https://github.com/DeepMLNet/DeepNet/issues">https://github.com/DeepMLNet/DeepNet/issues</a> and submit your pull requests via <a href="https://github.com/DeepMLNet/DeepNet/pulls">https://github.com/DeepMLNet/DeepNet/pulls</a>.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/DeepMLNet/DeepNet/blob/018df6c3f0e2ae11d0b2e0d3b3257bb0b88de366/Tensor/Tensor.Docs/articles/Guide-Installation.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

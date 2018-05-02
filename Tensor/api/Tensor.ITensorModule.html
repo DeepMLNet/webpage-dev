@@ -1,0 +1,394 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class ITensor (mod)
+   | Tensor for F# </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class ITensor (mod)
+   | Tensor for F# ">
+    <meta name="generator" content="docfx 2.35.0.0">
+    
+    <link rel="shortcut icon" href="../images/tensor.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/tensor.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Tensor.ITensorModule">
+  
+  
+  <h1 id="Tensor_ITensorModule" data-uid="Tensor.ITensorModule" class="text-break">Class ITensor (mod)
+  </h1>
+  <div class="markdown level0 summary"><p>Type-neutral interface to Tensor&lt;&apos;T&gt; of any type &apos;T.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">ITensor (mod)</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Tensor.html">Tensor</a></h6>
+  <h6><strong>Assembly</strong>: Tensor.dll</h6>
+  <h5 id="Tensor_ITensorModule_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">module ITensor</code></pre>
+  </div>
+  <h5 id="Tensor_ITensorModule_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>These functions are useful for working with tensors of unknown types.
+For most use cases the functions provided by <a class="xref" href="Tensor.Tensor-1.html">Tensor&lt;&#39;T&gt;</a> are better suited.</p>
+</div>
+  <h3 id="methods">Methods
+  </h3>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="Tensor_ITensorModule_allIdx_Tensor_ITensor_" data-uid="Tensor.ITensorModule.allIdx(Tensor.ITensor)">
+          <a class="xref" href="Tensor.ITensorModule.allIdx.html#Tensor_ITensorModule_allIdx_Tensor_ITensor_">val allIdx: ITensor -&gt; seq&lt;int64 list&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets a sequence of all indices to enumerate all elements within the tensor.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_ITensorModule_atLeast1D_Tensor_ITensor_" data-uid="Tensor.ITensorModule.atLeast1D(Tensor.ITensor)">
+          <a class="xref" href="Tensor.ITensorModule.atLeast1D.html#Tensor_ITensorModule_atLeast1D_Tensor_ITensor_">val atLeast1D: ITensor -&gt; ITensor</a>
+        </td>
+        <td class="markdown level1 summary"><p>Pads the tensor from the left with size-one dimensions until it has at least one dimension.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_ITensorModule_atLeast2D_Tensor_ITensor_" data-uid="Tensor.ITensorModule.atLeast2D(Tensor.ITensor)">
+          <a class="xref" href="Tensor.ITensorModule.atLeast2D.html#Tensor_ITensorModule_atLeast2D_Tensor_ITensor_">val atLeast2D: ITensor -&gt; ITensor</a>
+        </td>
+        <td class="markdown level1 summary"><p>Pads the tensor from the left with size-one dimensions until it has at least two dimensions.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_ITensorModule_atLeast3D_Tensor_ITensor_" data-uid="Tensor.ITensorModule.atLeast3D(Tensor.ITensor)">
+          <a class="xref" href="Tensor.ITensorModule.atLeast3D.html#Tensor_ITensorModule_atLeast3D_Tensor_ITensor_">val atLeast3D: ITensor -&gt; ITensor</a>
+        </td>
+        <td class="markdown level1 summary"><p>Pads the tensor from the left with size-one dimensions until it has at least three dimensions.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_ITensorModule_atLeastND_int____Tensor_ITensor_" data-uid="Tensor.ITensorModule.atLeastND(int -&gt; Tensor.ITensor)">
+          <a class="xref" href="Tensor.ITensorModule.atLeastND.html#Tensor_ITensorModule_atLeastND_int____Tensor_ITensor_">val atLeastND: int -&gt; ITensor -&gt; ITensor</a>
+        </td>
+        <td class="markdown level1 summary"><p>Pads the tensor from the left with size-one dimensions until it has at least the specified number of
+dimensions.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_ITensorModule_broadcastDim_int____int64____Tensor_ITensor_" data-uid="Tensor.ITensorModule.broadcastDim(int -&gt; int64 -&gt; Tensor.ITensor)">
+          <a class="xref" href="Tensor.ITensorModule.broadcastDim.html#Tensor_ITensorModule_broadcastDim_int____int64____Tensor_ITensor_">val broadcastDim: int -&gt; int64 -&gt; ITensor -&gt; ITensor</a>
+        </td>
+        <td class="markdown level1 summary"><p>Broadcast a dimension to a specified size.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_ITensorModule_broadcastTo_int64_list____Tensor_ITensor_" data-uid="Tensor.ITensorModule.broadcastTo(int64 list -&gt; Tensor.ITensor)">
+          <a class="xref" href="Tensor.ITensorModule.broadcastTo.html#Tensor_ITensorModule_broadcastTo_int64_list____Tensor_ITensor_">val broadcastTo: int64 list -&gt; ITensor -&gt; ITensor</a>
+        </td>
+        <td class="markdown level1 summary"><p>Broadcasts the specified tensor to the specified shape.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_ITensorModule_broadcastToSame_Tensor_ITensor_list_" data-uid="Tensor.ITensorModule.broadcastToSame(Tensor.ITensor list)">
+          <a class="xref" href="Tensor.ITensorModule.broadcastToSame.html#Tensor_ITensorModule_broadcastToSame_Tensor_ITensor_list_">val broadcastToSame: ITensor list -&gt; ITensor list</a>
+        </td>
+        <td class="markdown level1 summary"><p>Broadcasts all specified tensors to have the same shape.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_ITensorModule_broadcastToSameInDims_seq_int____Tensor_ITensor_list_" data-uid="Tensor.ITensorModule.broadcastToSameInDims(seq&lt;int&gt; * Tensor.ITensor list)">
+          <a class="xref" href="Tensor.ITensorModule.broadcastToSameInDims.html#Tensor_ITensorModule_broadcastToSameInDims_seq_int____Tensor_ITensor_list_">val broadcastToSameInDims: seq&lt;int&gt; * ITensor list -&gt; ITensor list</a>
+        </td>
+        <td class="markdown level1 summary"><p>Broadcasts all specified tensors to have the same size in the specified dimensions.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_ITensorModule_copy_Tensor_ITensor_" data-uid="Tensor.ITensorModule.copy(Tensor.ITensor)">
+          <a class="xref" href="Tensor.ITensorModule.copy.html#Tensor_ITensorModule_copy_Tensor_ITensor_">val copy: ITensor -&gt; ITensor</a>
+        </td>
+        <td class="markdown level1 summary"><p>Returns a copy of the tensor.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_ITensorModule_cutLeft_Tensor_ITensor_" data-uid="Tensor.ITensorModule.cutLeft(Tensor.ITensor)">
+          <a class="xref" href="Tensor.ITensorModule.cutLeft.html#Tensor_ITensorModule_cutLeft_Tensor_ITensor_">val cutLeft: ITensor -&gt; ITensor</a>
+        </td>
+        <td class="markdown level1 summary"><p>Removes the first dimension.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_ITensorModule_cutRight_Tensor_ITensor_" data-uid="Tensor.ITensorModule.cutRight(Tensor.ITensor)">
+          <a class="xref" href="Tensor.ITensorModule.cutRight.html#Tensor_ITensorModule_cutRight_Tensor_ITensor_">val cutRight: ITensor -&gt; ITensor</a>
+        </td>
+        <td class="markdown level1 summary"><p>Removes the last dimension.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_ITensorModule_dataType_Tensor_ITensor_" data-uid="Tensor.ITensorModule.dataType(Tensor.ITensor)">
+          <a class="xref" href="Tensor.ITensorModule.dataType.html#Tensor_ITensorModule_dataType_Tensor_ITensor_">val dataType: ITensor -&gt; Type</a>
+        </td>
+        <td class="markdown level1 summary"><p>Type of data stored within the tensor.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_ITensorModule_dev_Tensor_ITensor_" data-uid="Tensor.ITensorModule.dev(Tensor.ITensor)">
+          <a class="xref" href="Tensor.ITensorModule.dev.html#Tensor_ITensorModule_dev_Tensor_ITensor_">val dev: ITensor -&gt; ITensorDevice</a>
+        </td>
+        <td class="markdown level1 summary"><p>Device the data of tensor is stored on.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_ITensorModule_flatten_Tensor_ITensor_" data-uid="Tensor.ITensorModule.flatten(Tensor.ITensor)">
+          <a class="xref" href="Tensor.ITensorModule.flatten.html#Tensor_ITensorModule_flatten_Tensor_ITensor_">val flatten: ITensor -&gt; ITensor</a>
+        </td>
+        <td class="markdown level1 summary"><p>Flattens the tensor into a (one-dimensional) vector.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_ITensorModule_insertAxis_int____Tensor_ITensor_" data-uid="Tensor.ITensorModule.insertAxis(int -&gt; Tensor.ITensor)">
+          <a class="xref" href="Tensor.ITensorModule.insertAxis.html#Tensor_ITensorModule_insertAxis_int____Tensor_ITensor_">val insertAxis: int -&gt; ITensor -&gt; ITensor</a>
+        </td>
+        <td class="markdown level1 summary"><p>Insert a dimension of size one before the specifed dimension.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_ITensorModule_isBroadcasted_Tensor_ITensor_" data-uid="Tensor.ITensorModule.isBroadcasted(Tensor.ITensor)">
+          <a class="xref" href="Tensor.ITensorModule.isBroadcasted.html#Tensor_ITensorModule_isBroadcasted_Tensor_ITensor_">val isBroadcasted: ITensor -&gt; bool</a>
+        </td>
+        <td class="markdown level1 summary"><p>Checks if the specified tensor is broadcasted in at least one dimension.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_ITensorModule_layout_Tensor_ITensor_" data-uid="Tensor.ITensorModule.layout(Tensor.ITensor)">
+          <a class="xref" href="Tensor.ITensorModule.layout.html#Tensor_ITensorModule_layout_Tensor_ITensor_">val layout: ITensor -&gt; TensorLayout</a>
+        </td>
+        <td class="markdown level1 summary"><p>Memory layout of the tensor.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_ITensorModule_nDims_Tensor_ITensor_" data-uid="Tensor.ITensorModule.nDims(Tensor.ITensor)">
+          <a class="xref" href="Tensor.ITensorModule.nDims.html#Tensor_ITensorModule_nDims_Tensor_ITensor_">val nDims: ITensor -&gt; int</a>
+        </td>
+        <td class="markdown level1 summary"><p>Dimensionality of the tensor.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_ITensorModule_nElems_Tensor_ITensor_" data-uid="Tensor.ITensorModule.nElems(Tensor.ITensor)">
+          <a class="xref" href="Tensor.ITensorModule.nElems.html#Tensor_ITensorModule_nElems_Tensor_ITensor_">val nElems: ITensor -&gt; int64</a>
+        </td>
+        <td class="markdown level1 summary"><p>Total number of elements within the tensor.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_ITensorModule_padLeft_Tensor_ITensor_" data-uid="Tensor.ITensorModule.padLeft(Tensor.ITensor)">
+          <a class="xref" href="Tensor.ITensorModule.padLeft.html#Tensor_ITensorModule_padLeft_Tensor_ITensor_">val padLeft: ITensor -&gt; ITensor</a>
+        </td>
+        <td class="markdown level1 summary"><p>Insert a dimension of size one as the first dimension.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_ITensorModule_padRight_Tensor_ITensor_" data-uid="Tensor.ITensorModule.padRight(Tensor.ITensor)">
+          <a class="xref" href="Tensor.ITensorModule.padRight.html#Tensor_ITensorModule_padRight_Tensor_ITensor_">val padRight: ITensor -&gt; ITensor</a>
+        </td>
+        <td class="markdown level1 summary"><p>Append a dimension of size one after the last dimension.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_ITensorModule_padToSame_Tensor_ITensor_list_" data-uid="Tensor.ITensorModule.padToSame(Tensor.ITensor list)">
+          <a class="xref" href="Tensor.ITensorModule.padToSame.html#Tensor_ITensorModule_padToSame_Tensor_ITensor_list_">val padToSame: ITensor list -&gt; ITensor list</a>
+        </td>
+        <td class="markdown level1 summary"><p>Pads all specified tensors from the left with dimensions of size one until they have the 
+same dimensionality.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_ITensorModule_permuteAxes_int_list____Tensor_ITensor_" data-uid="Tensor.ITensorModule.permuteAxes(int list -&gt; Tensor.ITensor)">
+          <a class="xref" href="Tensor.ITensorModule.permuteAxes.html#Tensor_ITensorModule_permuteAxes_int_list____Tensor_ITensor_">val permuteAxes: int list -&gt; ITensor -&gt; ITensor</a>
+        </td>
+        <td class="markdown level1 summary"><p>Permutes the axes as specified.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_ITensorModule_range_Tensor_Rng_list____Tensor_ITensor_" data-uid="Tensor.ITensorModule.range(Tensor.Rng list -&gt; Tensor.ITensor)">
+          <a class="xref" href="Tensor.ITensorModule.range.html#Tensor_ITensorModule_range_Tensor_Rng_list____Tensor_ITensor_">val range: Rng list -&gt; ITensor -&gt; ITensor</a>
+        </td>
+        <td class="markdown level1 summary"><p>Get a slice (part) of the tensor.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_ITensorModule_relayout_Tensor_Backend_TensorLayout____Tensor_ITensor_" data-uid="Tensor.ITensorModule.relayout(Tensor.Backend.TensorLayout -&gt; Tensor.ITensor)">
+          <a class="xref" href="Tensor.ITensorModule.relayout.html#Tensor_ITensorModule_relayout_Tensor_Backend_TensorLayout____Tensor_ITensor_">val relayout: TensorLayout -&gt; ITensor -&gt; ITensor</a>
+        </td>
+        <td class="markdown level1 summary"><p>Creates a tensor with the specified layout sharing its storage with the original tensor.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_ITensorModule_reshape_int64_list____Tensor_ITensor_" data-uid="Tensor.ITensorModule.reshape(int64 list -&gt; Tensor.ITensor)">
+          <a class="xref" href="Tensor.ITensorModule.reshape.html#Tensor_ITensorModule_reshape_int64_list____Tensor_ITensor_">val reshape: int64 list -&gt; ITensor -&gt; ITensor</a>
+        </td>
+        <td class="markdown level1 summary"><p>Changes the shape of a tensor.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_ITensorModule_reshapeView_int64_list____Tensor_ITensor_" data-uid="Tensor.ITensorModule.reshapeView(int64 list -&gt; Tensor.ITensor)">
+          <a class="xref" href="Tensor.ITensorModule.reshapeView.html#Tensor_ITensorModule_reshapeView_int64_list____Tensor_ITensor_">val reshapeView: int64 list -&gt; ITensor -&gt; ITensor</a>
+        </td>
+        <td class="markdown level1 summary"><p>Creates a reshaped view of the tensor (without copying).</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_ITensorModule_reverseAxis_int____Tensor_ITensor_" data-uid="Tensor.ITensorModule.reverseAxis(int -&gt; Tensor.ITensor)">
+          <a class="xref" href="Tensor.ITensorModule.reverseAxis.html#Tensor_ITensorModule_reverseAxis_int____Tensor_ITensor_">val reverseAxis: int -&gt; ITensor -&gt; ITensor</a>
+        </td>
+        <td class="markdown level1 summary"><p>Reverses the elements in the specified dimension.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_ITensorModule_shape_Tensor_ITensor_" data-uid="Tensor.ITensorModule.shape(Tensor.ITensor)">
+          <a class="xref" href="Tensor.ITensorModule.shape.html#Tensor_ITensorModule_shape_Tensor_ITensor_">val shape: ITensor -&gt; int64 list</a>
+        </td>
+        <td class="markdown level1 summary"><p>Shape of the tensor.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_ITensorModule_swapDim_int____int____Tensor_ITensor_" data-uid="Tensor.ITensorModule.swapDim(int -&gt; int -&gt; Tensor.ITensor)">
+          <a class="xref" href="Tensor.ITensorModule.swapDim.html#Tensor_ITensorModule_swapDim_int____int____Tensor_ITensor_">val swapDim: int -&gt; int -&gt; ITensor -&gt; ITensor</a>
+        </td>
+        <td class="markdown level1 summary"><p>Swaps the specified dimensions of the tensor.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_ITensorModule_transfer_Tensor_Backend_ITensorDevice____Tensor_ITensor_" data-uid="Tensor.ITensorModule.transfer(Tensor.Backend.ITensorDevice -&gt; Tensor.ITensor)">
+          <a class="xref" href="Tensor.ITensorModule.transfer.html#Tensor_ITensorModule_transfer_Tensor_Backend_ITensorDevice____Tensor_ITensor_">val transfer: ITensorDevice -&gt; ITensor -&gt; ITensor</a>
+        </td>
+        <td class="markdown level1 summary"><p>Transfers a tensor to the specifed device.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_ITensorModule_transpose_Tensor_ITensor_" data-uid="Tensor.ITensorModule.transpose(Tensor.ITensor)">
+          <a class="xref" href="Tensor.ITensorModule.transpose.html#Tensor_ITensorModule_transpose_Tensor_ITensor_">val transpose: ITensor -&gt; ITensor</a>
+        </td>
+        <td class="markdown level1 summary"><p>Transpose of a matrix.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_ITensorModule_tryReshapeView_int64_list____Tensor_ITensor_" data-uid="Tensor.ITensorModule.tryReshapeView(int64 list -&gt; Tensor.ITensor)">
+          <a class="xref" href="Tensor.ITensorModule.tryReshapeView.html#Tensor_ITensorModule_tryReshapeView_int64_list____Tensor_ITensor_">val tryReshapeView: int64 list -&gt; ITensor -&gt; ITensor option</a>
+        </td>
+        <td class="markdown level1 summary"><p>Tries to create a reshaped view of the tensor (without copying).</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="seealso">See Also</h3>
+  <div class="seealso">
+      <div><a class="xref" href="Tensor.Tensor-1.html">Tensor&lt;&#39;T&gt;</a></div>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

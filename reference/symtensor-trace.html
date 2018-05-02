@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Trace - Deep.Net</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content=""/>
+    <meta name="author" content="Deep.Net developers"/>
+
+    <script src="https://code.jquery.com/jquery-1.8.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.8.23/jquery-ui.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/js/bootstrap.min.js"></script>
+    <link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/css/bootstrap-combined.min.css" rel="stylesheet"/>
+
+    <link type="text/css" rel="stylesheet" href="http://www.deepml.net/content/style.css" />
+    <script type="text/javascript" src="http://www.deepml.net/content/tips.js"></script>
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <script type="text/javascript" async
+              src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="masthead">
+        <ul class="nav nav-pills pull-right">
+          <li><a href="http://github.com/DeepMLNet/DeepNet">github page</a></li>
+        </ul>
+        <h3 class="muted"><a href="http://www.deepml.net/index.html">Deep.Net</a></h3>
+      </div>
+      <hr />
+      <div class="row">
+        <div class="span9" id="main">
+          
+
+
+
+<h1>Trace</h1>
+<p>
+  <span>Namespace: SymTensor</span><br />
+</p>
+<div class="xmldoc">
+</div>
+
+<!-- Render nested types and modules, if there are any -->
+  <h2>Nested types and modules</h2>
+  <div>
+      <table class="table table-bordered type-list">
+    <thead>
+      <tr><td>Type</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td class="type-name">
+            <a href="symtensor-trace-evalevent.html">EvalEvent</a>
+          </td>
+          <td class="xmldoc"></td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="symtensor-trace-exprevaluation.html">ExprEvaluation</a>
+          </td>
+          <td class="xmldoc"></td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="symtensor-trace-loopiter.html">LoopIter</a>
+          </td>
+          <td class="xmldoc"></td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="symtensor-trace-loopstack.html">LoopStack</a>
+          </td>
+          <td class="xmldoc"></td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="symtensor-trace-tracesession.html">TraceSession</a>
+          </td>
+          <td class="xmldoc"></td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="symtensor-trace-tracesessionhandle.html">TraceSessionHandle</a>
+          </td>
+          <td class="xmldoc"></td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+  <h3>Functions and values</h3>
+  <table class="table table-bordered member-list">
+    <thead>
+      <tr><td>Function or value</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '439', 439)" onmouseover="showTip(event, '439', 439)">
+            compare 
+          </code>
+          <div class="tip" id="439">
+            <strong>Signature:</strong> TraceSession -&gt; TraceSession -&gt; int<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/DeepMLNet/DeepNet/tree/master/SymTensor/Trace.fs#L260-260" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '440', 440)" onmouseover="showTip(event, '440', 440)">
+            compareCustom isSimilar a b
+          </code>
+          <div class="tip" id="440">
+            <strong>Signature:</strong> isSimilar:(ITensor -&gt; ITensor -&gt; bool) -&gt; a:TraceSession -&gt; b:TraceSession -&gt; int<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/DeepMLNet/DeepNet/tree/master/SymTensor/Trace.fs#L214-214" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '441', 441)" onmouseover="showTip(event, '441', 441)">
+            dump txtFile hdfFile trace
+          </code>
+          <div class="tip" id="441">
+            <strong>Signature:</strong> txtFile:TextWriter -&gt; hdfFile:HDF5 -&gt; trace:TraceSession -&gt; unit<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/DeepMLNet/DeepNet/tree/master/SymTensor/Trace.fs#L262-262" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '442', 442)" onmouseover="showTip(event, '442', 442)">
+            dumpActiveTrace txtFile hdfFile
+          </code>
+          <div class="tip" id="442">
+            <strong>Signature:</strong> txtFile:TextWriter -&gt; hdfFile:HDF5 -&gt; unit<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/DeepMLNet/DeepNet/tree/master/SymTensor/Trace.fs#L329-329" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '443', 443)" onmouseover="showTip(event, '443', 443)">
+            dumpToFile txtPath hdfPath trace
+          </code>
+          <div class="tip" id="443">
+            <strong>Signature:</strong> txtPath:string -&gt; hdfPath:string -&gt; trace:TraceSession -&gt; unit<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/DeepMLNet/DeepNet/tree/master/SymTensor/Trace.fs#L324-324" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '444', 444)" onmouseover="showTip(event, '444', 444)">
+            endExprEval ()
+          </code>
+          <div class="tip" id="444">
+            <strong>Signature:</strong> unit -&gt; unit<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/DeepMLNet/DeepNet/tree/master/SymTensor/Trace.fs#L138-138" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '445', 445)" onmouseover="showTip(event, '445', 445)">
+            enteringLoop uexpr
+          </code>
+          <div class="tip" id="445">
+            <strong>Signature:</strong> uexpr:UExprT -&gt; unit<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/DeepMLNet/DeepNet/tree/master/SymTensor/Trace.fs#L144-144" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '446', 446)" onmouseover="showTip(event, '446', 446)">
+            exprEvaled uexpr res
+          </code>
+          <div class="tip" id="446">
+            <strong>Signature:</strong> uexpr:UExprT -&gt; res:Lazy&lt;ITensor&gt; -&gt; unit<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/DeepMLNet/DeepNet/tree/master/SymTensor/Trace.fs#L186-186" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '447', 447)" onmouseover="showTip(event, '447', 447)">
+            exprEvaledWithMsg uexpr res msg
+          </code>
+          <div class="tip" id="447">
+            <strong>Signature:</strong> uexpr:UExprT -&gt; res:Lazy&lt;ITensor&gt; -&gt; msg:string -&gt; unit<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/DeepMLNet/DeepNet/tree/master/SymTensor/Trace.fs#L175-175" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '448', 448)" onmouseover="showTip(event, '448', 448)">
+            extractLoop uexpr
+          </code>
+          <div class="tip" id="448">
+            <strong>Signature:</strong> uexpr:UExprT -&gt; UExprT<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/DeepMLNet/DeepNet/tree/master/SymTensor/Trace.fs#L332-332" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '449', 449)" onmouseover="showTip(event, '449', 449)">
+            isActive ()
+          </code>
+          <div class="tip" id="449">
+            <strong>Signature:</strong> unit -&gt; bool<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/DeepMLNet/DeepNet/tree/master/SymTensor/Trace.fs#L56-56" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '450', 450)" onmouseover="showTip(event, '450', 450)">
+            leavingLoop uexpr
+          </code>
+          <div class="tip" id="450">
+            <strong>Signature:</strong> uexpr:UExprT -&gt; unit<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/DeepMLNet/DeepNet/tree/master/SymTensor/Trace.fs#L153-153" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '451', 451)" onmouseover="showTip(event, '451', 451)">
+            loopStack ()
+          </code>
+          <div class="tip" id="451">
+            <strong>Signature:</strong> unit -&gt; LoopStack<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/DeepMLNet/DeepNet/tree/master/SymTensor/Trace.fs#L170-170" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '452', 452)" onmouseover="showTip(event, '452', 452)">
+            maxSimilar a b
+          </code>
+          <div class="tip" id="452">
+            <strong>Signature:</strong> a:ITensor -&gt; b:ITensor -&gt; bool<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/DeepMLNet/DeepNet/tree/master/SymTensor/Trace.fs#L189-189" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '453', 453)" onmouseover="showTip(event, '453', 453)">
+            setLoopIter iter
+          </code>
+          <div class="tip" id="453">
+            <strong>Signature:</strong> iter:int64 -&gt; unit<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/DeepMLNet/DeepNet/tree/master/SymTensor/Trace.fs#L162-162" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '454', 454)" onmouseover="showTip(event, '454', 454)">
+            startExprEval uexprs compiler
+          </code>
+          <div class="tip" id="454">
+            <strong>Signature:</strong> uexprs:UExprT list -&gt; compiler:string -&gt; unit<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/DeepMLNet/DeepNet/tree/master/SymTensor/Trace.fs#L118-118" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '455', 455)" onmouseover="showTip(event, '455', 455)">
+            startSession name
+          </code>
+          <div class="tip" id="455">
+            <strong>Signature:</strong> name:string -&gt; TraceSessionHandle<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/DeepMLNet/DeepNet/tree/master/SymTensor/Trace.fs#L110-110" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '456', 456)" onmouseover="showTip(event, '456', 456)">
+            startSessionWithRng name (arg2, arg3)
+          </code>
+          <div class="tip" id="456">
+            <strong>Signature:</strong> name:string -&gt; (int option * int option) -&gt; TraceSessionHandle<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/DeepMLNet/DeepNet/tree/master/SymTensor/Trace.fs#L95-95" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '457', 457)" onmouseover="showTip(event, '457', 457)">
+            WithMessage 
+          </code>
+          <div class="tip" id="457">
+            <strong>Signature:</strong> bool<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/DeepMLNet/DeepNet/tree/master/SymTensor/Trace.fs#L15-15" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+        </div>
+        <div class="span3">
+          <!-- <img src="http://www.deepml.net/img/logo.png" alt="Deep.Net logo" style="width:150px;margin:10px" /> -->  
+          <ul class="nav nav-list" id="menu" style="margin-top: 20px;">
+            <li class="nav-header">Deep.Net</li>
+            <li><a href="http://www.deepml.net/index.html">Home page</a></li>
+            <li class="divider"></li>
+            <li><a href="http://nuget.org/packages/DeepNet">Get Library via NuGet</a></li>
+            <li><a href="http://github.com/DeepMLNet/DeepNet">Source Code on GitHub</a></li>
+            <li><a href="http://www.deepml.net/release-notes.html">Release Notes</a></li>
+            
+            <li class="nav-header">Basics</li>
+            <li><a href="http://www.deepml.net/tensor.html">Working with Tensors</a></li>
+            <li><a href="http://www.deepml.net/model.html">Model Definition</a></li>
+            <li><a href="http://www.deepml.net/components.html">Model Components</a></li>
+            <li><a href="http://www.deepml.net/dataset.html">Dataset Handling</a></li>
+            <li><a href="http://www.deepml.net/training.html">Training</a></li>
+
+            <li class="nav-header">Advanced</li>
+            <li><a href="http://www.deepml.net/diff.html">Automatic Differentiation</a></li>
+
+            <li class="nav-header">Documentation</li>
+            <li><a href="http://www.deepml.net/reference/index.html">API Reference</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <a href="http://github.com/DeepMLNet/DeepNet"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"/></a>
+  </body>
+  </html>

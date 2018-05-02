@@ -1,0 +1,630 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Struct Rat
+   | Tensor for F# </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Struct Rat
+   | Tensor for F# ">
+    <meta name="generator" content="docfx 2.35.0.0">
+    
+    <link rel="shortcut icon" href="../images/tensor.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/tensor.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Tensor.Algorithm.Rat">
+  
+  
+  <h1 id="Tensor_Algorithm_Rat" data-uid="Tensor.Algorithm.Rat" class="text-break">Struct Rat
+  </h1>
+  <div class="markdown level0 summary"><p> A rational number, i.e. a fraction of arbitrary precision.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">System.IComparable</span></div>
+    <div><span class="xref">System.IComparable</span>&lt;<a class="xref" href="Tensor.Algorithm.Rat.html">Rat</a>&gt;</div>
+    <div><span class="xref">System.IEquatable</span>&lt;<a class="xref" href="Tensor.Algorithm.Rat.html">Rat</a>&gt;</div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Tensor.Algorithm.html">Tensor.Algorithm</a></h6>
+  <h6><strong>Assembly</strong>: Tensor.Algorithm.dll</h6>
+  <h5 id="Tensor_Algorithm_Rat_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[&lt;Struct; CustomEquality; CustomComparison&gt;]
+type Rat
+    inherit ValueType
+    interface IComparable
+    interface IComparable&lt;Rat&gt;
+    interface IEquatable&lt;Rat&gt;</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="Tensor_Algorithm_Rat__ctor_int32___int32_" data-uid="Tensor.Algorithm.Rat.#ctor(int32 * int32)">
+          <a class="xref" href="Tensor.Algorithm.Rat.-ctor.html#Tensor_Algorithm_Rat__ctor_int32___int32_">new: int32 * int32 -&gt; Rat</a>
+        </td>
+        <td class="markdown level1 summary"><p> Constructs a fraction from numerator and denominator.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Algorithm_Rat__ctor_int32_" data-uid="Tensor.Algorithm.Rat.#ctor(int32)">
+          <a class="xref" href="Tensor.Algorithm.Rat.-ctor.html#Tensor_Algorithm_Rat__ctor_int32_">new: int32 -&gt; Rat</a>
+        </td>
+        <td class="markdown level1 summary"><p> Constructs an integer rational number.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Algorithm_Rat__ctor_int64___int64_" data-uid="Tensor.Algorithm.Rat.#ctor(int64 * int64)">
+          <a class="xref" href="Tensor.Algorithm.Rat.-ctor.html#Tensor_Algorithm_Rat__ctor_int64___int64_">new: int64 * int64 -&gt; Rat</a>
+        </td>
+        <td class="markdown level1 summary"><p> Constructs a fraction from numerator and denominator.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Algorithm_Rat__ctor_int64_" data-uid="Tensor.Algorithm.Rat.#ctor(int64)">
+          <a class="xref" href="Tensor.Algorithm.Rat.-ctor.html#Tensor_Algorithm_Rat__ctor_int64_">new: int64 -&gt; Rat</a>
+        </td>
+        <td class="markdown level1 summary"><p> Constructs an integer rational number.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Algorithm_Rat__ctor_System_Numerics_BigInteger___System_Numerics_BigInteger_" data-uid="Tensor.Algorithm.Rat.#ctor(System.Numerics.BigInteger * System.Numerics.BigInteger)">
+          <a class="xref" href="Tensor.Algorithm.Rat.-ctor.html#Tensor_Algorithm_Rat__ctor_System_Numerics_BigInteger___System_Numerics_BigInteger_">new: BigInteger * BigInteger -&gt; Rat</a>
+        </td>
+        <td class="markdown level1 summary"><p> Constructs a fraction from numerator and denominator.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Algorithm_Rat__ctor_System_Numerics_BigInteger_" data-uid="Tensor.Algorithm.Rat.#ctor(System.Numerics.BigInteger)">
+          <a class="xref" href="Tensor.Algorithm.Rat.-ctor.html#Tensor_Algorithm_Rat__ctor_System_Numerics_BigInteger_">new: BigInteger -&gt; Rat</a>
+        </td>
+        <td class="markdown level1 summary"><p> Constructs an integer rational number.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Algorithm_Rat__ctor_uint32___uint32_" data-uid="Tensor.Algorithm.Rat.#ctor(uint32 * uint32)">
+          <a class="xref" href="Tensor.Algorithm.Rat.-ctor.html#Tensor_Algorithm_Rat__ctor_uint32___uint32_">new: uint32 * uint32 -&gt; Rat</a>
+        </td>
+        <td class="markdown level1 summary"><p> Constructs a fraction from numerator and denominator.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Algorithm_Rat__ctor_uint32_" data-uid="Tensor.Algorithm.Rat.#ctor(uint32)">
+          <a class="xref" href="Tensor.Algorithm.Rat.-ctor.html#Tensor_Algorithm_Rat__ctor_uint32_">new: uint32 -&gt; Rat</a>
+        </td>
+        <td class="markdown level1 summary"><p> Constructs an integer rational number.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Algorithm_Rat__ctor_uint64___uint64_" data-uid="Tensor.Algorithm.Rat.#ctor(uint64 * uint64)">
+          <a class="xref" href="Tensor.Algorithm.Rat.-ctor.html#Tensor_Algorithm_Rat__ctor_uint64___uint64_">new: uint64 * uint64 -&gt; Rat</a>
+        </td>
+        <td class="markdown level1 summary"><p> Constructs a fraction from numerator and denominator.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Algorithm_Rat__ctor_uint64_" data-uid="Tensor.Algorithm.Rat.#ctor(uint64)">
+          <a class="xref" href="Tensor.Algorithm.Rat.-ctor.html#Tensor_Algorithm_Rat__ctor_uint64_">new: uint64 -&gt; Rat</a>
+        </td>
+        <td class="markdown level1 summary"><p> Constructs an integer rational number.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="fields">Fields
+  </h3>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="Tensor_Algorithm_Rat_Num" data-uid="Tensor.Algorithm.Rat.Num">
+          <a class="xref" href="Tensor.Algorithm.Rat.Num.html">val Num: bigint</a>
+        </td>
+        <td class="markdown level1 summary"><p> the numerator</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="Tensor_Algorithm_Rat_Dnm_unit_" data-uid="Tensor.Algorithm.Rat.Dnm(unit)">
+          <a class="xref" href="Tensor.Algorithm.Rat.Dnm.html#Tensor_Algorithm_Rat_Dnm_unit_">property Dnm: bigint</a>
+        </td>
+        <td class="markdown level1 summary"><p> the denominator</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Algorithm_Rat_IsFinite_unit_" data-uid="Tensor.Algorithm.Rat.IsFinite(unit)">
+          <a class="xref" href="Tensor.Algorithm.Rat.IsFinite.html#Tensor_Algorithm_Rat_IsFinite_unit_">property IsFinite: bool</a>
+        </td>
+        <td class="markdown level1 summary"><p> True if this is a finite number (not infinity and not NaN).</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Algorithm_Rat_IsInf_unit_" data-uid="Tensor.Algorithm.Rat.IsInf(unit)">
+          <a class="xref" href="Tensor.Algorithm.Rat.IsInf.html#Tensor_Algorithm_Rat_IsInf_unit_">property IsInf: bool</a>
+        </td>
+        <td class="markdown level1 summary"><p> True is this is infinity.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Algorithm_Rat_IsInt_unit_" data-uid="Tensor.Algorithm.Rat.IsInt(unit)">
+          <a class="xref" href="Tensor.Algorithm.Rat.IsInt.html#Tensor_Algorithm_Rat_IsInt_unit_">property IsInt: bool</a>
+        </td>
+        <td class="markdown level1 summary"><p> True if this is an integer, i.e. denominator is one.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Algorithm_Rat_IsNaN_unit_" data-uid="Tensor.Algorithm.Rat.IsNaN(unit)">
+          <a class="xref" href="Tensor.Algorithm.Rat.IsNaN.html#Tensor_Algorithm_Rat_IsNaN_unit_">property IsNaN: bool</a>
+        </td>
+        <td class="markdown level1 summary"><p> True if this is not-a-number.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Algorithm_Rat_IsNegInf_unit_" data-uid="Tensor.Algorithm.Rat.IsNegInf(unit)">
+          <a class="xref" href="Tensor.Algorithm.Rat.IsNegInf.html#Tensor_Algorithm_Rat_IsNegInf_unit_">property IsNegInf: bool</a>
+        </td>
+        <td class="markdown level1 summary"><p> True is this is negative infinity.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Algorithm_Rat_IsPosInf_unit_" data-uid="Tensor.Algorithm.Rat.IsPosInf(unit)">
+          <a class="xref" href="Tensor.Algorithm.Rat.IsPosInf.html#Tensor_Algorithm_Rat_IsPosInf_unit_">property IsPosInf: bool</a>
+        </td>
+        <td class="markdown level1 summary"><p> True is this is positive infinity.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Algorithm_Rat_MaxValue_unit_" data-uid="Tensor.Algorithm.Rat.MaxValue(unit)">
+          <a class="xref" href="Tensor.Algorithm.Rat.MaxValue.html#Tensor_Algorithm_Rat_MaxValue_unit_">static property MaxValue: Rat</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Algorithm_Rat_MinusOne_unit_" data-uid="Tensor.Algorithm.Rat.MinusOne(unit)">
+          <a class="xref" href="Tensor.Algorithm.Rat.MinusOne.html#Tensor_Algorithm_Rat_MinusOne_unit_">static property MinusOne: Rat</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Algorithm_Rat_MinValue_unit_" data-uid="Tensor.Algorithm.Rat.MinValue(unit)">
+          <a class="xref" href="Tensor.Algorithm.Rat.MinValue.html#Tensor_Algorithm_Rat_MinValue_unit_">static property MinValue: Rat</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Algorithm_Rat_NaN_unit_" data-uid="Tensor.Algorithm.Rat.NaN(unit)">
+          <a class="xref" href="Tensor.Algorithm.Rat.NaN.html#Tensor_Algorithm_Rat_NaN_unit_">static property NaN: Rat</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Algorithm_Rat_NegInf_unit_" data-uid="Tensor.Algorithm.Rat.NegInf(unit)">
+          <a class="xref" href="Tensor.Algorithm.Rat.NegInf.html#Tensor_Algorithm_Rat_NegInf_unit_">static property NegInf: Rat</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Algorithm_Rat_One_unit_" data-uid="Tensor.Algorithm.Rat.One(unit)">
+          <a class="xref" href="Tensor.Algorithm.Rat.One.html#Tensor_Algorithm_Rat_One_unit_">static property One: Rat</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Algorithm_Rat_PosInf_unit_" data-uid="Tensor.Algorithm.Rat.PosInf(unit)">
+          <a class="xref" href="Tensor.Algorithm.Rat.PosInf.html#Tensor_Algorithm_Rat_PosInf_unit_">static property PosInf: Rat</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Algorithm_Rat_Pretty_unit_" data-uid="Tensor.Algorithm.Rat.Pretty(unit)">
+          <a class="xref" href="Tensor.Algorithm.Rat.Pretty.html#Tensor_Algorithm_Rat_Pretty_unit_">property Pretty: string</a>
+        </td>
+        <td class="markdown level1 summary"><p> Pretty string representation.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Algorithm_Rat_Zero_unit_" data-uid="Tensor.Algorithm.Rat.Zero(unit)">
+          <a class="xref" href="Tensor.Algorithm.Rat.Zero.html#Tensor_Algorithm_Rat_Zero_unit_">static property Zero: Rat</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="Tensor_Algorithm_Rat_Abs_Tensor_Algorithm_Rat_" data-uid="Tensor.Algorithm.Rat.Abs(Tensor.Algorithm.Rat)">
+          <a class="xref" href="Tensor.Algorithm.Rat.Abs.html#Tensor_Algorithm_Rat_Abs_Tensor_Algorithm_Rat_">static member Abs: Rat -&gt; Rat</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Algorithm_Rat_Ceiling_Tensor_Algorithm_Rat_" data-uid="Tensor.Algorithm.Rat.Ceiling(Tensor.Algorithm.Rat)">
+          <a class="xref" href="Tensor.Algorithm.Rat.Ceiling.html#Tensor_Algorithm_Rat_Ceiling_Tensor_Algorithm_Rat_">static member Ceiling: Rat -&gt; Rat</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Algorithm_Rat_dnm_Tensor_Algorithm_Rat_" data-uid="Tensor.Algorithm.Rat.dnm(Tensor.Algorithm.Rat)">
+          <a class="xref" href="Tensor.Algorithm.Rat.dnm.html#Tensor_Algorithm_Rat_dnm_Tensor_Algorithm_Rat_">static member dnm: Rat -&gt; bigint</a>
+        </td>
+        <td class="markdown level1 summary"><p> denominator</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Algorithm_Rat_Equals_obj_" data-uid="Tensor.Algorithm.Rat.Equals(obj)">
+          <a class="xref" href="Tensor.Algorithm.Rat.Equals.html#Tensor_Algorithm_Rat_Equals_obj_">override member Equals: obj -&gt; bool</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Algorithm_Rat_Floor_Tensor_Algorithm_Rat_" data-uid="Tensor.Algorithm.Rat.Floor(Tensor.Algorithm.Rat)">
+          <a class="xref" href="Tensor.Algorithm.Rat.Floor.html#Tensor_Algorithm_Rat_Floor_Tensor_Algorithm_Rat_">static member Floor: Rat -&gt; Rat</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Algorithm_Rat_get_Sign_Tensor_Algorithm_Rat_" data-uid="Tensor.Algorithm.Rat.get_Sign(Tensor.Algorithm.Rat)">
+          <a class="xref" href="Tensor.Algorithm.Rat.get_Sign.html#Tensor_Algorithm_Rat_get_Sign_Tensor_Algorithm_Rat_">static member get_Sign: Rat -&gt; int</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Algorithm_Rat_GetHashCode_unit_" data-uid="Tensor.Algorithm.Rat.GetHashCode(unit)">
+          <a class="xref" href="Tensor.Algorithm.Rat.GetHashCode.html#Tensor_Algorithm_Rat_GetHashCode_unit_">override member GetHashCode: unit -&gt; int</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Algorithm_Rat_isFinite_Tensor_Algorithm_Rat_" data-uid="Tensor.Algorithm.Rat.isFinite(Tensor.Algorithm.Rat)">
+          <a class="xref" href="Tensor.Algorithm.Rat.isFinite.html#Tensor_Algorithm_Rat_isFinite_Tensor_Algorithm_Rat_">static member isFinite: Rat -&gt; bool</a>
+        </td>
+        <td class="markdown level1 summary"><p> True if a is a finite number.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Algorithm_Rat_isInf_Tensor_Algorithm_Rat_" data-uid="Tensor.Algorithm.Rat.isInf(Tensor.Algorithm.Rat)">
+          <a class="xref" href="Tensor.Algorithm.Rat.isInf.html#Tensor_Algorithm_Rat_isInf_Tensor_Algorithm_Rat_">static member isInf: Rat -&gt; bool</a>
+        </td>
+        <td class="markdown level1 summary"><p> True if a is infinity.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Algorithm_Rat_isInteger_Tensor_Algorithm_Rat_" data-uid="Tensor.Algorithm.Rat.isInteger(Tensor.Algorithm.Rat)">
+          <a class="xref" href="Tensor.Algorithm.Rat.isInteger.html#Tensor_Algorithm_Rat_isInteger_Tensor_Algorithm_Rat_">static member isInteger: Rat -&gt; bool</a>
+        </td>
+        <td class="markdown level1 summary"><p> True if a is an integer, i.e. its denominator is one.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Algorithm_Rat_isNaN_Tensor_Algorithm_Rat_" data-uid="Tensor.Algorithm.Rat.isNaN(Tensor.Algorithm.Rat)">
+          <a class="xref" href="Tensor.Algorithm.Rat.isNaN.html#Tensor_Algorithm_Rat_isNaN_Tensor_Algorithm_Rat_">static member isNaN: Rat -&gt; bool</a>
+        </td>
+        <td class="markdown level1 summary"><p> True if a is not-a-number.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Algorithm_Rat_isNegInf_Tensor_Algorithm_Rat_" data-uid="Tensor.Algorithm.Rat.isNegInf(Tensor.Algorithm.Rat)">
+          <a class="xref" href="Tensor.Algorithm.Rat.isNegInf.html#Tensor_Algorithm_Rat_isNegInf_Tensor_Algorithm_Rat_">static member isNegInf: Rat -&gt; bool</a>
+        </td>
+        <td class="markdown level1 summary"><p> True if a is negative infinity.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Algorithm_Rat_isPosInf_Tensor_Algorithm_Rat_" data-uid="Tensor.Algorithm.Rat.isPosInf(Tensor.Algorithm.Rat)">
+          <a class="xref" href="Tensor.Algorithm.Rat.isPosInf.html#Tensor_Algorithm_Rat_isPosInf_Tensor_Algorithm_Rat_">static member isPosInf: Rat -&gt; bool</a>
+        </td>
+        <td class="markdown level1 summary"><p> True if a is positive infinity.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Algorithm_Rat_num_Tensor_Algorithm_Rat_" data-uid="Tensor.Algorithm.Rat.num(Tensor.Algorithm.Rat)">
+          <a class="xref" href="Tensor.Algorithm.Rat.num.html#Tensor_Algorithm_Rat_num_Tensor_Algorithm_Rat_">static member num: Rat -&gt; bigint</a>
+        </td>
+        <td class="markdown level1 summary"><p> numerator</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Algorithm_Rat_ToString_unit_" data-uid="Tensor.Algorithm.Rat.ToString(unit)">
+          <a class="xref" href="Tensor.Algorithm.Rat.ToString.html#Tensor_Algorithm_Rat_ToString_unit_">override member ToString: unit -&gt; string</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Algorithm_Rat_Truncate_Tensor_Algorithm_Rat_" data-uid="Tensor.Algorithm.Rat.Truncate(Tensor.Algorithm.Rat)">
+          <a class="xref" href="Tensor.Algorithm.Rat.Truncate.html#Tensor_Algorithm_Rat_Truncate_Tensor_Algorithm_Rat_">static member Truncate: Rat -&gt; Rat</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="operators">Operators
+  </h3>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="Tensor_Algorithm_Rat_op_Addition_Tensor_Algorithm_Rat___Tensor_Algorithm_Rat_" data-uid="Tensor.Algorithm.Rat.op_Addition(Tensor.Algorithm.Rat * Tensor.Algorithm.Rat)">
+          <a class="xref" href="Tensor.Algorithm.Rat.op_Addition.html#Tensor_Algorithm_Rat_op_Addition_Tensor_Algorithm_Rat___Tensor_Algorithm_Rat_">static member ( + ): Rat * Rat -&gt; Rat</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Algorithm_Rat_op_Division_Tensor_Algorithm_Rat___Tensor_Algorithm_Rat_" data-uid="Tensor.Algorithm.Rat.op_Division(Tensor.Algorithm.Rat * Tensor.Algorithm.Rat)">
+          <a class="xref" href="Tensor.Algorithm.Rat.op_Division.html#Tensor_Algorithm_Rat_op_Division_Tensor_Algorithm_Rat___Tensor_Algorithm_Rat_">static member ( / ): Rat * Rat -&gt; Rat</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Algorithm_Rat_op_Explicit_bigint_Tensor_Algorithm_Rat_" data-uid="Tensor.Algorithm.Rat.op_Explicit_bigint(Tensor.Algorithm.Rat)">
+          <a class="xref" href="Tensor.Algorithm.Rat.op_Explicit_bigint.html#Tensor_Algorithm_Rat_op_Explicit_bigint_Tensor_Algorithm_Rat_">static member op_Explicit: Rat -&gt; bigint</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Algorithm_Rat_op_Explicit_double_Tensor_Algorithm_Rat_" data-uid="Tensor.Algorithm.Rat.op_Explicit_double(Tensor.Algorithm.Rat)">
+          <a class="xref" href="Tensor.Algorithm.Rat.op_Explicit_double.html#Tensor_Algorithm_Rat_op_Explicit_double_Tensor_Algorithm_Rat_">static member op_Explicit: Rat -&gt; double</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Algorithm_Rat_op_Explicit_int32_Tensor_Algorithm_Rat_" data-uid="Tensor.Algorithm.Rat.op_Explicit_int32(Tensor.Algorithm.Rat)">
+          <a class="xref" href="Tensor.Algorithm.Rat.op_Explicit_int32.html#Tensor_Algorithm_Rat_op_Explicit_int32_Tensor_Algorithm_Rat_">static member op_Explicit: Rat -&gt; int32</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Algorithm_Rat_op_Explicit_int64_Tensor_Algorithm_Rat_" data-uid="Tensor.Algorithm.Rat.op_Explicit_int64(Tensor.Algorithm.Rat)">
+          <a class="xref" href="Tensor.Algorithm.Rat.op_Explicit_int64.html#Tensor_Algorithm_Rat_op_Explicit_int64_Tensor_Algorithm_Rat_">static member op_Explicit: Rat -&gt; int64</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Algorithm_Rat_op_Explicit_single_Tensor_Algorithm_Rat_" data-uid="Tensor.Algorithm.Rat.op_Explicit_single(Tensor.Algorithm.Rat)">
+          <a class="xref" href="Tensor.Algorithm.Rat.op_Explicit_single.html#Tensor_Algorithm_Rat_op_Explicit_single_Tensor_Algorithm_Rat_">static member op_Explicit: Rat -&gt; single</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Algorithm_Rat_op_Explicit_uint32_Tensor_Algorithm_Rat_" data-uid="Tensor.Algorithm.Rat.op_Explicit_uint32(Tensor.Algorithm.Rat)">
+          <a class="xref" href="Tensor.Algorithm.Rat.op_Explicit_uint32.html#Tensor_Algorithm_Rat_op_Explicit_uint32_Tensor_Algorithm_Rat_">static member op_Explicit: Rat -&gt; uint32</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Algorithm_Rat_op_Explicit_uint64_Tensor_Algorithm_Rat_" data-uid="Tensor.Algorithm.Rat.op_Explicit_uint64(Tensor.Algorithm.Rat)">
+          <a class="xref" href="Tensor.Algorithm.Rat.op_Explicit_uint64.html#Tensor_Algorithm_Rat_op_Explicit_uint64_Tensor_Algorithm_Rat_">static member op_Explicit: Rat -&gt; uint64</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Algorithm_Rat_op_Implicit_bigint_" data-uid="Tensor.Algorithm.Rat.op_Implicit(bigint)">
+          <a class="xref" href="Tensor.Algorithm.Rat.op_Implicit.html#Tensor_Algorithm_Rat_op_Implicit_bigint_">static member op_Implicit: bigint -&gt; Rat</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Algorithm_Rat_op_Implicit_int32_" data-uid="Tensor.Algorithm.Rat.op_Implicit(int32)">
+          <a class="xref" href="Tensor.Algorithm.Rat.op_Implicit.html#Tensor_Algorithm_Rat_op_Implicit_int32_">static member op_Implicit: int32 -&gt; Rat</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Algorithm_Rat_op_Implicit_int64_" data-uid="Tensor.Algorithm.Rat.op_Implicit(int64)">
+          <a class="xref" href="Tensor.Algorithm.Rat.op_Implicit.html#Tensor_Algorithm_Rat_op_Implicit_int64_">static member op_Implicit: int64 -&gt; Rat</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Algorithm_Rat_op_Implicit_uint32_" data-uid="Tensor.Algorithm.Rat.op_Implicit(uint32)">
+          <a class="xref" href="Tensor.Algorithm.Rat.op_Implicit.html#Tensor_Algorithm_Rat_op_Implicit_uint32_">static member op_Implicit: uint32 -&gt; Rat</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Algorithm_Rat_op_Implicit_uint64_" data-uid="Tensor.Algorithm.Rat.op_Implicit(uint64)">
+          <a class="xref" href="Tensor.Algorithm.Rat.op_Implicit.html#Tensor_Algorithm_Rat_op_Implicit_uint64_">static member op_Implicit: uint64 -&gt; Rat</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Algorithm_Rat_op_Modulus_Tensor_Algorithm_Rat___Tensor_Algorithm_Rat_" data-uid="Tensor.Algorithm.Rat.op_Modulus(Tensor.Algorithm.Rat * Tensor.Algorithm.Rat)">
+          <a class="xref" href="Tensor.Algorithm.Rat.op_Modulus.html#Tensor_Algorithm_Rat_op_Modulus_Tensor_Algorithm_Rat___Tensor_Algorithm_Rat_">static member ( % ): Rat * Rat -&gt; Rat</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Algorithm_Rat_op_Multiply_Tensor_Algorithm_Rat___Tensor_Algorithm_Rat_" data-uid="Tensor.Algorithm.Rat.op_Multiply(Tensor.Algorithm.Rat * Tensor.Algorithm.Rat)">
+          <a class="xref" href="Tensor.Algorithm.Rat.op_Multiply.html#Tensor_Algorithm_Rat_op_Multiply_Tensor_Algorithm_Rat___Tensor_Algorithm_Rat_">static member ( * ): Rat * Rat -&gt; Rat</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Algorithm_Rat_op_Subtraction_Tensor_Algorithm_Rat___Tensor_Algorithm_Rat_" data-uid="Tensor.Algorithm.Rat.op_Subtraction(Tensor.Algorithm.Rat * Tensor.Algorithm.Rat)">
+          <a class="xref" href="Tensor.Algorithm.Rat.op_Subtraction.html#Tensor_Algorithm_Rat_op_Subtraction_Tensor_Algorithm_Rat___Tensor_Algorithm_Rat_">static member ( - ): Rat * Rat -&gt; Rat</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Algorithm_Rat_op_UnaryNegation_Tensor_Algorithm_Rat_" data-uid="Tensor.Algorithm.Rat.op_UnaryNegation(Tensor.Algorithm.Rat)">
+          <a class="xref" href="Tensor.Algorithm.Rat.op_UnaryNegation.html#Tensor_Algorithm_Rat_op_UnaryNegation_Tensor_Algorithm_Rat_">static member ( ~- ): Rat -&gt; Rat</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Algorithm_Rat_op_UnaryPlus_Tensor_Algorithm_Rat_" data-uid="Tensor.Algorithm.Rat.op_UnaryPlus(Tensor.Algorithm.Rat)">
+          <a class="xref" href="Tensor.Algorithm.Rat.op_UnaryPlus.html#Tensor_Algorithm_Rat_op_UnaryPlus_Tensor_Algorithm_Rat_">static member ( ~+ ): Rat -&gt; Rat</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="eii">Explicit Interface Implementations
+  </h3>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="Tensor_Algorithm_Rat_System_IComparable_1_CompareTo_Tensor_Algorithm_Rat_" data-uid="Tensor.Algorithm.Rat.System-IComparable`1-CompareTo(Tensor.Algorithm.Rat)">
+          <a class="xref" href="Tensor.Algorithm.Rat.System-IComparable-1-CompareTo.html#Tensor_Algorithm_Rat_System_IComparable_1_CompareTo_Tensor_Algorithm_Rat_">interface IComparable&lt;Rat&gt; with member CompareTo: Rat -&gt; int</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Algorithm_Rat_System_IComparable_CompareTo_obj_" data-uid="Tensor.Algorithm.Rat.System-IComparable-CompareTo(obj)">
+          <a class="xref" href="Tensor.Algorithm.Rat.System-IComparable-CompareTo.html#Tensor_Algorithm_Rat_System_IComparable_CompareTo_obj_">interface IComparable with member CompareTo: obj -&gt; int</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Algorithm_Rat_System_IEquatable_1_Equals_Tensor_Algorithm_Rat_" data-uid="Tensor.Algorithm.Rat.System-IEquatable`1-Equals(Tensor.Algorithm.Rat)">
+          <a class="xref" href="Tensor.Algorithm.Rat.System-IEquatable-1-Equals.html#Tensor_Algorithm_Rat_System_IEquatable_1_Equals_Tensor_Algorithm_Rat_">interface IEquatable&lt;Rat&gt; with member Equals: Rat -&gt; bool</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

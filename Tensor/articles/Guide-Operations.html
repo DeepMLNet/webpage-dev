@@ -1,0 +1,257 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Tensor operations | Tensor for F# </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Tensor operations | Tensor for F# ">
+    <meta name="generator" content="docfx 2.35.0.0">
+    
+    <link rel="shortcut icon" href="../images/tensor.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/tensor.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="tensor-operations">Tensor operations</h1>
+
+<p>The tensor type supports all standard arithmetic operators and arithmetic functions.</p>
+<h2 id="element-wise-arithmetic-operators">Element-wise arithmetic operators</h2>
+<p>The elementary arithmetic operators (<a class="xref" href="../api/Tensor.Tensor-1.op_Addition.html">+</a>, <a class="xref" href="../api/Tensor.Tensor-1.op_Subtraction.html">-</a>, <a class="xref" href="../api/Tensor.Tensor-1.op_Multiply.html">*</a>, <a class="xref" href="../api/Tensor.Tensor-1.op_Division.html">/</a>, <a class="xref" href="../api/Tensor.Tensor-1.op_Modulus.html">%</a>, <a class="xref" href="../api/Tensor.Tensor-1.Pow.html">**</a>, <a class="xref" href="../api/Tensor.Tensor-1.op_UnaryNegation.html">~-</a>) are executed element-wise.
+For example, consider the vectors <code>d</code> and <code>e</code>, that are initialized as follows.</p>
+<pre><code class="lang-fsharp">let d = HostTensor.init [4L] (fun [|i|] -&gt; float i)
+let e = HostTensor.init [4L] (fun [|i|] -&gt; 10.0 * float i)
+// d = [   0.0000    1.0000    2.0000    3.0000]
+// e = [   0.0000   10.0000   20.0000   30.0000]
+</code></pre><p>Then we can perform an element-wise addition using the following code.</p>
+<pre><code class="lang-fsharp">let f = d + e
+// f = [   0.0000   11.0000   22.0000   33.0000]
+</code></pre><p>It is also possible to apply an operator to a tensor and a scalar value of the same data type.
+In this case the scalar is repeated to match the size of the given tensor, as shown in the following example.</p>
+<pre><code class="lang-fsharp">let d1 = d * 100.0
+// d1 = [   0.0000  100.0000  200.0000  300.0000]
+</code></pre><h3 id="automatic-broadcasting">Automatic broadcasting</h3>
+<p>If a binary operator (for example <code>+</code>) is applied to two tensors of different shapes, the library tries to automatically broadcast both tensors to a compatible shape using the following rules.</p>
+<ol>
+<li><p>If the tensors have different ranks, the tensor with the lower rank is padded from the left with axes of size one until both tensors have the same rank.
+For example, if tensor <code>a</code> is of shape <em>4x3x1</em> and tensor <code>b</code> is of shape <em>2</em>, then tensor <code>b</code> is padded to the shape <strong>1</strong>x<strong>1</strong>x2.</p>
+</li>
+<li><p>For each dimension that has different size in both tensors and size one in one of the tensors, this dimension of the tensor with size one is broadcasted to the corresponding dimension of the other tensor.
+Thus, in our example, the last dimension of tensor <code>a</code> is broadcasted resulting in the shape 4x3x<strong>2</strong> and the first and second dimensions of tensor <code>b</code> (after padding it is of shape <em>1x1x2</em>) are broadcasted, resulting in the shape <strong>4</strong>x<strong>3</strong>x2.</p>
+</li>
+</ol>
+<p>If the shapes still differ after applying the above rules, the operation fails and an exception is raised.</p>
+<pre><code class="lang-fsharp">let a = HostTensor.init [4L; 3L; 1L] (fun [|i; j; k|] -&gt; float i + 0.1 * float j)
+let b = HostTensor.init [2L] (fun [|i|] -&gt; 10.0 * float i)
+// a =
+//   [[[   0.0000]
+//     [   0.1000]
+//     [   0.2000]]
+//    [[   1.0000]
+//     [   1.1000]
+//     [   1.2000]]
+//    [[   2.0000]
+//     [   2.1000]
+//     [   2.2000]]
+//    [[   3.0000]
+//     [   3.1000]
+//     [   3.2000]]]
+// b = [   0.0000   10.0000]
+let apb = a + b
+// apb =
+//   [[[   0.0000   10.0000]
+//     [   0.1000   10.1000]
+//     [   0.2000   10.2000]]
+//    [[   1.0000   11.0000]
+//     [   1.1000   11.1000]
+//     [   1.2000   11.2000]]
+//    [[   2.0000   12.0000]
+//     [   2.1000   12.1000]
+//     [   2.2000   12.2000]]
+//    [[   3.0000   13.0000]
+//     [   3.1000   13.1000]
+//     [   3.2000   13.2000]]]
+// apb.Shape = [4L; 3L; 2L]
+</code></pre><h3 id="storage-devices-must-match">Storage devices must match</h3>
+<p>All tensors participating in an operation must be located on the same storage device, i.e. their <a class="xref" href="../api/Tensor.Tensor-1.Dev.html">Dev</a> property must be equal.
+The result will be stored on the same device as the sources.
+No automatic transfer between different devices (e.g. GPU and host memory) is performed; instead an exception is raised.</p>
+<p>If working with tensors stored on different devices, you first have to use the <a class="xref" href="../api/Tensor.Tensor-1.transfer.html">transfer</a> function to copy them to the same device, before applying an operator on them.</p>
+<h2 id="element-wise-arithmetic-and-rounding-functions">Element-wise arithmetic and rounding functions</h2>
+<p>The standard F# arithmetic functions, such as <a class="xref" href="../api/Tensor.Tensor-1.Sin.html">sin</a>, <a class="xref" href="../api/Tensor.Tensor-1.Exp.html">exp</a>, <a class="xref" href="../api/Tensor.Tensor-1.Log.html">log</a>, and rounding functions, such as <a class="xref" href="../api/Tensor.Tensor-1.Floor.html">floor</a> and <a class="xref" href="../api/Tensor.Tensor-1.Ceiling.html">ceil</a>, can also be applied to tensors.
+They execute element-wise, just like the arithmetic operators presented above.</p>
+<pre><code class="lang-fsharp">let f2 = sin f
+// f2 = [   0.0000    -1.000    -0.009    0.9999]
+</code></pre><h2 id="specifying-where-the-result-should-be-stored">Specifying where the result should be stored</h2>
+<p>Sometimes you might want to specify in which (existing) tensor the result of an operation should be stored.
+For this purpose there exist a corresponding <code>Fill*</code> variant of each operation provided by the tensor library.</p>
+<p>For example, for the multiply operator <a class="xref" href="../api/Tensor.Tensor-1.op_Multiply.html">(*)</a>, there exist the <a class="xref" href="../api/Tensor.Tensor-1.FillMultiply.html">FillMultiply</a> variant, which also performs a multiplication, but stores the result in the specified target tensor.
+The previous contents of the target tensor are thereby overwritten.
+The target tensor must have appropriate shape and data type to hold the result of the operation.
+Also it must reside on the same device as the source(s) of the operation.</p>
+<p>The following example illustrates the use of the <code>Fill*</code> functions.</p>
+<pre><code class="lang-fsharp">// f3 = [  -1.0000   -1.0000   29.0000   40.0000]
+f3.FillMultiply d e
+// f3 = [   0.0000   10.0000   40.0000   90.0000]
+</code></pre><p>It is also possible to perform operations in-place.
+This means that one of the inputs of an operation is overwritten by the output.</p>
+<pre><code class="lang-fsharp">f3.FillMultiply f3 e
+// f3 = [   0.0000  100.0000  800.0000 2700.0000]
+</code></pre><p>This is especially useful when working with very large tensors and thus care must be taken to conserve memory usage.</p>
+<p>You can find the <code>Fill*</code> variants of each operation by checking the &quot;<em>see also</em>&quot; section in its reference documentation.</p>
+<h2 id="matrix-multiplication-dot-product">Matrix multiplication (dot product)</h2>
+<p>Matrix multiplication (dot product) is implemented using the <a class="xref" href="../api/Tensor.Tensor-1.op_DotMultiply.html">.* operator</a>.
+This operator can be used to calculate a vector/vector product resulting in a scalar, a matrix/vector product resulting in a vector and a matrix/matrix product resulting in a matrix.
+If the inputs have more than two dimensions, a batched matrix/matrix product is computed.</p>
+<p>The following example shows how to compute the matrix product of the <em>5x3</em> matrix <code>h</code> with the <em>3x3</em> matrix <code>i</code>, resulting in the <em>5x3</em> matrix <code>hi</code>.</p>
+<pre><code class="lang-fsharp">let h = HostTensor.init [5L; 3L] (fun [|i; j|] -&gt; 3.0 * float i + float j)
+// h =
+//     [[   0.0000    1.0000    2.0000]
+//      [   3.0000    4.0000    5.0000]
+//      [   6.0000    7.0000    8.0000]
+//      [   9.0000   10.0000   11.0000]
+//      [  12.0000   13.0000   14.0000]]
+let i = 0.1 + HostTensor.identity 3L
+// i =
+//     [[   1.1000    0.1000    0.1000]
+//      [   0.1000    1.1000    0.1000]
+//      [   0.1000    0.1000    1.1000]]
+let hi = h .* i
+// hi =
+//     [[   0.3000    1.3000    2.3000]
+//      [   4.2000    5.2000    6.2000]
+//      [   8.1000    9.1000   10.1000]
+//      [  12.0000   13.0000   14.0000]
+//      [  15.9000   16.9000   17.9000]]
+</code></pre><h2 id="linear-algebra-operations">Linear algebra operations</h2>
+<p>The diagonal of a matrix can be extracted using the <a class="xref" href="../api/Tensor.Tensor-1.diag.html">diag</a> function.
+To create a diagonal matrix with specific elements on the diagonal use the <a class="xref" href="../api/Tensor.Tensor-1.diagMat.html">diagMat</a> function.</p>
+<p>The norm can be computed using the <a class="xref" href="../api/Tensor.Tensor-1.norm.html">norm</a> and <a class="xref" href="../api/Tensor.Tensor-1.normAxis.html">normAxis</a> functions.</p>
+<p>To invert a square, invertable matrix use the <a class="xref" href="../api/Tensor.Tensor-1.invert.html">invert</a> function.
+However, this may be numerically instable, especially if the condition number of the matrix is low.
+Thus it is usually better, but also more expensive, to compute the Moore-Penrose pseudo-inverse using the <a class="xref" href="../api/Tensor.Tensor-1.pseudoInvert.html">pseudoInvert</a> function.
+This is also applicable to non-square and non-invertable matrices.</p>
+<pre><code class="lang-fsharp">let iinv = Tensor.invert i
+// iinv =
+//    [[   0.9231    -0.077    -0.077]
+//     [   -0.077    0.9231    -0.077]
+//     [   -0.077    -0.077    0.9231]]
+</code></pre><p>The singular value decomposition (SVD) of a matrix is available through <a class="xref" href="../api/Tensor.Tensor-1.SVD.html">SVD</a>.
+The eigen-decomposition of a symmetric matrix can be computed using the <a class="xref" href="../api/Tensor.Tensor-1.symmetricEigenDecomposition.html">symmetricEigenDecomposition</a> function.</p>
+<p>The tensor product (pairwise product between all elements of two tensors) between two tensors can be obtained using the the <a class="xref" href="../api/Tensor.Tensor-1.tensorProduct.html">tensorProduct</a> function.</p>
+<h2 id="concatenation-and-block-tensors">Concatenation and block tensors</h2>
+<p>Tensors can be concatenated along an axis using the <a class="xref" href="../api/Tensor.Tensor-1.concat.html">concat</a> function.</p>
+<p>To replicate a tensor along an axis use the <a class="xref" href="../api/Tensor.Tensor-1.replicate.html">replicate</a> function.</p>
+<p>A tensor built out of smaller tensors block can be created using the <a class="xref" href="../api/Tensor.Tensor-1.ofBlocks.html">ofBlocks</a> function.</p>
+<h2 id="element-wise-function-application-host-only">Element-wise function application (host-only)</h2>
+<p>For tensors stored in host memory, it is also possible to apply an arbitrary function element-wise using the <a class="xref" href="../api/Tensor.HostTensor.map.html">HostTensor.map</a> function.</p>
+<pre><code class="lang-fsharp">let f3 = HostTensor.map (fun x -&gt; if x &gt; 15.0 then 7.0 + x else -1.0) f
+// f3 = [  -1.0000   -1.0000   29.0000   40.0000]
+</code></pre><p>Likewise, the <a class="xref" href="../api/Tensor.HostTensor.map2.html">HostTensor.map2</a> function takes two tensors and applies a binary function to their elements.
+Indexed variants of both function are provided by <a class="xref" href="../api/Tensor.HostTensor.mapi.html">HostTensor.mapi</a> and <a class="xref" href="../api/Tensor.HostTensor.mapi2.html">HostTensor.mapi2</a>.</p>
+<p>The <a class="xref" href="../api/Tensor.HostTensor.foldAxis.html">HostTensor.foldAxis</a> applies a function along the specified axis of a tensor and threads an state through the computation.</p>
+<h2 id="further-algorithms">Further algorithms</h2>
+<p>Further algorithms are provided in the <a class="xref" href="../api/Tensor.Algorithm.html">Tensor.Algorithm namespace</a>.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/DeepMLNet/DeepNet/blob/018df6c3f0e2ae11d0b2e0d3b3257bb0b88de366/Tensor/Tensor.Docs/articles/Guide-Operations.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

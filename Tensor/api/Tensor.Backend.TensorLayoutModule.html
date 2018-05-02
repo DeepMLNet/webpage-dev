@@ -1,0 +1,516 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class TensorLayout (mod)
+   | Tensor for F# </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class TensorLayout (mod)
+   | Tensor for F# ">
+    <meta name="generator" content="docfx 2.35.0.0">
+    
+    <link rel="shortcut icon" href="../images/tensor.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/tensor.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Tensor.Backend.TensorLayoutModule">
+  
+  
+  <h1 id="Tensor_Backend_TensorLayoutModule" data-uid="Tensor.Backend.TensorLayoutModule" class="text-break">Class TensorLayout (mod)
+  </h1>
+  <div class="markdown level0 summary"><p> Functions for working with TensorLayout.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">TensorLayout (mod)</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Tensor.Backend.html">Tensor.Backend</a></h6>
+  <h6><strong>Assembly</strong>: Tensor.dll</h6>
+  <h5 id="Tensor_Backend_TensorLayoutModule_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">module TensorLayout</code></pre>
+  </div>
+  <h3 id="fields">Fields
+  </h3>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="Tensor_Backend_TensorLayoutModule_emptyVector__" data-uid="Tensor.Backend.TensorLayoutModule.emptyVector()">
+          <a class="xref" href="Tensor.Backend.TensorLayoutModule.emptyVector%28%29.html">val emptyVector</a>
+        </td>
+        <td class="markdown level1 summary"><p> an ArrayND layout for an empty (zero elements) vector (1D)</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="Tensor_Backend_TensorLayoutModule_addr_int64_list____Tensor_Backend_TensorLayout_" data-uid="Tensor.Backend.TensorLayoutModule.addr(int64 list -&gt; Tensor.Backend.TensorLayout)">
+          <a class="xref" href="Tensor.Backend.TensorLayoutModule.addr.html#Tensor_Backend_TensorLayoutModule_addr_int64_list____Tensor_Backend_TensorLayout_">val addr: int64 list -&gt; TensorLayout -&gt; int64</a>
+        </td>
+        <td class="markdown level1 summary"><p> address of element</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Backend_TensorLayoutModule_allIdx_Tensor_Backend_TensorLayout_" data-uid="Tensor.Backend.TensorLayoutModule.allIdx(Tensor.Backend.TensorLayout)">
+          <a class="xref" href="Tensor.Backend.TensorLayoutModule.allIdx.html#Tensor_Backend_TensorLayoutModule_allIdx_Tensor_Backend_TensorLayout_">val allIdx: TensorLayout -&gt; seq&lt;int64 list&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p> sequence of all indices </p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Backend_TensorLayoutModule_allIdxOfDim_int____Tensor_Backend_TensorLayout_" data-uid="Tensor.Backend.TensorLayoutModule.allIdxOfDim(int -&gt; Tensor.Backend.TensorLayout)">
+          <a class="xref" href="Tensor.Backend.TensorLayoutModule.allIdxOfDim.html#Tensor_Backend_TensorLayoutModule_allIdxOfDim_int____Tensor_Backend_TensorLayout_">val allIdxOfDim: int -&gt; TensorLayout -&gt; seq&lt;int64&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p> all indices of the given dimension</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Backend_TensorLayoutModule_allIdxOfShape_int64_list_" data-uid="Tensor.Backend.TensorLayoutModule.allIdxOfShape(int64 list)">
+          <a class="xref" href="Tensor.Backend.TensorLayoutModule.allIdxOfShape.html#Tensor_Backend_TensorLayoutModule_allIdxOfShape_int64_list_">val allIdxOfShape: int64 list -&gt; seq&lt;int64 list&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p> a sequence of indicies enumerating all elements of the array with the given shape</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Backend_TensorLayoutModule_allSrcRngsAndTrgtIdxsForAxisReduce_int____Tensor_Backend_TensorLayout_" data-uid="Tensor.Backend.TensorLayoutModule.allSrcRngsAndTrgtIdxsForAxisReduce(int -&gt; Tensor.Backend.TensorLayout)">
+          <a class="xref" href="Tensor.Backend.TensorLayoutModule.allSrcRngsAndTrgtIdxsForAxisReduce.html#Tensor_Backend_TensorLayoutModule_allSrcRngsAndTrgtIdxsForAxisReduce_int____Tensor_Backend_TensorLayout_">val allSrcRngsAndTrgtIdxsForAxisReduce: int -&gt; TensorLayout -&gt; seq&lt;Rng list * int64 list&gt;</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Backend_TensorLayoutModule_broadcastDim_int____int64____Tensor_Backend_TensorLayout_" data-uid="Tensor.Backend.TensorLayoutModule.broadcastDim(int -&gt; int64 -&gt; Tensor.Backend.TensorLayout)">
+          <a class="xref" href="Tensor.Backend.TensorLayoutModule.broadcastDim.html#Tensor_Backend_TensorLayoutModule_broadcastDim_int____int64____Tensor_Backend_TensorLayout_">val broadcastDim: int -&gt; int64 -&gt; TensorLayout -&gt; TensorLayout</a>
+        </td>
+        <td class="markdown level1 summary"><p> broadcast the given dimension to the given size</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Backend_TensorLayoutModule_broadcastToSame_Tensor_Backend_TensorLayout____Tensor_Backend_TensorLayout_" data-uid="Tensor.Backend.TensorLayoutModule.broadcastToSame(Tensor.Backend.TensorLayout -&gt; Tensor.Backend.TensorLayout)">
+          <a class="xref" href="Tensor.Backend.TensorLayoutModule.broadcastToSame.html#Tensor_Backend_TensorLayoutModule_broadcastToSame_Tensor_Backend_TensorLayout____Tensor_Backend_TensorLayout_">val broadcastToSame: TensorLayout -&gt; TensorLayout -&gt; TensorLayout * TensorLayout</a>
+        </td>
+        <td class="markdown level1 summary"><p> broadcasts to have the same size</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Backend_TensorLayoutModule_broadcastToSameInDims_seq_int_____Tensor_Backend_TensorLayout____Tensor_Backend_TensorLayout_" data-uid="Tensor.Backend.TensorLayoutModule.broadcastToSameInDims(seq&lt;int&gt; -&gt; Tensor.Backend.TensorLayout -&gt; Tensor.Backend.TensorLayout)">
+          <a class="xref" href="Tensor.Backend.TensorLayoutModule.broadcastToSameInDims.html#Tensor_Backend_TensorLayoutModule_broadcastToSameInDims_seq_int_____Tensor_Backend_TensorLayout____Tensor_Backend_TensorLayout_">val broadcastToSameInDims: seq&lt;int&gt; -&gt; TensorLayout -&gt; TensorLayout -&gt; TensorLayout * TensorLayout</a>
+        </td>
+        <td class="markdown level1 summary"><p> broadcasts to have the same size in the given dimensions</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Backend_TensorLayoutModule_broadcastToSameInDimsMany_seq_int_____Tensor_Backend_TensorLayout_list_" data-uid="Tensor.Backend.TensorLayoutModule.broadcastToSameInDimsMany(seq&lt;int&gt; -&gt; Tensor.Backend.TensorLayout list)">
+          <a class="xref" href="Tensor.Backend.TensorLayoutModule.broadcastToSameInDimsMany.html#Tensor_Backend_TensorLayoutModule_broadcastToSameInDimsMany_seq_int_____Tensor_Backend_TensorLayout_list_">val broadcastToSameInDimsMany: seq&lt;int&gt; -&gt; TensorLayout list -&gt; TensorLayout list</a>
+        </td>
+        <td class="markdown level1 summary"><p> broadcasts to have the same size in the given dimensions    </p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Backend_TensorLayoutModule_broadcastToSameMany_Tensor_Backend_TensorLayout_list_" data-uid="Tensor.Backend.TensorLayoutModule.broadcastToSameMany(Tensor.Backend.TensorLayout list)">
+          <a class="xref" href="Tensor.Backend.TensorLayoutModule.broadcastToSameMany.html#Tensor_Backend_TensorLayoutModule_broadcastToSameMany_Tensor_Backend_TensorLayout_list_">val broadcastToSameMany: TensorLayout list -&gt; TensorLayout list</a>
+        </td>
+        <td class="markdown level1 summary"><p> broadcasts to have the same size</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Backend_TensorLayoutModule_broadcastToShape_int64_list____Tensor_Backend_TensorLayout_" data-uid="Tensor.Backend.TensorLayoutModule.broadcastToShape(int64 list -&gt; Tensor.Backend.TensorLayout)">
+          <a class="xref" href="Tensor.Backend.TensorLayoutModule.broadcastToShape.html#Tensor_Backend_TensorLayoutModule_broadcastToShape_int64_list____Tensor_Backend_TensorLayout_">val broadcastToShape: int64 list -&gt; TensorLayout -&gt; TensorLayout</a>
+        </td>
+        <td class="markdown level1 summary"><p> broadcasts a tensor to the given shape</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Backend_TensorLayoutModule_canReshape_int64_list____Tensor_Backend_TensorLayout_" data-uid="Tensor.Backend.TensorLayoutModule.canReshape(int64 list -&gt; Tensor.Backend.TensorLayout)">
+          <a class="xref" href="Tensor.Backend.TensorLayoutModule.canReshape.html#Tensor_Backend_TensorLayoutModule_canReshape_int64_list____Tensor_Backend_TensorLayout_">val canReshape: int64 list -&gt; TensorLayout -&gt; bool</a>
+        </td>
+        <td class="markdown level1 summary"><p> Returns true if a can be reshaped into shp without copying.
+ The number of elements must not change.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Backend_TensorLayoutModule_check_Tensor_Backend_TensorLayout_" data-uid="Tensor.Backend.TensorLayoutModule.check(Tensor.Backend.TensorLayout)">
+          <a class="xref" href="Tensor.Backend.TensorLayoutModule.check.html#Tensor_Backend_TensorLayoutModule_check_Tensor_Backend_TensorLayout_">val check: TensorLayout -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p> checks that the layout is valid</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Backend_TensorLayoutModule_checkAxis_int____Tensor_Backend_TensorLayout_" data-uid="Tensor.Backend.TensorLayoutModule.checkAxis(int -&gt; Tensor.Backend.TensorLayout)">
+          <a class="xref" href="Tensor.Backend.TensorLayoutModule.checkAxis.html#Tensor_Backend_TensorLayoutModule_checkAxis_int____Tensor_Backend_TensorLayout_">val checkAxis: int -&gt; TensorLayout -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p> checks that the given axis is valid </p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Backend_TensorLayoutModule_checkIndex_int64_list____int64_list_" data-uid="Tensor.Backend.TensorLayoutModule.checkIndex(int64 list -&gt; int64 list)">
+          <a class="xref" href="Tensor.Backend.TensorLayoutModule.checkIndex.html#Tensor_Backend_TensorLayoutModule_checkIndex_int64_list____int64_list_">val checkIndex: int64 list -&gt; int64 list -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p> checks that the given index is valid for the given shape</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Backend_TensorLayoutModule_cStride_int64_list_" data-uid="Tensor.Backend.TensorLayoutModule.cStride(int64 list)">
+          <a class="xref" href="Tensor.Backend.TensorLayoutModule.cStride.html#Tensor_Backend_TensorLayoutModule_cStride_int64_list_">val cStride: int64 list -&gt; int64 list</a>
+        </td>
+        <td class="markdown level1 summary"><p> computes the stride given the shape for the ArrayND to be in C-order (row-major)</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Backend_TensorLayoutModule_cutLeft_Tensor_Backend_TensorLayout_" data-uid="Tensor.Backend.TensorLayoutModule.cutLeft(Tensor.Backend.TensorLayout)">
+          <a class="xref" href="Tensor.Backend.TensorLayoutModule.cutLeft.html#Tensor_Backend_TensorLayoutModule_cutLeft_Tensor_Backend_TensorLayout_">val cutLeft: TensorLayout -&gt; TensorLayout</a>
+        </td>
+        <td class="markdown level1 summary"><p> cuts one dimension from the left</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Backend_TensorLayoutModule_cutRight_Tensor_Backend_TensorLayout_" data-uid="Tensor.Backend.TensorLayoutModule.cutRight(Tensor.Backend.TensorLayout)">
+          <a class="xref" href="Tensor.Backend.TensorLayoutModule.cutRight.html#Tensor_Backend_TensorLayoutModule_cutRight_Tensor_Backend_TensorLayout_">val cutRight: TensorLayout -&gt; TensorLayout</a>
+        </td>
+        <td class="markdown level1 summary"><p> cuts one dimension from the right</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Backend_TensorLayoutModule_diagAxis_int____int____Tensor_Backend_TensorLayout_" data-uid="Tensor.Backend.TensorLayoutModule.diagAxis(int -&gt; int -&gt; Tensor.Backend.TensorLayout)">
+          <a class="xref" href="Tensor.Backend.TensorLayoutModule.diagAxis.html#Tensor_Backend_TensorLayoutModule_diagAxis_int____int____Tensor_Backend_TensorLayout_">val diagAxis: int -&gt; int -&gt; TensorLayout -&gt; TensorLayout</a>
+        </td>
+        <td class="markdown level1 summary"><p> Creates a layout that extracts the diagonal along the given axes.
+ The first axis is replaced with the diagonal and the second axis is removed.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Backend_TensorLayoutModule_fStride_int64_list_" data-uid="Tensor.Backend.TensorLayoutModule.fStride(int64 list)">
+          <a class="xref" href="Tensor.Backend.TensorLayoutModule.fStride.html#Tensor_Backend_TensorLayoutModule_fStride_int64_list_">val fStride: int64 list -&gt; int64 list</a>
+        </td>
+        <td class="markdown level1 summary"><p> computes the stride given the shape for the ArrayND to be in Fortran-order (column-major)</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Backend_TensorLayoutModule_hasContiguousMemory_Tensor_Backend_TensorLayout_" data-uid="Tensor.Backend.TensorLayoutModule.hasContiguousMemory(Tensor.Backend.TensorLayout)">
+          <a class="xref" href="Tensor.Backend.TensorLayoutModule.hasContiguousMemory.html#Tensor_Backend_TensorLayoutModule_hasContiguousMemory_Tensor_Backend_TensorLayout_">val hasContiguousMemory: TensorLayout -&gt; bool</a>
+        </td>
+        <td class="markdown level1 summary"><p> true if the memory of the ArrayND is a contiguous block</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Backend_TensorLayoutModule_idxToLinear_Tensor_Backend_TensorLayout____int64_list_" data-uid="Tensor.Backend.TensorLayoutModule.idxToLinear(Tensor.Backend.TensorLayout -&gt; int64 list)">
+          <a class="xref" href="Tensor.Backend.TensorLayoutModule.idxToLinear.html#Tensor_Backend_TensorLayoutModule_idxToLinear_Tensor_Backend_TensorLayout____int64_list_">val idxToLinear: TensorLayout -&gt; int64 list -&gt; int64</a>
+        </td>
+        <td class="markdown level1 summary"><p> Computes the linear index of a given index.
+ Linear indexing is performed in row-major order.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Backend_TensorLayoutModule_insertAxis_int____Tensor_Backend_TensorLayout_" data-uid="Tensor.Backend.TensorLayoutModule.insertAxis(int -&gt; Tensor.Backend.TensorLayout)">
+          <a class="xref" href="Tensor.Backend.TensorLayoutModule.insertAxis.html#Tensor_Backend_TensorLayoutModule_insertAxis_int____Tensor_Backend_TensorLayout_">val insertAxis: int -&gt; TensorLayout -&gt; TensorLayout</a>
+        </td>
+        <td class="markdown level1 summary"><p> Inserts an axis of size 1 before the specified position.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Backend_TensorLayoutModule_isBroadcasted_Tensor_Backend_TensorLayout_" data-uid="Tensor.Backend.TensorLayoutModule.isBroadcasted(Tensor.Backend.TensorLayout)">
+          <a class="xref" href="Tensor.Backend.TensorLayoutModule.isBroadcasted.html#Tensor_Backend_TensorLayoutModule_isBroadcasted_Tensor_Backend_TensorLayout_">val isBroadcasted: TensorLayout -&gt; bool</a>
+        </td>
+        <td class="markdown level1 summary"><p> returns true if at least one dimension is broadcasted</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Backend_TensorLayoutModule_isC_Tensor_Backend_TensorLayout_" data-uid="Tensor.Backend.TensorLayoutModule.isC(Tensor.Backend.TensorLayout)">
+          <a class="xref" href="Tensor.Backend.TensorLayoutModule.isC.html#Tensor_Backend_TensorLayoutModule_isC_Tensor_Backend_TensorLayout_">val isC: TensorLayout -&gt; bool</a>
+        </td>
+        <td class="markdown level1 summary"><p> true if the ArrayND is contiguous</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Backend_TensorLayoutModule_isF_Tensor_Backend_TensorLayout_" data-uid="Tensor.Backend.TensorLayoutModule.isF(Tensor.Backend.TensorLayout)">
+          <a class="xref" href="Tensor.Backend.TensorLayoutModule.isF.html#Tensor_Backend_TensorLayoutModule_isF_Tensor_Backend_TensorLayout_">val isF: TensorLayout -&gt; bool</a>
+        </td>
+        <td class="markdown level1 summary"><p> true if the ArrayND is in Fortran order</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Backend_TensorLayoutModule_linearToIdx_Tensor_Backend_TensorLayout____int64_" data-uid="Tensor.Backend.TensorLayoutModule.linearToIdx(Tensor.Backend.TensorLayout -&gt; int64)">
+          <a class="xref" href="Tensor.Backend.TensorLayoutModule.linearToIdx.html#Tensor_Backend_TensorLayoutModule_linearToIdx_Tensor_Backend_TensorLayout____int64_">val linearToIdx: TensorLayout -&gt; int64 -&gt; int64 list</a>
+        </td>
+        <td class="markdown level1 summary"><p> Computes the index of a given linear index.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Backend_TensorLayoutModule_nDims_Tensor_Backend_TensorLayout_" data-uid="Tensor.Backend.TensorLayoutModule.nDims(Tensor.Backend.TensorLayout)">
+          <a class="xref" href="Tensor.Backend.TensorLayoutModule.nDims.html#Tensor_Backend_TensorLayoutModule_nDims_Tensor_Backend_TensorLayout_">val nDims: TensorLayout -&gt; int</a>
+        </td>
+        <td class="markdown level1 summary"><p> number of dimensions</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Backend_TensorLayoutModule_nElems_Tensor_Backend_TensorLayout_" data-uid="Tensor.Backend.TensorLayoutModule.nElems(Tensor.Backend.TensorLayout)">
+          <a class="xref" href="Tensor.Backend.TensorLayoutModule.nElems.html#Tensor_Backend_TensorLayoutModule_nElems_Tensor_Backend_TensorLayout_">val nElems: TensorLayout -&gt; int64</a>
+        </td>
+        <td class="markdown level1 summary"><p> number of elements </p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Backend_TensorLayoutModule_newC_int64_list_" data-uid="Tensor.Backend.TensorLayoutModule.newC(int64 list)">
+          <a class="xref" href="Tensor.Backend.TensorLayoutModule.newC.html#Tensor_Backend_TensorLayoutModule_newC_int64_list_">val newC: int64 list -&gt; TensorLayout</a>
+        </td>
+        <td class="markdown level1 summary"><p> a C-order (row-major) ArrayND layout of the given shape </p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Backend_TensorLayoutModule_newF_int64_list_" data-uid="Tensor.Backend.TensorLayoutModule.newF(int64 list)">
+          <a class="xref" href="Tensor.Backend.TensorLayoutModule.newF.html#Tensor_Backend_TensorLayoutModule_newF_int64_list_">val newF: int64 list -&gt; TensorLayout</a>
+        </td>
+        <td class="markdown level1 summary"><p> a Fortran-order (column-major) ArrayND layout of the given shape </p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Backend_TensorLayoutModule_newOrdered_int64_list____int_list_" data-uid="Tensor.Backend.TensorLayoutModule.newOrdered(int64 list -&gt; int list)">
+          <a class="xref" href="Tensor.Backend.TensorLayoutModule.newOrdered.html#Tensor_Backend_TensorLayoutModule_newOrdered_int64_list____int_list_">val newOrdered: int64 list -&gt; int list -&gt; TensorLayout</a>
+        </td>
+        <td class="markdown level1 summary"><p> a ArrayND layout of the given shape and stride order</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Backend_TensorLayoutModule_offset_Tensor_Backend_TensorLayout_" data-uid="Tensor.Backend.TensorLayoutModule.offset(Tensor.Backend.TensorLayout)">
+          <a class="xref" href="Tensor.Backend.TensorLayoutModule.offset.html#Tensor_Backend_TensorLayoutModule_offset_Tensor_Backend_TensorLayout_">val offset: TensorLayout -&gt; int64</a>
+        </td>
+        <td class="markdown level1 summary"><p> offset </p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Backend_TensorLayoutModule_orderedStride_int64_list____int_list_" data-uid="Tensor.Backend.TensorLayoutModule.orderedStride(int64 list -&gt; int list)">
+          <a class="xref" href="Tensor.Backend.TensorLayoutModule.orderedStride.html#Tensor_Backend_TensorLayoutModule_orderedStride_int64_list____int_list_">val orderedStride: int64 list -&gt; int list -&gt; int64 list</a>
+        </td>
+        <td class="markdown level1 summary"><p> Computes the strides for the given shape using the specified ordering.
+ The axis that is first in the ordering gets stride 1.
+ The resulting strides will be independent of the shape of the axis 
+ that appears last in the ordering.
+ A C-order stride corresponds to the ordering: [n; n-1; ...; 2; 1; 0].
+ A Fortran-order stride corresponds to the ordering: [0; 1; 2; ...; n-1; n].</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Backend_TensorLayoutModule_padLeft_Tensor_Backend_TensorLayout_" data-uid="Tensor.Backend.TensorLayoutModule.padLeft(Tensor.Backend.TensorLayout)">
+          <a class="xref" href="Tensor.Backend.TensorLayoutModule.padLeft.html#Tensor_Backend_TensorLayoutModule_padLeft_Tensor_Backend_TensorLayout_">val padLeft: TensorLayout -&gt; TensorLayout</a>
+        </td>
+        <td class="markdown level1 summary"><p> adds a new dimension of size one to the left</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Backend_TensorLayoutModule_padRight_Tensor_Backend_TensorLayout_" data-uid="Tensor.Backend.TensorLayoutModule.padRight(Tensor.Backend.TensorLayout)">
+          <a class="xref" href="Tensor.Backend.TensorLayoutModule.padRight.html#Tensor_Backend_TensorLayoutModule_padRight_Tensor_Backend_TensorLayout_">val padRight: TensorLayout -&gt; TensorLayout</a>
+        </td>
+        <td class="markdown level1 summary"><p> adds a new dimension of size one to the right</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Backend_TensorLayoutModule_padToSame_Tensor_Backend_TensorLayout____Tensor_Backend_TensorLayout_" data-uid="Tensor.Backend.TensorLayoutModule.padToSame(Tensor.Backend.TensorLayout -&gt; Tensor.Backend.TensorLayout)">
+          <a class="xref" href="Tensor.Backend.TensorLayoutModule.padToSame.html#Tensor_Backend_TensorLayoutModule_padToSame_Tensor_Backend_TensorLayout____Tensor_Backend_TensorLayout_">val padToSame: TensorLayout -&gt; TensorLayout -&gt; TensorLayout * TensorLayout</a>
+        </td>
+        <td class="markdown level1 summary"><p> pads shapes from the left until they have same rank</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Backend_TensorLayoutModule_padToSameMany_Tensor_Backend_TensorLayout_list_" data-uid="Tensor.Backend.TensorLayoutModule.padToSameMany(Tensor.Backend.TensorLayout list)">
+          <a class="xref" href="Tensor.Backend.TensorLayoutModule.padToSameMany.html#Tensor_Backend_TensorLayoutModule_padToSameMany_Tensor_Backend_TensorLayout_list_">val padToSameMany: TensorLayout list -&gt; TensorLayout list</a>
+        </td>
+        <td class="markdown level1 summary"><p> pads shapes from the left until they have same rank</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Backend_TensorLayoutModule_permuteAxes_int_list____Tensor_Backend_TensorLayout_" data-uid="Tensor.Backend.TensorLayoutModule.permuteAxes(int list -&gt; Tensor.Backend.TensorLayout)">
+          <a class="xref" href="Tensor.Backend.TensorLayoutModule.permuteAxes.html#Tensor_Backend_TensorLayoutModule_permuteAxes_int_list____Tensor_Backend_TensorLayout_">val permuteAxes: int list -&gt; TensorLayout -&gt; TensorLayout</a>
+        </td>
+        <td class="markdown level1 summary"><p> Permutes the axes as specified.
+ Each entry in the specified permutation specifies the <em>new</em> position of 
+ the corresponding axis, i.e. to which position the axis should move.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Backend_TensorLayoutModule_reshape_int64_list____Tensor_Backend_TensorLayout_" data-uid="Tensor.Backend.TensorLayoutModule.reshape(int64 list -&gt; Tensor.Backend.TensorLayout)">
+          <a class="xref" href="Tensor.Backend.TensorLayoutModule.reshape.html#Tensor_Backend_TensorLayoutModule_reshape_int64_list____Tensor_Backend_TensorLayout_">val reshape: int64 list -&gt; TensorLayout -&gt; TensorLayout</a>
+        </td>
+        <td class="markdown level1 summary"><p> Reshape layout under the assumption that it is contiguous.
+ The number of elements must not change.
+ An error is raised, if reshape is impossible without copying.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Backend_TensorLayoutModule_reverseAxis_int____Tensor_Backend_TensorLayout_" data-uid="Tensor.Backend.TensorLayoutModule.reverseAxis(int -&gt; Tensor.Backend.TensorLayout)">
+          <a class="xref" href="Tensor.Backend.TensorLayoutModule.reverseAxis.html#Tensor_Backend_TensorLayoutModule_reverseAxis_int____Tensor_Backend_TensorLayout_">val reverseAxis: int -&gt; TensorLayout -&gt; TensorLayout</a>
+        </td>
+        <td class="markdown level1 summary"><p> Reverses the elements in the specified dimension.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Backend_TensorLayoutModule_shape_Tensor_Backend_TensorLayout_" data-uid="Tensor.Backend.TensorLayoutModule.shape(Tensor.Backend.TensorLayout)">
+          <a class="xref" href="Tensor.Backend.TensorLayoutModule.shape.html#Tensor_Backend_TensorLayoutModule_shape_Tensor_Backend_TensorLayout_">val shape: TensorLayout -&gt; int64 list</a>
+        </td>
+        <td class="markdown level1 summary"><p> shape </p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Backend_TensorLayoutModule_stride_Tensor_Backend_TensorLayout_" data-uid="Tensor.Backend.TensorLayoutModule.stride(Tensor.Backend.TensorLayout)">
+          <a class="xref" href="Tensor.Backend.TensorLayoutModule.stride.html#Tensor_Backend_TensorLayoutModule_stride_Tensor_Backend_TensorLayout_">val stride: TensorLayout -&gt; int64 list</a>
+        </td>
+        <td class="markdown level1 summary"><p> stride</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Backend_TensorLayoutModule_stridesEqual_int64_list____int64_list____int64_list_" data-uid="Tensor.Backend.TensorLayoutModule.stridesEqual(int64 list -&gt; int64 list -&gt; int64 list)">
+          <a class="xref" href="Tensor.Backend.TensorLayoutModule.stridesEqual.html#Tensor_Backend_TensorLayoutModule_stridesEqual_int64_list____int64_list____int64_list_">val stridesEqual: int64 list -&gt; int64 list -&gt; int64 list -&gt; bool</a>
+        </td>
+        <td class="markdown level1 summary"><p> True if strides are equal at all dimensions with size &gt; 1.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Backend_TensorLayoutModule_swapDim_int____int____Tensor_Backend_TensorLayout_" data-uid="Tensor.Backend.TensorLayoutModule.swapDim(int -&gt; int -&gt; Tensor.Backend.TensorLayout)">
+          <a class="xref" href="Tensor.Backend.TensorLayoutModule.swapDim.html#Tensor_Backend_TensorLayoutModule_swapDim_int____int____Tensor_Backend_TensorLayout_">val swapDim: int -&gt; int -&gt; TensorLayout -&gt; TensorLayout</a>
+        </td>
+        <td class="markdown level1 summary"><p> swaps the given dimensions</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Backend_TensorLayoutModule_transpose_Tensor_Backend_TensorLayout_" data-uid="Tensor.Backend.TensorLayoutModule.transpose(Tensor.Backend.TensorLayout)">
+          <a class="xref" href="Tensor.Backend.TensorLayoutModule.transpose.html#Tensor_Backend_TensorLayoutModule_transpose_Tensor_Backend_TensorLayout_">val transpose: TensorLayout -&gt; TensorLayout</a>
+        </td>
+        <td class="markdown level1 summary"><p> Transposes the given layout of a matrix.
+ If the array has more then two dimensions, the last two axes are swapped.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Backend_TensorLayoutModule_tryReshape_int64_list____Tensor_Backend_TensorLayout_" data-uid="Tensor.Backend.TensorLayoutModule.tryReshape(int64 list -&gt; Tensor.Backend.TensorLayout)">
+          <a class="xref" href="Tensor.Backend.TensorLayoutModule.tryReshape.html#Tensor_Backend_TensorLayoutModule_tryReshape_int64_list____Tensor_Backend_TensorLayout_">val tryReshape: int64 list -&gt; TensorLayout -&gt; TensorLayout option</a>
+        </td>
+        <td class="markdown level1 summary"><p> Reshape layout under the assumption that it is contiguous.
+ The number of elements must not change.
+ Returns Some newLayout when reshape is possible without copy
+ Returns None when a copy is required.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Backend_TensorLayoutModule_view_Tensor_Rng_list____Tensor_Backend_TensorLayout_" data-uid="Tensor.Backend.TensorLayoutModule.view(Tensor.Rng list -&gt; Tensor.Backend.TensorLayout)">
+          <a class="xref" href="Tensor.Backend.TensorLayoutModule.view.html#Tensor_Backend_TensorLayoutModule_view_Tensor_Rng_list____Tensor_Backend_TensorLayout_">val view: Rng list -&gt; TensorLayout -&gt; TensorLayout</a>
+        </td>
+        <td class="markdown level1 summary"><p> creates a subview layout</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

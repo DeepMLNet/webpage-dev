@@ -1,0 +1,240 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Constructor ( .ctor )
+   | Tensor for F# </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Constructor ( .ctor )
+   | Tensor for F# ">
+    <meta name="generator" content="docfx 2.35.0.0">
+    
+    <link rel="shortcut icon" href="../images/tensor.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/tensor.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Tensor.Tensor`1.#ctor*">
+
+<h1 id="Tensor_Tensor_1__ctor_" data-uid="Tensor.Tensor`1.#ctor*">Constructor ( .ctor )
+</h1>
+<div class="markdown level0 summary"></div>
+<div class="markdown level0 conceptual"></div>
+
+
+
+<a id="Tensor_Tensor_1__ctor_" data-uid="Tensor.Tensor`1.#ctor*"></a>
+<h4 id="Tensor_Tensor_1__ctor_Tensor_Backend_TensorLayout___Tensor_Backend_ITensorStorage__T__" data-uid="Tensor.Tensor`1.#ctor(Tensor.Backend.TensorLayout * Tensor.Backend.ITensorStorage&lt;'T&gt;)">new: TensorLayout * ITensorStorage&lt;'T&gt; -&gt; Tensor&lt;'T&gt;</h4>
+<div class="markdown level1 summary"><p>Implicit constructor.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<h5 class="decalaration">Declaration</h5>
+<div class="codewrapper">
+  <pre><code class="lang-csharp hljs">new: layout:TensorLayout * storage:ITensorStorage&lt;'T&gt; -&gt; Tensor&lt;'T&gt;</code></pre>
+</div>
+<h5 class="parameters">Parameters</h5>
+<table class="table table-bordered table-striped table-condensed">
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a class="xref" href="Tensor.Backend.TensorLayout.html">TensorLayout</a></td>
+      <td><span class="parametername">layout</span></td>
+      <td><p>The memory layout to use.</p>
+</td>
+    </tr>
+    <tr>
+      <td><a class="xref" href="Tensor.Backend.ITensorStorage-1.html">ITensorStorage</a>&lt;&#39;T&gt;</td>
+      <td><span class="parametername">storage</span></td>
+      <td><p>The storage to use.</p>
+</td>
+    </tr>
+  </tbody>
+</table>
+<h5 class="returns">Returns</h5>
+<table class="table table-bordered table-striped table-condensed">
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a class="xref" href="Tensor.Tensor-1.html">Tensor</a>&lt;&#39;T&gt;</td>
+      <td><p>A tensor using the specified memory layout and storage.</p>
+</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<a id="Tensor_Tensor_1__ctor_" data-uid="Tensor.Tensor`1.#ctor*"></a>
+<h4 id="Tensor_Tensor_1__ctor_int64_list___Tensor_Backend_ITensorDevice___Tensor_TensorOrder_option_" data-uid="Tensor.Tensor`1.#ctor(int64 list * Tensor.Backend.ITensorDevice * Tensor.TensorOrder option)">new: int64 list * ITensorDevice * TensorOrder option -&gt; Tensor&lt;'T&gt;</h4>
+<div class="markdown level1 summary"><p>Creates a new, uninitialized tensor with a new storage.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<h5 class="decalaration">Declaration</h5>
+<div class="codewrapper">
+  <pre><code class="lang-csharp hljs">new: shape:int64 list * dev:ITensorDevice * order:TensorOrder option -&gt; Tensor&lt;'T&gt;</code></pre>
+</div>
+<h5 class="parameters">Parameters</h5>
+<table class="table table-bordered table-striped table-condensed">
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="xref">int64</span> <span class="xref">list</span></td>
+      <td><span class="parametername">shape</span></td>
+      <td><p>The shape of the tensor to create.</p>
+</td>
+    </tr>
+    <tr>
+      <td><a class="xref" href="Tensor.Backend.ITensorDevice.html">ITensorDevice</a></td>
+      <td><span class="parametername">dev</span></td>
+      <td><p>The device to store the data of the tensor on.</p>
+</td>
+    </tr>
+    <tr>
+      <td><a class="xref" href="Tensor.TensorOrder.html">TensorOrder</a> <span class="xref">option</span></td>
+      <td><span class="parametername">order</span></td>
+      <td><p>The memory layout to use for the new tensor. (default: row-major)</p>
+</td>
+    </tr>
+  </tbody>
+</table>
+<h5 class="returns">Returns</h5>
+<table class="table table-bordered table-striped table-condensed">
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a class="xref" href="Tensor.Tensor-1.html">Tensor</a>&lt;&#39;T&gt;</td>
+      <td><p>The new, uninitialized tensor.</p>
+</td>
+    </tr>
+  </tbody>
+</table>
+<h5 id="Tensor_Tensor_1__ctor_int64_list___Tensor_Backend_ITensorDevice___Tensor_TensorOrder_option__remarks">Remarks</h5>
+<div class="markdown level1 remarks"><p>The contents of the new tensor are undefined. The default memory layout is row-major.</p>
+<p>The recommended way to create a new tensor is to use <a class="xref" href="Tensor.Tensor-1.zeros.html#Tensor_Tensor_1_zeros_Tensor_Backend_ITensorDevice____int64_list_">static member zeros: ITensorDevice -&gt; int64 list -&gt; Tensor&lt;&#39;T&gt;</a>.</p>
+</div>
+<h5 id="Tensor_Tensor_1__ctor_int64_list___Tensor_Backend_ITensorDevice___Tensor_TensorOrder_option__seealso">See Also</h5>
+<div class="seealso">
+    <div><a class="xref" href="Tensor.Tensor-1.NewOfType.html#Tensor_Tensor_1_NewOfType_int64_list___System_Type___Tensor_Backend_ITensorDevice___Tensor_TensorOrder_option_">static member NewOfType: int64 list * Type * ITensorDevice * TensorOrder option -&gt; ITensor</a></div>
+    <div><a class="xref" href="Tensor.Tensor-1.zeros.html#Tensor_Tensor_1_zeros_Tensor_Backend_ITensorDevice____int64_list_">static member zeros: ITensorDevice -&gt; int64 list -&gt; Tensor&lt;&#39;T&gt;</a></div>
+</div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

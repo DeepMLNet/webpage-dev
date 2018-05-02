@@ -1,0 +1,267 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Interface ITensorFrontend&lt;'T&gt;
+   | Tensor for F# </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Interface ITensorFrontend&lt;'T&gt;
+   | Tensor for F# ">
+    <meta name="generator" content="docfx 2.35.0.0">
+    
+    <link rel="shortcut icon" href="../images/tensor.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/tensor.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Tensor.Backend.ITensorFrontend`1">
+  
+  
+  <h1 id="Tensor_Backend_ITensorFrontend_1" data-uid="Tensor.Backend.ITensorFrontend`1" class="text-break">Interface ITensorFrontend&lt;'T&gt;
+  </h1>
+  <div class="markdown level0 summary"><p> Tensor frontend access (for use from backend).</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Tensor.Backend.html">Tensor.Backend</a></h6>
+  <h6><strong>Assembly</strong>: Tensor.dll</h6>
+  <h5 id="Tensor_Backend_ITensorFrontend_1_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">interface ITensorFrontend&lt;'T&gt;</code></pre>
+  </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">'T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="Tensor_Backend_ITensorFrontend_1_Backend_unit_" data-uid="Tensor.Backend.ITensorFrontend`1.Backend(unit)">
+          <a class="xref" href="Tensor.Backend.ITensorFrontend-1.Backend.html#Tensor_Backend_ITensorFrontend_1_Backend_unit_">abstract property Backend: ITensorBackend&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p> the backend    </p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Backend_ITensorFrontend_1_Dev_unit_" data-uid="Tensor.Backend.ITensorFrontend`1.Dev(unit)">
+          <a class="xref" href="Tensor.Backend.ITensorFrontend-1.Dev.html#Tensor_Backend_ITensorFrontend_1_Dev_unit_">abstract property Dev: ITensorDevice</a>
+        </td>
+        <td class="markdown level1 summary"><p> storage factory</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Backend_ITensorFrontend_1_Layout_unit_" data-uid="Tensor.Backend.ITensorFrontend`1.Layout(unit)">
+          <a class="xref" href="Tensor.Backend.ITensorFrontend-1.Layout.html#Tensor_Backend_ITensorFrontend_1_Layout_unit_">abstract property Layout: TensorLayout</a>
+        </td>
+        <td class="markdown level1 summary"><p> layout of this tensor (shape, offset and strides)</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Backend_ITensorFrontend_1_NDims_unit_" data-uid="Tensor.Backend.ITensorFrontend`1.NDims(unit)">
+          <a class="xref" href="Tensor.Backend.ITensorFrontend-1.NDims.html#Tensor_Backend_ITensorFrontend_1_NDims_unit_">abstract property NDims: int</a>
+        </td>
+        <td class="markdown level1 summary"><p> number of dimensions</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Backend_ITensorFrontend_1_NElems_unit_" data-uid="Tensor.Backend.ITensorFrontend`1.NElems(unit)">
+          <a class="xref" href="Tensor.Backend.ITensorFrontend-1.NElems.html#Tensor_Backend_ITensorFrontend_1_NElems_unit_">abstract property NElems: int64</a>
+        </td>
+        <td class="markdown level1 summary"><p> number of elements</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Backend_ITensorFrontend_1_Offset_unit_" data-uid="Tensor.Backend.ITensorFrontend`1.Offset(unit)">
+          <a class="xref" href="Tensor.Backend.ITensorFrontend-1.Offset.html#Tensor_Backend_ITensorFrontend_1_Offset_unit_">abstract property Offset: int64</a>
+        </td>
+        <td class="markdown level1 summary"><p> stride</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Backend_ITensorFrontend_1_Shape_unit_" data-uid="Tensor.Backend.ITensorFrontend`1.Shape(unit)">
+          <a class="xref" href="Tensor.Backend.ITensorFrontend-1.Shape.html#Tensor_Backend_ITensorFrontend_1_Shape_unit_">abstract property Shape: int64 list</a>
+        </td>
+        <td class="markdown level1 summary"><p> shape</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Backend_ITensorFrontend_1_Storage_unit_" data-uid="Tensor.Backend.ITensorFrontend`1.Storage(unit)">
+          <a class="xref" href="Tensor.Backend.ITensorFrontend-1.Storage.html#Tensor_Backend_ITensorFrontend_1_Storage_unit_">abstract property Storage: ITensorStorage&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p> storage of this tensor</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Backend_ITensorFrontend_1_Stride_unit_" data-uid="Tensor.Backend.ITensorFrontend`1.Stride(unit)">
+          <a class="xref" href="Tensor.Backend.ITensorFrontend-1.Stride.html#Tensor_Backend_ITensorFrontend_1_Stride_unit_">abstract property Stride: int64 list</a>
+        </td>
+        <td class="markdown level1 summary"><p> stride</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Backend_ITensorFrontend_1_T_unit_" data-uid="Tensor.Backend.ITensorFrontend`1.T(unit)">
+          <a class="xref" href="Tensor.Backend.ITensorFrontend-1.T.html#Tensor_Backend_ITensorFrontend_1_T_unit_">abstract property T: ITensorFrontend&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p> Transpose</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="Tensor_Backend_ITensorFrontend_1_Copy_Tensor_TensorOrder_option_" data-uid="Tensor.Backend.ITensorFrontend`1.Copy(Tensor.TensorOrder option)">
+          <a class="xref" href="Tensor.Backend.ITensorFrontend-1.Copy.html#Tensor_Backend_ITensorFrontend_1_Copy_Tensor_TensorOrder_option_">abstract member Copy: TensorOrder option -&gt; ITensorFrontend&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p> returns a copy of the tensor</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Backend_ITensorFrontend_1_CopyFrom_Tensor_Backend_ITensorFrontend__T__" data-uid="Tensor.Backend.ITensorFrontend`1.CopyFrom(Tensor.Backend.ITensorFrontend&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Backend.ITensorFrontend-1.CopyFrom.html#Tensor_Backend_ITensorFrontend_1_CopyFrom_Tensor_Backend_ITensorFrontend__T__">abstract member CopyFrom: ITensorFrontend&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p> Copies the specifed tensor into this tensor.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Backend_ITensorFrontend_1_Relayout_Tensor_Backend_TensorLayout_" data-uid="Tensor.Backend.ITensorFrontend`1.Relayout(Tensor.Backend.TensorLayout)">
+          <a class="xref" href="Tensor.Backend.ITensorFrontend-1.Relayout.html#Tensor_Backend_ITensorFrontend_1_Relayout_Tensor_Backend_TensorLayout_">abstract member Relayout: TensorLayout -&gt; ITensorFrontend&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p> a tensor with the same storage but new layout</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Backend_ITensorFrontend_1_Transfer_Tensor_Backend_ITensorDevice_" data-uid="Tensor.Backend.ITensorFrontend`1.Transfer(Tensor.Backend.ITensorDevice)">
+          <a class="xref" href="Tensor.Backend.ITensorFrontend-1.Transfer.html#Tensor_Backend_ITensorFrontend_1_Transfer_Tensor_Backend_ITensorDevice_">abstract member Transfer: ITensorDevice -&gt; ITensorFrontend&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p> Transfers this tensor to the specifed device.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

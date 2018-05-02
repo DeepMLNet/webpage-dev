@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Reduction operations | Tensor for F# </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Reduction operations | Tensor for F# ">
+    <meta name="generator" content="docfx 2.35.0.0">
+    
+    <link rel="shortcut icon" href="../images/tensor.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/tensor.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="reduction-operations">Reduction operations</h1>
+
+<p>Reduction functions are function that reduce the number of dimensions of a tensor by combining multiple elements into a single element.
+Summation is an example of such an operation, since it takes multiple input values and outputs a single value.</p>
+<h2 id="summation">Summation</h2>
+<p>The <a class="xref" href="../api/Tensor.Tensor-1.sum.html">Tensor.sum</a> function computes the sum of all elements of a tensor and returns it as a primitive value.</p>
+<pre><code class="lang-fsharp">let s1 = Tensor.sum f
+// s1 = 66.0
+</code></pre><p>If you want the result to be returned as a scalar tensor instead of a primitive value, use the <a class="xref" href="../api/Tensor.Tensor-1.sumTensor.html">Tensor.sumTensor</a> function instead.
+This is useful for tensors stored on the GPU if the result is used for furhter computation, since it avoids the transfer back to host memory.</p>
+<p>Often it is necessary to compute many sums in parallel, for example it might be interesting to compute the sums of all columns of a matrix.
+For this purpose, the tensor library provides the <a class="xref" href="../api/Tensor.Tensor-1.sumAxis.html">Tensor.sumAxis</a> function.
+The following example illustrates its usage.</p>
+<pre><code class="lang-fsharp">let g = HostTensor.init [4L; 4L] (fun [|y; x|] -&gt; 4 * int y + int x)
+// g =
+//    [[   0    1    2    3]
+//     [   4    5    6    7]
+//     [   8    9   10   11]
+//     [  12   13   14   15]]
+let s2 = Tensor.sumAxis 0 g
+// s2 = [  24   28   32   36]
+</code></pre><p>This computed the sums of all columns of the matrix, thus resulting in a vector.</p>
+<p>In general, the result tensor of a reduction function that ends in <code>Axis</code> (i.e. <a class="xref" href="../api/Tensor.Tensor-1.sumAxis.html">Tensor.sumAxis</a>, <a class="xref" href="../api/Tensor.Tensor-1.productAxis.html">Tensor.productAxis</a>, etc.) has one dimension less than the input tensor.</p>
+<h2 id="product">Product</h2>
+<p>Likewise <a class="xref" href="../api/Tensor.Tensor-1.product.html">Tensor.product</a> and <a class="xref" href="../api/Tensor.Tensor-1.productAxis.html">Tensor.productAxis</a> compute the product of the elements of a tensor.</p>
+<h2 id="maximum-and-minimum">Maximum and minimum</h2>
+<p>The <a class="xref" href="../api/Tensor.Tensor-1.min.html">Tensor.min</a> and <a class="xref" href="../api/Tensor.Tensor-1.max.html">Tensor.max</a> compute the minimum and maximum of a tensor and return a primitive value.
+Analogously <a class="xref" href="../api/Tensor.Tensor-1.minAxis.html">Tensor.minAxis</a> and <a class="xref" href="../api/Tensor.Tensor-1.maxAxis.html">Tensor.maxAxis</a> compute the minimum and maximum over the given axis.</p>
+<pre><code class="lang-fsharp">let m2 = Tensor.maxAxis 0 g
+// m2 = [  12   13   14   15]
+</code></pre><h2 id="mean-and-variance">Mean and variance</h2>
+<p>The <a class="xref" href="../api/Tensor.Tensor-1.mean.html">Tensor.mean</a> and <a class="xref" href="../api/Tensor.Tensor-1.var.html">Tensor.var</a> compute the emperical mean and variance of a tensor.
+Variants computing the mean and variance along the specified axis are <a class="xref" href="../api/Tensor.Tensor-1.meanAxis.html">Tensor.meanAxis</a> and <a class="xref" href="../api/Tensor.Tensor-1.varAxis.html">Tensor.varAxis</a> respectively.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/DeepMLNet/DeepNet/blob/018df6c3f0e2ae11d0b2e0d3b3257bb0b88de366/Tensor/Tensor.Docs/articles/Guide-Reductions.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

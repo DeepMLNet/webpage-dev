@@ -1,0 +1,308 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Interface ITensor
+   | Tensor for F# </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Interface ITensor
+   | Tensor for F# ">
+    <meta name="generator" content="docfx 2.35.0.0">
+    
+    <link rel="shortcut icon" href="../images/tensor.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/tensor.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Tensor.ITensor">
+  
+  
+  <h1 id="Tensor_ITensor" data-uid="Tensor.ITensor" class="text-break">Interface ITensor
+  </h1>
+  <div class="markdown level0 summary"><p>Type-neutral interface to Tensor&lt;&apos;T&gt; of any type &apos;T.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Tensor.html">Tensor</a></h6>
+  <h6><strong>Assembly</strong>: Tensor.dll</h6>
+  <h5 id="Tensor_ITensor_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">interface ITensor</code></pre>
+  </div>
+  <h5 id="Tensor_ITensor_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>These functions are useful for working with tensors of unknown types.
+For most use cases the functions provided by <a class="xref" href="Tensor.Tensor-1.html">Tensor&lt;&#39;T&gt;</a> are better suited.</p>
+</div>
+  <h3 id="properties">Properties
+  </h3>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="Tensor_ITensor_DataType_unit_" data-uid="Tensor.ITensor.DataType(unit)">
+          <a class="xref" href="Tensor.ITensor.DataType.html#Tensor_ITensor_DataType_unit_">abstract property DataType: Type</a>
+        </td>
+        <td class="markdown level1 summary"><p> type of data stored in this tensor</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_ITensor_Dev_unit_" data-uid="Tensor.ITensor.Dev(unit)">
+          <a class="xref" href="Tensor.ITensor.Dev.html#Tensor_ITensor_Dev_unit_">abstract property Dev: ITensorDevice</a>
+        </td>
+        <td class="markdown level1 summary"><p> storage factory</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_ITensor_Full_unit_" data-uid="Tensor.ITensor.Full(unit)">
+          <a class="xref" href="Tensor.ITensor.Full.html#Tensor_ITensor_Full_unit_">abstract property Full: string</a>
+        </td>
+        <td class="markdown level1 summary"><p> full contents string</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_ITensor_Item_int64_" data-uid="Tensor.ITensor.Item(int64)">
+          <a class="xref" href="Tensor.ITensor.Item.html#Tensor_ITensor_Item_int64_">abstract property Item: int64 -&gt; ITensor</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_ITensor_Item_Tensor_Rng_list_" data-uid="Tensor.ITensor.Item(Tensor.Rng list)">
+          <a class="xref" href="Tensor.ITensor.Item.html#Tensor_ITensor_Item_Tensor_Rng_list_">abstract property Item: Rng list -&gt; ITensor</a>
+        </td>
+        <td class="markdown level1 summary"><p> n-dimensional slicing using a list of Rngs</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_ITensor_Layout_unit_" data-uid="Tensor.ITensor.Layout(unit)">
+          <a class="xref" href="Tensor.ITensor.Layout.html#Tensor_ITensor_Layout_unit_">abstract property Layout: TensorLayout</a>
+        </td>
+        <td class="markdown level1 summary"><p> layout of this tensor (shape, offset and strides)</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_ITensor_M_Tensor_ITensor___Tensor_ITensor___Tensor_ITensor___Tensor_ITensor___Tensor_ITensor_" data-uid="Tensor.ITensor.M(Tensor.ITensor * Tensor.ITensor * Tensor.ITensor * Tensor.ITensor * Tensor.ITensor)">
+          <a class="xref" href="Tensor.ITensor.M.html#Tensor_ITensor_M_Tensor_ITensor___Tensor_ITensor___Tensor_ITensor___Tensor_ITensor___Tensor_ITensor_">abstract property M: ITensor * ITensor * ITensor * ITensor * ITensor -&gt; ITensor</a>
+        </td>
+        <td class="markdown level1 summary"><p> Element selection using boolean mask. Specify NoMask for a dimension if no masking is desired.   </p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_ITensor_M_Tensor_ITensor___Tensor_ITensor___Tensor_ITensor___Tensor_ITensor_" data-uid="Tensor.ITensor.M(Tensor.ITensor * Tensor.ITensor * Tensor.ITensor * Tensor.ITensor)">
+          <a class="xref" href="Tensor.ITensor.M.html#Tensor_ITensor_M_Tensor_ITensor___Tensor_ITensor___Tensor_ITensor___Tensor_ITensor_">abstract property M: ITensor * ITensor * ITensor * ITensor -&gt; ITensor</a>
+        </td>
+        <td class="markdown level1 summary"><p> Element selection using boolean mask. Specify NoMask for a dimension if no masking is desired.   </p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_ITensor_M_Tensor_ITensor___Tensor_ITensor___Tensor_ITensor_" data-uid="Tensor.ITensor.M(Tensor.ITensor * Tensor.ITensor * Tensor.ITensor)">
+          <a class="xref" href="Tensor.ITensor.M.html#Tensor_ITensor_M_Tensor_ITensor___Tensor_ITensor___Tensor_ITensor_">abstract property M: ITensor * ITensor * ITensor -&gt; ITensor</a>
+        </td>
+        <td class="markdown level1 summary"><p> Element selection using boolean mask. Specify NoMask for a dimension if no masking is desired.   </p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_ITensor_M_Tensor_ITensor___Tensor_ITensor_" data-uid="Tensor.ITensor.M(Tensor.ITensor * Tensor.ITensor)">
+          <a class="xref" href="Tensor.ITensor.M.html#Tensor_ITensor_M_Tensor_ITensor___Tensor_ITensor_">abstract property M: ITensor * ITensor -&gt; ITensor</a>
+        </td>
+        <td class="markdown level1 summary"><p> Element selection using boolean mask. Specify NoMask for a dimension if no masking is desired.   </p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_ITensor_M_Tensor_ITensor_list_" data-uid="Tensor.ITensor.M(Tensor.ITensor list)">
+          <a class="xref" href="Tensor.ITensor.M.html#Tensor_ITensor_M_Tensor_ITensor_list_">abstract property M: ITensor list -&gt; ITensor</a>
+        </td>
+        <td class="markdown level1 summary"><p> Element selection using boolean mask. Specify NoMask for a dimension if no masking is desired.   </p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_ITensor_M_Tensor_ITensor_" data-uid="Tensor.ITensor.M(Tensor.ITensor)">
+          <a class="xref" href="Tensor.ITensor.M.html#Tensor_ITensor_M_Tensor_ITensor_">abstract property M: ITensor -&gt; ITensor</a>
+        </td>
+        <td class="markdown level1 summary"><p> Element selection using boolean mask. Specify NoMask for a dimension if no masking is desired.   </p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_ITensor_NDims_unit_" data-uid="Tensor.ITensor.NDims(unit)">
+          <a class="xref" href="Tensor.ITensor.NDims.html#Tensor_ITensor_NDims_unit_">abstract property NDims: int</a>
+        </td>
+        <td class="markdown level1 summary"><p> number of dimensions</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_ITensor_NElems_unit_" data-uid="Tensor.ITensor.NElems(unit)">
+          <a class="xref" href="Tensor.ITensor.NElems.html#Tensor_ITensor_NElems_unit_">abstract property NElems: int64</a>
+        </td>
+        <td class="markdown level1 summary"><p> number of elements</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_ITensor_Pretty_unit_" data-uid="Tensor.ITensor.Pretty(unit)">
+          <a class="xref" href="Tensor.ITensor.Pretty.html#Tensor_ITensor_Pretty_unit_">abstract property Pretty: string</a>
+        </td>
+        <td class="markdown level1 summary"><p> pretty contents string</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_ITensor_Shape_unit_" data-uid="Tensor.ITensor.Shape(unit)">
+          <a class="xref" href="Tensor.ITensor.Shape.html#Tensor_ITensor_Shape_unit_">abstract property Shape: int64 list</a>
+        </td>
+        <td class="markdown level1 summary"><p> shape</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_ITensor_Storage_unit_" data-uid="Tensor.ITensor.Storage(unit)">
+          <a class="xref" href="Tensor.ITensor.Storage.html#Tensor_ITensor_Storage_unit_">abstract property Storage: ITensorStorage</a>
+        </td>
+        <td class="markdown level1 summary"><p> storage of this tensor</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="Tensor_ITensor_Copy_Tensor_TensorOrder_option_" data-uid="Tensor.ITensor.Copy(Tensor.TensorOrder option)">
+          <a class="xref" href="Tensor.ITensor.Copy.html#Tensor_ITensor_Copy_Tensor_TensorOrder_option_">abstract member Copy: TensorOrder option -&gt; ITensor</a>
+        </td>
+        <td class="markdown level1 summary"><p> returns a copy of the tensor</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_ITensor_FillZero_unit_" data-uid="Tensor.ITensor.FillZero(unit)">
+          <a class="xref" href="Tensor.ITensor.FillZero.html#Tensor_ITensor_FillZero_unit_">abstract member FillZero: unit -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p> fills the tensors with zeros</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_ITensor_Relayout_Tensor_Backend_TensorLayout_" data-uid="Tensor.ITensor.Relayout(Tensor.Backend.TensorLayout)">
+          <a class="xref" href="Tensor.ITensor.Relayout.html#Tensor_ITensor_Relayout_Tensor_Backend_TensorLayout_">abstract member Relayout: TensorLayout -&gt; ITensor</a>
+        </td>
+        <td class="markdown level1 summary"><p> a tensor with the same storage but new layout</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_ITensor_Transfer_Tensor_Backend_ITensorDevice_" data-uid="Tensor.ITensor.Transfer(Tensor.Backend.ITensorDevice)">
+          <a class="xref" href="Tensor.ITensor.Transfer.html#Tensor_ITensor_Transfer_Tensor_Backend_ITensorDevice_">abstract member Transfer: ITensorDevice -&gt; ITensor</a>
+        </td>
+        <td class="markdown level1 summary"><p> Transfers this tensor to the specifed device.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="seealso">See Also</h3>
+  <div class="seealso">
+      <div><a class="xref" href="Tensor.Tensor-1.html">Tensor&lt;&#39;T&gt;</a></div>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

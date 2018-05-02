@@ -1,0 +1,520 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class HostTensor (mod)
+   | Tensor for F# </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class HostTensor (mod)
+   | Tensor for F# ">
+    <meta name="generator" content="docfx 2.35.0.0">
+    
+    <link rel="shortcut icon" href="../images/tensor.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/tensor.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Tensor.HostTensor">
+  
+  
+  <h1 id="Tensor_HostTensor" data-uid="Tensor.HostTensor" class="text-break">Class HostTensor (mod)
+  </h1>
+  <div class="markdown level0 summary"><p>Functions for creating and operating on tensors stored in host memory.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">HostTensor (mod)</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Tensor.html">Tensor</a></h6>
+  <h6><strong>Assembly</strong>: Tensor.dll</h6>
+  <h5 id="Tensor_HostTensor_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">module HostTensor</code></pre>
+  </div>
+  <h5 id="Tensor_HostTensor_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>This module contains functions for creating tensors stored in host memory.
+It further contains functions that only work with tensors stored in host memory.
+Calling these functions with tensors stored on other devices will result in an
+<span class="xref">System.InvalidOperationException</span>.</p>
+</div>
+  <h5 id="Tensor_HostTensor_examples"><strong>Examples</strong></h5>
+  <pre><code class="fsharp"> let x = HostTensor.zeros [3L; 3L]  // x.Dev = HostTensor.Dev</code></pre>
+  <h3 id="fields">Fields
+  </h3>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="Tensor_HostTensor_Dev__" data-uid="Tensor.HostTensor.Dev()">
+          <a class="xref" href="Tensor.HostTensor.Dev%28%29.html">val Dev</a>
+        </td>
+        <td class="markdown level1 summary"><p>Tensor device using a .NET array in host memory as data storage.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="Tensor_HostTensor_arange__T_____T_____T_" data-uid="Tensor.HostTensor.arange('T -&gt; 'T -&gt; 'T)">
+          <a class="xref" href="Tensor.HostTensor.arange.html#Tensor_HostTensor_arange__T_____T_____T_">val arange: &#39;T -&gt; &#39;T -&gt; &#39;T -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Creates a new vector filled with equaly spaced values using a specifed increment.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_HostTensor_counting_int64_" data-uid="Tensor.HostTensor.counting(int64)">
+          <a class="xref" href="Tensor.HostTensor.counting.html#Tensor_HostTensor_counting_int64_">val counting: int64 -&gt; Tensor&lt;int64&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Creates a new vector filled with the integers from zero to the specified maximum.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_HostTensor_empty_int_" data-uid="Tensor.HostTensor.empty(int)">
+          <a class="xref" href="Tensor.HostTensor.empty.html#Tensor_HostTensor_empty_int_">val empty: int -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Creates a new, empty tensor with the given number of dimensions.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_HostTensor_falses_int64_list_" data-uid="Tensor.HostTensor.falses(int64 list)">
+          <a class="xref" href="Tensor.HostTensor.falses.html#Tensor_HostTensor_falses_int64_list_">val falses: int64 list -&gt; Tensor&lt;bool&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Creates a new boolean tensor filled with falses.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_HostTensor_Fill_Tensor_Tensor__T_____unit_____T_" data-uid="Tensor.HostTensor.Fill(Tensor.Tensor&lt;'T&gt; -&gt; unit -&gt; 'T)">
+          <a class="xref" href="Tensor.HostTensor.Fill.html#Tensor_HostTensor_Fill_Tensor_Tensor__T_____unit_____T_">val Fill: Tensor&lt;&#39;T&gt; -&gt; unit -&gt; &#39;T -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p>Fills the tensor with the values returned by the function.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_HostTensor_filled_int64_list_____T_" data-uid="Tensor.HostTensor.filled(int64 list -&gt; 'T)">
+          <a class="xref" href="Tensor.HostTensor.filled.html#Tensor_HostTensor_filled_int64_list_____T_">val filled: int64 list -&gt; &#39;T -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Creates a new tensor filled with the specified value.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_HostTensor_FillFoldAxis_Tensor_Tensor__T______T_____TA_____T____Tensor_Tensor__T_____int____Tensor_Tensor__TA__" data-uid="Tensor.HostTensor.FillFoldAxis(Tensor.Tensor&lt;'T&gt; -&gt; 'T -&gt; 'TA -&gt; 'T -&gt; Tensor.Tensor&lt;'T&gt; -&gt; int -&gt; Tensor.Tensor&lt;'TA&gt;)">
+          <a class="xref" href="Tensor.HostTensor.FillFoldAxis.html#Tensor_HostTensor_FillFoldAxis_Tensor_Tensor__T______T_____TA_____T____Tensor_Tensor__T_____int____Tensor_Tensor__TA__">val FillFoldAxis: Tensor&lt;&#39;T&gt; -&gt; &#39;T -&gt; &#39;TA -&gt; &#39;T -&gt; Tensor&lt;&#39;T&gt; -&gt; int -&gt; Tensor&lt;&#39;TA&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p>Applies to specified function to all elements of the tensor, threading an accumulator through the 
+computation.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_HostTensor_FillIndexed_Tensor_Tensor__T_____int64________T_" data-uid="Tensor.HostTensor.FillIndexed(Tensor.Tensor&lt;'T&gt; -&gt; int64 [] -&gt; 'T)">
+          <a class="xref" href="Tensor.HostTensor.FillIndexed.html#Tensor_HostTensor_FillIndexed_Tensor_Tensor__T_____int64________T_">val FillIndexed: Tensor&lt;&#39;T&gt; -&gt; int64 [] -&gt; &#39;T -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p>Fills the tensor with values returned by the specifed function.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_HostTensor_FillMap_Tensor_Tensor__T______TA_____T____Tensor_Tensor__TA__" data-uid="Tensor.HostTensor.FillMap(Tensor.Tensor&lt;'T&gt; -&gt; 'TA -&gt; 'T -&gt; Tensor.Tensor&lt;'TA&gt;)">
+          <a class="xref" href="Tensor.HostTensor.FillMap.html#Tensor_HostTensor_FillMap_Tensor_Tensor__T______TA_____T____Tensor_Tensor__TA__">val FillMap: Tensor&lt;&#39;T&gt; -&gt; &#39;TA -&gt; &#39;T -&gt; Tensor&lt;&#39;TA&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p>Applies to specified function to all elements of the tensor using the specified tensor as 
+target.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_HostTensor_FillMap2_Tensor_Tensor__T______TA_____TB_____T____Tensor_Tensor__TA_____Tensor_Tensor__TB__" data-uid="Tensor.HostTensor.FillMap2(Tensor.Tensor&lt;'T&gt; -&gt; 'TA -&gt; 'TB -&gt; 'T -&gt; Tensor.Tensor&lt;'TA&gt; -&gt; Tensor.Tensor&lt;'TB&gt;)">
+          <a class="xref" href="Tensor.HostTensor.FillMap2.html#Tensor_HostTensor_FillMap2_Tensor_Tensor__T______TA_____TB_____T____Tensor_Tensor__TA_____Tensor_Tensor__TB__">val FillMap2: Tensor&lt;&#39;T&gt; -&gt; &#39;TA -&gt; &#39;TB -&gt; &#39;T -&gt; Tensor&lt;&#39;TA&gt; -&gt; Tensor&lt;&#39;TB&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p>Applies to specified function to all elements of the two tensors using the specified tensor as 
+target.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_HostTensor_FillMapIndexed_Tensor_Tensor__T_____int64________TA_____T____Tensor_Tensor__TA__" data-uid="Tensor.HostTensor.FillMapIndexed(Tensor.Tensor&lt;'T&gt; -&gt; int64 [] -&gt; 'TA -&gt; 'T -&gt; Tensor.Tensor&lt;'TA&gt;)">
+          <a class="xref" href="Tensor.HostTensor.FillMapIndexed.html#Tensor_HostTensor_FillMapIndexed_Tensor_Tensor__T_____int64________TA_____T____Tensor_Tensor__TA__">val FillMapIndexed: Tensor&lt;&#39;T&gt; -&gt; int64 [] -&gt; &#39;TA -&gt; &#39;T -&gt; Tensor&lt;&#39;TA&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p>Applies to specified indexed function to all elements of the tensor using the specified tensor as 
+target.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_HostTensor_FillMapIndexed2_Tensor_Tensor__T_____int64________TA_____TB_____T____Tensor_Tensor__TA_____Tensor_Tensor__TB__" data-uid="Tensor.HostTensor.FillMapIndexed2(Tensor.Tensor&lt;'T&gt; -&gt; int64 [] -&gt; 'TA -&gt; 'TB -&gt; 'T -&gt; Tensor.Tensor&lt;'TA&gt; -&gt; Tensor.Tensor&lt;'TB&gt;)">
+          <a class="xref" href="Tensor.HostTensor.FillMapIndexed2.html#Tensor_HostTensor_FillMapIndexed2_Tensor_Tensor__T_____int64________TA_____TB_____T____Tensor_Tensor__TA_____Tensor_Tensor__TB__">val FillMapIndexed2: Tensor&lt;&#39;T&gt; -&gt; int64 [] -&gt; &#39;TA -&gt; &#39;TB -&gt; &#39;T -&gt; Tensor&lt;&#39;TA&gt; -&gt; Tensor&lt;&#39;TB&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p>Applies to specified indexed function to all elements of the two tensors using the specified tensor as 
+target.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_HostTensor_FillSeq_Tensor_Tensor__T_____seq__T__" data-uid="Tensor.HostTensor.FillSeq(Tensor.Tensor&lt;'T&gt; -&gt; seq&lt;'T&gt;)">
+          <a class="xref" href="Tensor.HostTensor.FillSeq.html#Tensor_HostTensor_FillSeq_Tensor_Tensor__T_____seq__T__">val FillSeq: Tensor&lt;&#39;T&gt; -&gt; seq&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p>Fills the tensor with the values returned by the given sequence.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_HostTensor_foldAxis__T_____TA_____T____Tensor_Tensor__T_____int____Tensor_Tensor__TA__" data-uid="Tensor.HostTensor.foldAxis('T -&gt; 'TA -&gt; 'T -&gt; Tensor.Tensor&lt;'T&gt; -&gt; int -&gt; Tensor.Tensor&lt;'TA&gt;)">
+          <a class="xref" href="Tensor.HostTensor.foldAxis.html#Tensor_HostTensor_foldAxis__T_____TA_____T____Tensor_Tensor__T_____int____Tensor_Tensor__TA__">val foldAxis: &#39;T -&gt; &#39;TA -&gt; &#39;T -&gt; Tensor&lt;&#39;T&gt; -&gt; int -&gt; Tensor&lt;&#39;TA&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Applies to specified function to all elements of the tensor, threading an accumulator through the 
+computation.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_HostTensor_identity_int64_" data-uid="Tensor.HostTensor.identity(int64)">
+          <a class="xref" href="Tensor.HostTensor.identity.html#Tensor_HostTensor_identity_int64_">val identity: int64 -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Creates a new identity matrix.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_HostTensor_init_int64_list____int64________T_" data-uid="Tensor.HostTensor.init(int64 list -&gt; int64 [] -&gt; 'T)">
+          <a class="xref" href="Tensor.HostTensor.init.html#Tensor_HostTensor_init_int64_list____int64________T_">val init: int64 list -&gt; int64 [] -&gt; &#39;T -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Creates a new tensor with values returned by the specified function.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_HostTensor_linspace__T_____T____int64_" data-uid="Tensor.HostTensor.linspace('T -&gt; 'T -&gt; int64)">
+          <a class="xref" href="Tensor.HostTensor.linspace.html#Tensor_HostTensor_linspace__T_____T____int64_">val linspace: &#39;T -&gt; &#39;T -&gt; int64 -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Creates a new vector of given size filled with equaly spaced values.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_HostTensor_map__T_____R____Tensor_Tensor__T__" data-uid="Tensor.HostTensor.map('T -&gt; 'R -&gt; Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.HostTensor.map.html#Tensor_HostTensor_map__T_____R____Tensor_Tensor__T__">val map: &#39;T -&gt; &#39;R -&gt; Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;R&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Applies to specified function to all elements of the tensor.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_HostTensor_map2__TA_____TB_____R____Tensor_Tensor__TA_____Tensor_Tensor__TB__" data-uid="Tensor.HostTensor.map2('TA -&gt; 'TB -&gt; 'R -&gt; Tensor.Tensor&lt;'TA&gt; -&gt; Tensor.Tensor&lt;'TB&gt;)">
+          <a class="xref" href="Tensor.HostTensor.map2.html#Tensor_HostTensor_map2__TA_____TB_____R____Tensor_Tensor__TA_____Tensor_Tensor__TB__">val map2: &#39;TA -&gt; &#39;TB -&gt; &#39;R -&gt; Tensor&lt;&#39;TA&gt; -&gt; Tensor&lt;&#39;TB&gt; -&gt; Tensor&lt;&#39;R&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Applies to specified function to all elements of the two tensors.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_HostTensor_mapi_int64________T_____R____Tensor_Tensor__T__" data-uid="Tensor.HostTensor.mapi(int64 [] -&gt; 'T -&gt; 'R -&gt; Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.HostTensor.mapi.html#Tensor_HostTensor_mapi_int64________T_____R____Tensor_Tensor__T__">val mapi: int64 [] -&gt; &#39;T -&gt; &#39;R -&gt; Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;R&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Applies to specified indexed function to all elements of the tensor.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_HostTensor_mapi2_int64________TA_____TB_____R____Tensor_Tensor__TA_____Tensor_Tensor__TB__" data-uid="Tensor.HostTensor.mapi2(int64 [] -&gt; 'TA -&gt; 'TB -&gt; 'R -&gt; Tensor.Tensor&lt;'TA&gt; -&gt; Tensor.Tensor&lt;'TB&gt;)">
+          <a class="xref" href="Tensor.HostTensor.mapi2.html#Tensor_HostTensor_mapi2_int64________TA_____TB_____R____Tensor_Tensor__TA_____Tensor_Tensor__TB__">val mapi2: int64 [] -&gt; &#39;TA -&gt; &#39;TB -&gt; &#39;R -&gt; Tensor&lt;&#39;TA&gt; -&gt; Tensor&lt;&#39;TB&gt; -&gt; Tensor&lt;&#39;R&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Applies to specified indexed function to all elements of the two tensors.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_HostTensor_ofArray__T____" data-uid="Tensor.HostTensor.ofArray('T [])">
+          <a class="xref" href="Tensor.HostTensor.ofArray.html#Tensor_HostTensor_ofArray__T____">val ofArray: &#39;T [] -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Creates a one-dimensional tensor copying the specified data.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_HostTensor_ofArray2D__T_____" data-uid="Tensor.HostTensor.ofArray2D('T [,])">
+          <a class="xref" href="Tensor.HostTensor.ofArray2D.html#Tensor_HostTensor_ofArray2D__T_____">val ofArray2D: &#39;T [,] -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Creates a two-dimensional tensor copying the specified data.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_HostTensor_ofArray3D__T______" data-uid="Tensor.HostTensor.ofArray3D('T [,,])">
+          <a class="xref" href="Tensor.HostTensor.ofArray3D.html#Tensor_HostTensor_ofArray3D__T______">val ofArray3D: &#39;T [,,] -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Creates a three-dimensional tensor copying the specified data.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_HostTensor_ofArray4D__T_______" data-uid="Tensor.HostTensor.ofArray4D('T [,,,])">
+          <a class="xref" href="Tensor.HostTensor.ofArray4D.html#Tensor_HostTensor_ofArray4D__T_______">val ofArray4D: &#39;T [,,,] -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Creates a four-dimensional tensor copying the specified data.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_HostTensor_ofList__T_list_" data-uid="Tensor.HostTensor.ofList('T list)">
+          <a class="xref" href="Tensor.HostTensor.ofList.html#Tensor_HostTensor_ofList__T_list_">val ofList: &#39;T list -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Creates a one-dimensional tensor from the specified list.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_HostTensor_ofList2D__T_list_list_" data-uid="Tensor.HostTensor.ofList2D('T list list)">
+          <a class="xref" href="Tensor.HostTensor.ofList2D.html#Tensor_HostTensor_ofList2D__T_list_list_">val ofList2D: &#39;T list list -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Creates a two-dimensional tensor from the specified list of lists.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_HostTensor_ofSeq_seq__T__" data-uid="Tensor.HostTensor.ofSeq(seq&lt;'T&gt;)">
+          <a class="xref" href="Tensor.HostTensor.ofSeq.html#Tensor_HostTensor_ofSeq_seq__T__">val ofSeq: seq&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Creates a one-dimensional tensor from the specified sequence.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_HostTensor_ofSeqWithShape_int64_list____seq__T__" data-uid="Tensor.HostTensor.ofSeqWithShape(int64 list -&gt; seq&lt;'T&gt;)">
+          <a class="xref" href="Tensor.HostTensor.ofSeqWithShape.html#Tensor_HostTensor_ofSeqWithShape_int64_list____seq__T__">val ofSeqWithShape: int64 list -&gt; seq&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Creates a one-dimensional Tensor using the specified sequence and shape.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_HostTensor_ones_int64_list_" data-uid="Tensor.HostTensor.ones(int64 list)">
+          <a class="xref" href="Tensor.HostTensor.ones.html#Tensor_HostTensor_ones_int64_list_">val ones: int64 list -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Creates a new tensor filled with ones (1).</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_HostTensor_randomInt_System_Random____int___int____int64_list_" data-uid="Tensor.HostTensor.randomInt(System.Random -&gt; int * int -&gt; int64 list)">
+          <a class="xref" href="Tensor.HostTensor.randomInt.html#Tensor_HostTensor_randomInt_System_Random____int___int____int64_list_">val randomInt: Random -&gt; int * int -&gt; int64 list -&gt; Tensor&lt;int&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Creates a tensor filled with random integer numbers from a uniform distribution.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_HostTensor_randomNormal_System_Random_____T____T____int64_list_" data-uid="Tensor.HostTensor.randomNormal(System.Random -&gt; 'T * 'T -&gt; int64 list)">
+          <a class="xref" href="Tensor.HostTensor.randomNormal.html#Tensor_HostTensor_randomNormal_System_Random_____T____T____int64_list_">val randomNormal: Random -&gt; &#39;T * &#39;T -&gt; int64 list -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Creates a tensor filled with random numbers from a normale distribution.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_HostTensor_randomUniform_System_Random_____T____T____int64_list_" data-uid="Tensor.HostTensor.randomUniform(System.Random -&gt; 'T * 'T -&gt; int64 list)">
+          <a class="xref" href="Tensor.HostTensor.randomUniform.html#Tensor_HostTensor_randomUniform_System_Random_____T____T____int64_list_">val randomUniform: Random -&gt; &#39;T * &#39;T -&gt; int64 list -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Creates a tensor filled with random floating-point numbers from a uniform distribution.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_HostTensor_read_Tensor_HDF5____string_" data-uid="Tensor.HostTensor.read(Tensor.HDF5 -&gt; string)">
+          <a class="xref" href="Tensor.HostTensor.read.html#Tensor_HostTensor_read_Tensor_HDF5____string_">val read: HDF5 -&gt; string -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Reads a tensor from the specified HDF5 object path in an HDF5 file.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_HostTensor_readUntyped_Tensor_HDF5____string_" data-uid="Tensor.HostTensor.readUntyped(Tensor.HDF5 -&gt; string)">
+          <a class="xref" href="Tensor.HostTensor.readUntyped.html#Tensor_HostTensor_readUntyped_Tensor_HDF5____string_">val readUntyped: HDF5 -&gt; string -&gt; ITensor</a>
+        </td>
+        <td class="markdown level1 summary"><p>Reads a tensor with unspecified data type from the specified HDF5 object path in an HDF5 file.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_HostTensor_scalar__T_" data-uid="Tensor.HostTensor.scalar('T)">
+          <a class="xref" href="Tensor.HostTensor.scalar.html#Tensor_HostTensor_scalar__T_">val scalar: &#39;T -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Creates a new zero-dimensional (scalar) tensor with the specified value.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_HostTensor_toArray_Tensor_Tensor__T__" data-uid="Tensor.HostTensor.toArray(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.HostTensor.toArray.html#Tensor_HostTensor_toArray_Tensor_Tensor__T__">val toArray: Tensor&lt;&#39;T&gt; -&gt; &#39;T []</a>
+        </td>
+        <td class="markdown level1 summary"><p>Creates an array from a one-dimensional tensor.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_HostTensor_toArray2D_Tensor_Tensor__T__" data-uid="Tensor.HostTensor.toArray2D(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.HostTensor.toArray2D.html#Tensor_HostTensor_toArray2D_Tensor_Tensor__T__">val toArray2D: Tensor&lt;&#39;T&gt; -&gt; &#39;T [,]</a>
+        </td>
+        <td class="markdown level1 summary"><p>Creates an array from a two-dimensional tensor.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_HostTensor_toArray3D_Tensor_Tensor__T__" data-uid="Tensor.HostTensor.toArray3D(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.HostTensor.toArray3D.html#Tensor_HostTensor_toArray3D_Tensor_Tensor__T__">val toArray3D: Tensor&lt;&#39;T&gt; -&gt; &#39;T [,,]</a>
+        </td>
+        <td class="markdown level1 summary"><p>Creates an array from a three-dimensional tensor.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_HostTensor_toArray4D_Tensor_Tensor__T__" data-uid="Tensor.HostTensor.toArray4D(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.HostTensor.toArray4D.html#Tensor_HostTensor_toArray4D_Tensor_Tensor__T__">val toArray4D: Tensor&lt;&#39;T&gt; -&gt; &#39;T [,,,]</a>
+        </td>
+        <td class="markdown level1 summary"><p>Creates an array from a four-dimensional tensor.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_HostTensor_toList_Tensor_Tensor__T__" data-uid="Tensor.HostTensor.toList(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.HostTensor.toList.html#Tensor_HostTensor_toList_Tensor_Tensor__T__">val toList: Tensor&lt;&#39;T&gt; -&gt; &#39;T list</a>
+        </td>
+        <td class="markdown level1 summary"><p>Creates a list from a one-dimensional tensor.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_HostTensor_toList2D_Tensor_Tensor__T__" data-uid="Tensor.HostTensor.toList2D(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.HostTensor.toList2D.html#Tensor_HostTensor_toList2D_Tensor_Tensor__T__">val toList2D: Tensor&lt;&#39;T&gt; -&gt; &#39;T list list</a>
+        </td>
+        <td class="markdown level1 summary"><p>Creates a list of lists from a two-dimensional tensor.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_HostTensor_toSeq_Tensor_Tensor__T__" data-uid="Tensor.HostTensor.toSeq(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.HostTensor.toSeq.html#Tensor_HostTensor_toSeq_Tensor_Tensor__T__">val toSeq: Tensor&lt;&#39;T&gt; -&gt; seq&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>A sequence of all elements contained in the tensor.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_HostTensor_transfer_Tensor_Tensor__T__" data-uid="Tensor.HostTensor.transfer(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.HostTensor.transfer.html#Tensor_HostTensor_transfer_Tensor_Tensor__T__">val transfer: Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Transfers a tensor to the host device.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_HostTensor_trues_int64_list_" data-uid="Tensor.HostTensor.trues(int64 list)">
+          <a class="xref" href="Tensor.HostTensor.trues.html#Tensor_HostTensor_trues_int64_list_">val trues: int64 list -&gt; Tensor&lt;bool&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Creates a new boolean tensor filled with trues.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_HostTensor_usingArray__T____" data-uid="Tensor.HostTensor.usingArray('T [])">
+          <a class="xref" href="Tensor.HostTensor.usingArray.html#Tensor_HostTensor_usingArray__T____">val usingArray: &#39;T [] -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Creates a one-dimensional tensor referencing the specified data.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_HostTensor_write_Tensor_HDF5____string____Tensor_ITensor_" data-uid="Tensor.HostTensor.write(Tensor.HDF5 -&gt; string -&gt; Tensor.ITensor)">
+          <a class="xref" href="Tensor.HostTensor.write.html#Tensor_HostTensor_write_Tensor_HDF5____string____Tensor_ITensor_">val write: HDF5 -&gt; string -&gt; ITensor -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p>Writes the tensor into the HDF5 file under the specfied HDF5 object path.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_HostTensor_zeros_int64_list_" data-uid="Tensor.HostTensor.zeros(int64 list)">
+          <a class="xref" href="Tensor.HostTensor.zeros.html#Tensor_HostTensor_zeros_int64_list_">val zeros: int64 list -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Creates a new tensor filled with zeros (0).</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="seealso">See Also</h3>
+  <div class="seealso">
+      <div><a class="xref" href="Tensor.Tensor-1.html">Tensor&lt;&#39;T&gt;</a></div>
+      <div><a class="xref" href="Tensor.HostTensor.Parallel.html">HostTensor.Parallel (mod)</a></div>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

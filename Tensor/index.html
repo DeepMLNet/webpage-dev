@@ -1,0 +1,177 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Tensor for F# | Tensor for F# </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Tensor for F# | Tensor for F# ">
+    <meta name="generator" content="docfx 2.35.0.0">
+    
+    <link rel="shortcut icon" href="images/tensor.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="images/tensor.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="tensor-for-f">Tensor for F#</h1>
+
+<p><a href="https://www.travis-ci.org/DeepMLNet/DeepNet"><img src="https://www.travis-ci.org/DeepMLNet/DeepNet.svg?branch=master" alt="Build Status"></a>
+<a href="https://ci.appveyor.com/project/surban/deepnet/branch/master"><img src="https://ci.appveyor.com/api/projects/status/7qrfufbj0mvb6llv/branch/master?svg=true" alt="Build status"></a></p>
+<p>A <em>tensor</em> is an n-dimensional array of an arbitrary data type (for example <code>single</code> or <code>double</code>).
+Tensors of data type <code>&#39;T</code> are implemented by the <a class="xref" href="api/Tensor.Tensor-1.html">Tensor&lt;&#39;T&gt;</a> type.</p>
+<p>A tensor can be either stored in host memory or in the memory of a GPU computing device.
+Currenty only nVidia cards implementing the <a href="https://developer.nvidia.com/cuda-zone">CUDA API</a> are supported.
+The API for host and GPU stored tensors is mostly equal, thus a program can make use of GPU accelerated operations without porting effort.</p>
+<p>The tensor library provides functionality similar to <a href="http://docs.scipy.org/doc/numpy-1.10.0/reference/arrays.html">Numpy&#39;s Ndarray</a> and <a href="http://www.mathworks.com/help/matlab/matrices-and-arrays.html">MATLAB arrays</a>, including vector-wise operations, reshaping, slicing, broadcasting, masked assignment, reduction operations and BLAS operations.</p>
+<p>This open source library is written in <a href="http://fsharp.org/">F#</a> and targets the <a href="https://github.com/dotnet/standard/blob/master/docs/versions/netstandard2.0.md">.NET Standard 2.0 platform</a> with Linux, MacOS and Microsoft Windows as supported operating systems.</p>
+<h3 id="features-provided-by-the-core-tensor-library">Features provided by the core Tensor library</h3>
+<ul>
+<li>Core features<ul>
+<li>n-dimensional arrays (tensors) in host memory or on CUDA GPUs </li>
+<li>element-wise operations (addition, multiplication, absolute value, etc.)</li>
+<li>basic linear algebra operations (dot product, SVD decomposition, matrix inverse, etc.)</li>
+<li>reduction operations (sum, product, average, maximum, arg max, etc.)</li>
+<li>logic operations (comparision, and, or, etc.)</li>
+<li>views, slicing, reshaping, broadcasting (similar to NumPy) </li>
+<li>scatter and gather by indices</li>
+<li>standard functional operations (map, fold, etc.)</li>
+</ul>
+</li>
+<li>Data exchange<ul>
+<li>read/write support for HDF5 (.h5)</li>
+<li>interop with standard F# types (Seq, List, Array, Array2D, Array3D, etc.)</li>
+</ul>
+</li>
+<li>Performance<ul>
+<li>host: SIMD and Intel MKL accelerated operations </li>
+<li>CUDA GPU: all operations performed locally on GPU and cuBLAS used for matrix operations</li>
+</ul>
+</li>
+</ul>
+<h3 id="additional-features-provided-by-tensoralgorithm">Additional features provided by Tensor.Algorithm</h3>
+<ul>
+<li>Matrix algebra (integer, rational)<ul>
+<li>Row echelon form</li>
+<li>Smith normal form</li>
+<li>Kernel, cokernel and (pseudo-)inverse</li>
+</ul>
+</li>
+<li>Matrix decomposition (floating point)<ul>
+<li>Principal component analysis (PCA)</li>
+<li>ZCA whitening</li>
+</ul>
+</li>
+<li>Misc<ul>
+<li>Bezout&#39;s identity</li>
+<li>Loading of NumPy&#39;s .npy and .npz files.</li>
+</ul>
+</li>
+</ul>
+<h2 id="news">News</h2>
+<ul>
+<li><strong>2018/05/02</strong>. <a href="articles/Benchmarks.html">Initial benchmarks are available.</a></li>
+</ul>
+<h2 id="documentation">Documentation</h2>
+<p>To get an overview of available functions by category, see <a href="articles/Tensor.html">Tensor at a glance</a>.
+We also provide <a class="xref" href="api/Tensor.html">full reference documentation</a>.</p>
+<p>To start using the library, follow the <a href="articles/Guide-Installation.html">installation guide</a> and the <a href="articles/Guide-Creation.html">getting started guide</a>.</p>
+<h2 id="example">Example</h2>
+<p>Check out our example project that demonstrates essential features of the library at <a href="https://github.com/DeepMLNet/Tensor.Sample">https://github.com/DeepMLNet/Tensor.Sample</a>.</p>
+<h2 id="authors">Authors</h2>
+<p><a href="https://github.com/surban/">Sebastian Urban</a><br>Marcus Basalla<br>Johannes Langer<br>Wiebke Köpp</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/DeepMLNet/DeepNet/blob/018df6c3f0e2ae11d0b2e0d3b3257bb0b88de366/Tensor/Tensor.Docs/index.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

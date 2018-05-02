@@ -1,0 +1,730 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class TensorHostBackend&lt;'T&gt;
+   | Tensor for F# </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class TensorHostBackend&lt;'T&gt;
+   | Tensor for F# ">
+    <meta name="generator" content="docfx 2.35.0.0">
+    
+    <link rel="shortcut icon" href="../images/tensor.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/tensor.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Tensor.Host.TensorHostBackend`1">
+  
+  
+  <h1 id="Tensor_Host_TensorHostBackend_1" data-uid="Tensor.Host.TensorHostBackend`1" class="text-break">Class TensorHostBackend&lt;'T&gt;
+  </h1>
+  <div class="markdown level0 summary"><p> Backend for host tensors.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">TensorHostBackend&lt;'T&gt;</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;&#39;T&gt;</div>
+    <div><span class="xref">System.Collections.IEnumerable</span></div>
+    <div><a class="xref" href="Tensor.Backend.ITensorBackend-1.html">ITensorBackend</a>&lt;&#39;T&gt;</div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Tensor.Host.html">Tensor.Host</a></h6>
+  <h6><strong>Assembly</strong>: Tensor.dll</h6>
+  <h5 id="Tensor_Host_TensorHostBackend_1_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">type TensorHostBackend&lt;'T&gt; (layout:TensorLayout, storage:TensorHostStorage&lt;'T&gt;)
+    interface IEnumerable&lt;'T&gt;
+    interface IEnumerable
+    interface ITensorBackend&lt;'T&gt;</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Tensor.Backend.TensorLayout.html">TensorLayout</a></td>
+        <td><span class="parametername">layout</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Tensor.Host.TensorHostStorage-1.html">TensorHostStorage</a>&lt;&#39;T&gt;</td>
+        <td><span class="parametername">storage</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">'T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="constructors">Constructors
+  </h3>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1__ctor_Tensor_Backend_TensorLayout___Tensor_Host_TensorHostStorage__T__" data-uid="Tensor.Host.TensorHostBackend`1.#ctor(Tensor.Backend.TensorLayout * Tensor.Host.TensorHostStorage&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.-ctor.html#Tensor_Host_TensorHostBackend_1__ctor_Tensor_Backend_TensorLayout___Tensor_Host_TensorHostStorage__T__">new: TensorLayout * TensorHostStorage&lt;&#39;T&gt; -&gt; TensorHostBackend&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Implicit constructor.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_Data_unit_" data-uid="Tensor.Host.TensorHostBackend`1.Data(unit)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.Data.html#Tensor_Host_TensorHostBackend_1_Data_unit_">property Data: &#39;T []</a>
+        </td>
+        <td class="markdown level1 summary"><p> underlying data array</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_Storage_unit_" data-uid="Tensor.Host.TensorHostBackend`1.Storage(unit)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.Storage.html#Tensor_Host_TensorHostBackend_1_Storage_unit_">property Storage: TensorHostStorage&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p> underlying TensorHostStorate&lt;&#39;T&gt;</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_Fill_unit_____b___Tensor_Backend_ITensorFrontend__b____bool_" data-uid="Tensor.Host.TensorHostBackend`1.Fill(unit -&gt; 'b * Tensor.Backend.ITensorFrontend&lt;'b&gt; * bool)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.Fill.html#Tensor_Host_TensorHostBackend_1_Fill_unit_____b___Tensor_Backend_ITensorFrontend__b____bool_">member Fill: unit -&gt; &#39;b * ITensorFrontend&lt;&#39;b&gt; * bool -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_FillIndexed_int64________b___Tensor_Backend_ITensorFrontend__b____bool_" data-uid="Tensor.Host.TensorHostBackend`1.FillIndexed(int64 [] -&gt; 'b * Tensor.Backend.ITensorFrontend&lt;'b&gt; * bool)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.FillIndexed.html#Tensor_Host_TensorHostBackend_1_FillIndexed_int64________b___Tensor_Backend_ITensorFrontend__b____bool_">member FillIndexed: int64 [] -&gt; &#39;b * ITensorFrontend&lt;&#39;b&gt; * bool -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_FoldLastAxis__b_____c_____b___Tensor_Backend_ITensorFrontend__b____Tensor_Backend_ITensorFrontend__b____Tensor_Backend_ITensorFrontend__c____bool_" data-uid="Tensor.Host.TensorHostBackend`1.FoldLastAxis('b -&gt; 'c -&gt; 'b * Tensor.Backend.ITensorFrontend&lt;'b&gt; * Tensor.Backend.ITensorFrontend&lt;'b&gt; * Tensor.Backend.ITensorFrontend&lt;'c&gt; * bool)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.FoldLastAxis.html#Tensor_Host_TensorHostBackend_1_FoldLastAxis__b_____c_____b___Tensor_Backend_ITensorFrontend__b____Tensor_Backend_ITensorFrontend__b____Tensor_Backend_ITensorFrontend__c____bool_">member FoldLastAxis: &#39;b -&gt; &#39;c -&gt; &#39;b * ITensorFrontend&lt;&#39;b&gt; * ITensorFrontend&lt;&#39;b&gt; * ITensorFrontend&lt;&#39;c&gt; * bool -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_FoldLastAxisIndexed_int64_________123649______123650______123649___Tensor_Backend_ITensorFrontend___123649____Tensor_Backend_ITensorFrontend___123649____Tensor_Backend_ITensorFrontend___123650____bool_" data-uid="Tensor.Host.TensorHostBackend`1.FoldLastAxisIndexed(int64 [] -&gt; '?123649 -&gt; '?123650 -&gt; '?123649 * Tensor.Backend.ITensorFrontend&lt;'?123649&gt; * Tensor.Backend.ITensorFrontend&lt;'?123649&gt; * Tensor.Backend.ITensorFrontend&lt;'?123650&gt; * bool)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.FoldLastAxisIndexed.html#Tensor_Host_TensorHostBackend_1_FoldLastAxisIndexed_int64_________123649______123650______123649___Tensor_Backend_ITensorFrontend___123649____Tensor_Backend_ITensorFrontend___123649____Tensor_Backend_ITensorFrontend___123650____bool_">member FoldLastAxisIndexed: int64 [] -&gt; &#39;?123649 -&gt; &#39;?123650 -&gt; &#39;?123649 * ITensorFrontend&lt;&#39;?123649&gt; * ITensorFrontend&lt;&#39;?123649&gt; * ITensorFrontend&lt;&#39;?123650&gt; * bool -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_Map__b_____c___Tensor_Backend_ITensorFrontend__c____Tensor_Backend_ITensorFrontend__b____bool_" data-uid="Tensor.Host.TensorHostBackend`1.Map('b -&gt; 'c * Tensor.Backend.ITensorFrontend&lt;'c&gt; * Tensor.Backend.ITensorFrontend&lt;'b&gt; * bool)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.Map.html#Tensor_Host_TensorHostBackend_1_Map__b_____c___Tensor_Backend_ITensorFrontend__c____Tensor_Backend_ITensorFrontend__b____bool_">member Map: &#39;b -&gt; &#39;c * ITensorFrontend&lt;&#39;c&gt; * ITensorFrontend&lt;&#39;b&gt; * bool -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_Map2__b_____c_____d___Tensor_Backend_ITensorFrontend__d____Tensor_Backend_ITensorFrontend__b____Tensor_Backend_ITensorFrontend__c____bool_" data-uid="Tensor.Host.TensorHostBackend`1.Map2('b -&gt; 'c -&gt; 'd * Tensor.Backend.ITensorFrontend&lt;'d&gt; * Tensor.Backend.ITensorFrontend&lt;'b&gt; * Tensor.Backend.ITensorFrontend&lt;'c&gt; * bool)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.Map2.html#Tensor_Host_TensorHostBackend_1_Map2__b_____c_____d___Tensor_Backend_ITensorFrontend__d____Tensor_Backend_ITensorFrontend__b____Tensor_Backend_ITensorFrontend__c____bool_">member Map2: &#39;b -&gt; &#39;c -&gt; &#39;d * ITensorFrontend&lt;&#39;d&gt; * ITensorFrontend&lt;&#39;b&gt; * ITensorFrontend&lt;&#39;c&gt; * bool -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_MapIndexed_int64________b_____c___Tensor_Backend_ITensorFrontend__c____Tensor_Backend_ITensorFrontend__b____bool_" data-uid="Tensor.Host.TensorHostBackend`1.MapIndexed(int64 [] -&gt; 'b -&gt; 'c * Tensor.Backend.ITensorFrontend&lt;'c&gt; * Tensor.Backend.ITensorFrontend&lt;'b&gt; * bool)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.MapIndexed.html#Tensor_Host_TensorHostBackend_1_MapIndexed_int64________b_____c___Tensor_Backend_ITensorFrontend__c____Tensor_Backend_ITensorFrontend__b____bool_">member MapIndexed: int64 [] -&gt; &#39;b -&gt; &#39;c * ITensorFrontend&lt;&#39;c&gt; * ITensorFrontend&lt;&#39;b&gt; * bool -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_MapIndexed2_int64________b_____c_____d___Tensor_Backend_ITensorFrontend__d____Tensor_Backend_ITensorFrontend__b____Tensor_Backend_ITensorFrontend__c____bool_" data-uid="Tensor.Host.TensorHostBackend`1.MapIndexed2(int64 [] -&gt; 'b -&gt; 'c -&gt; 'd * Tensor.Backend.ITensorFrontend&lt;'d&gt; * Tensor.Backend.ITensorFrontend&lt;'b&gt; * Tensor.Backend.ITensorFrontend&lt;'c&gt; * bool)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.MapIndexed2.html#Tensor_Host_TensorHostBackend_1_MapIndexed2_int64________b_____c_____d___Tensor_Backend_ITensorFrontend__d____Tensor_Backend_ITensorFrontend__b____Tensor_Backend_ITensorFrontend__c____bool_">member MapIndexed2: int64 [] -&gt; &#39;b -&gt; &#39;c -&gt; &#39;d * ITensorFrontend&lt;&#39;d&gt; * ITensorFrontend&lt;&#39;b&gt; * ITensorFrontend&lt;&#39;c&gt; * bool -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="eii">Explicit Interface Implementations
+  </h3>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_System_Collections_Generic_IEnumerable_1_GetEnumerator_unit_" data-uid="Tensor.Host.TensorHostBackend`1.System-Collections-Generic-IEnumerable`1-GetEnumerator(unit)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.System-Collections-Generic-IEnumerable-1-GetEnumerator.html#Tensor_Host_TensorHostBackend_1_System_Collections_Generic_IEnumerable_1_GetEnumerator_unit_">interface IEnumerable&lt;&#39;T&gt; with member GetEnumerator: unit -&gt; IEnumerator&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_System_Collections_IEnumerable_GetEnumerator_unit_" data-uid="Tensor.Host.TensorHostBackend`1.System-Collections-IEnumerable-GetEnumerator(unit)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.System-Collections-IEnumerable-GetEnumerator.html#Tensor_Host_TensorHostBackend_1_System_Collections_IEnumerable_GetEnumerator_unit_">interface IEnumerable with member GetEnumerator: unit -&gt; IEnumerator</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_Abs_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__" data-uid="Tensor.Host.TensorHostBackend`1.Tensor-Backend-ITensorBackend`1-Abs(Tensor.Backend.ITensorFrontend&lt;'T&gt; * Tensor.Backend.ITensorFrontend&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.Tensor-Backend-ITensorBackend-1-Abs.html#Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_Abs_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__">interface ITensorBackend&lt;&#39;T&gt; with member Abs: ITensorFrontend&lt;&#39;T&gt; * ITensorFrontend&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_Acos_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__" data-uid="Tensor.Host.TensorHostBackend`1.Tensor-Backend-ITensorBackend`1-Acos(Tensor.Backend.ITensorFrontend&lt;'T&gt; * Tensor.Backend.ITensorFrontend&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.Tensor-Backend-ITensorBackend-1-Acos.html#Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_Acos_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__">interface ITensorBackend&lt;&#39;T&gt; with member Acos: ITensorFrontend&lt;&#39;T&gt; * ITensorFrontend&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_Add_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__" data-uid="Tensor.Host.TensorHostBackend`1.Tensor-Backend-ITensorBackend`1-Add(Tensor.Backend.ITensorFrontend&lt;'T&gt; * Tensor.Backend.ITensorFrontend&lt;'T&gt; * Tensor.Backend.ITensorFrontend&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.Tensor-Backend-ITensorBackend-1-Add.html#Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_Add_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__">interface ITensorBackend&lt;&#39;T&gt; with member Add: ITensorFrontend&lt;&#39;T&gt; * ITensorFrontend&lt;&#39;T&gt; * ITensorFrontend&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_AllLastAxis_Tensor_Backend_ITensorFrontend_bool____Tensor_Backend_ITensorFrontend_bool__" data-uid="Tensor.Host.TensorHostBackend`1.Tensor-Backend-ITensorBackend`1-AllLastAxis(Tensor.Backend.ITensorFrontend&lt;bool&gt; * Tensor.Backend.ITensorFrontend&lt;bool&gt;)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.Tensor-Backend-ITensorBackend-1-AllLastAxis.html#Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_AllLastAxis_Tensor_Backend_ITensorFrontend_bool____Tensor_Backend_ITensorFrontend_bool__">interface ITensorBackend&lt;&#39;T&gt; with member AllLastAxis: ITensorFrontend&lt;bool&gt; * ITensorFrontend&lt;bool&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_And_Tensor_Backend_ITensorFrontend_bool____Tensor_Backend_ITensorFrontend_bool____Tensor_Backend_ITensorFrontend_bool__" data-uid="Tensor.Host.TensorHostBackend`1.Tensor-Backend-ITensorBackend`1-And(Tensor.Backend.ITensorFrontend&lt;bool&gt; * Tensor.Backend.ITensorFrontend&lt;bool&gt; * Tensor.Backend.ITensorFrontend&lt;bool&gt;)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.Tensor-Backend-ITensorBackend-1-And.html#Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_And_Tensor_Backend_ITensorFrontend_bool____Tensor_Backend_ITensorFrontend_bool____Tensor_Backend_ITensorFrontend_bool__">interface ITensorBackend&lt;&#39;T&gt; with member And: ITensorFrontend&lt;bool&gt; * ITensorFrontend&lt;bool&gt; * ITensorFrontend&lt;bool&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_AnyLastAxis_Tensor_Backend_ITensorFrontend_bool____Tensor_Backend_ITensorFrontend_bool__" data-uid="Tensor.Host.TensorHostBackend`1.Tensor-Backend-ITensorBackend`1-AnyLastAxis(Tensor.Backend.ITensorFrontend&lt;bool&gt; * Tensor.Backend.ITensorFrontend&lt;bool&gt;)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.Tensor-Backend-ITensorBackend-1-AnyLastAxis.html#Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_AnyLastAxis_Tensor_Backend_ITensorFrontend_bool____Tensor_Backend_ITensorFrontend_bool__">interface ITensorBackend&lt;&#39;T&gt; with member AnyLastAxis: ITensorFrontend&lt;bool&gt; * ITensorFrontend&lt;bool&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_ArgMaxLastAxis_Tensor_Backend_ITensorFrontend_int64____Tensor_Backend_ITensorFrontend__T__" data-uid="Tensor.Host.TensorHostBackend`1.Tensor-Backend-ITensorBackend`1-ArgMaxLastAxis(Tensor.Backend.ITensorFrontend&lt;int64&gt; * Tensor.Backend.ITensorFrontend&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.Tensor-Backend-ITensorBackend-1-ArgMaxLastAxis.html#Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_ArgMaxLastAxis_Tensor_Backend_ITensorFrontend_int64____Tensor_Backend_ITensorFrontend__T__">interface ITensorBackend&lt;&#39;T&gt; with member ArgMaxLastAxis: ITensorFrontend&lt;int64&gt; * ITensorFrontend&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_ArgMinLastAxis_Tensor_Backend_ITensorFrontend_int64____Tensor_Backend_ITensorFrontend__T__" data-uid="Tensor.Host.TensorHostBackend`1.Tensor-Backend-ITensorBackend`1-ArgMinLastAxis(Tensor.Backend.ITensorFrontend&lt;int64&gt; * Tensor.Backend.ITensorFrontend&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.Tensor-Backend-ITensorBackend-1-ArgMinLastAxis.html#Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_ArgMinLastAxis_Tensor_Backend_ITensorFrontend_int64____Tensor_Backend_ITensorFrontend__T__">interface ITensorBackend&lt;&#39;T&gt; with member ArgMinLastAxis: ITensorFrontend&lt;int64&gt; * ITensorFrontend&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_Asin_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__" data-uid="Tensor.Host.TensorHostBackend`1.Tensor-Backend-ITensorBackend`1-Asin(Tensor.Backend.ITensorFrontend&lt;'T&gt; * Tensor.Backend.ITensorFrontend&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.Tensor-Backend-ITensorBackend-1-Asin.html#Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_Asin_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__">interface ITensorBackend&lt;&#39;T&gt; with member Asin: ITensorFrontend&lt;&#39;T&gt; * ITensorFrontend&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_Atan_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__" data-uid="Tensor.Host.TensorHostBackend`1.Tensor-Backend-ITensorBackend`1-Atan(Tensor.Backend.ITensorFrontend&lt;'T&gt; * Tensor.Backend.ITensorFrontend&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.Tensor-Backend-ITensorBackend-1-Atan.html#Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_Atan_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__">interface ITensorBackend&lt;&#39;T&gt; with member Atan: ITensorFrontend&lt;&#39;T&gt; * ITensorFrontend&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_BatchedInvert_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__" data-uid="Tensor.Host.TensorHostBackend`1.Tensor-Backend-ITensorBackend`1-BatchedInvert(Tensor.Backend.ITensorFrontend&lt;'T&gt; * Tensor.Backend.ITensorFrontend&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.Tensor-Backend-ITensorBackend-1-BatchedInvert.html#Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_BatchedInvert_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__">interface ITensorBackend&lt;&#39;T&gt; with member BatchedInvert: ITensorFrontend&lt;&#39;T&gt; * ITensorFrontend&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_BatchedMatMatDot_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__" data-uid="Tensor.Host.TensorHostBackend`1.Tensor-Backend-ITensorBackend`1-BatchedMatMatDot(Tensor.Backend.ITensorFrontend&lt;'T&gt; * Tensor.Backend.ITensorFrontend&lt;'T&gt; * Tensor.Backend.ITensorFrontend&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.Tensor-Backend-ITensorBackend-1-BatchedMatMatDot.html#Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_BatchedMatMatDot_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__">interface ITensorBackend&lt;&#39;T&gt; with member BatchedMatMatDot: ITensorFrontend&lt;&#39;T&gt; * ITensorFrontend&lt;&#39;T&gt; * ITensorFrontend&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_BatchedSVD_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__option___Tensor_Backend_ITensorFrontend__T__" data-uid="Tensor.Host.TensorHostBackend`1.Tensor-Backend-ITensorBackend`1-BatchedSVD(Tensor.Backend.ITensorFrontend&lt;'T&gt; * Tensor.Backend.ITensorFrontend&lt;'T&gt; * Tensor.Backend.ITensorFrontend&lt;'T&gt; option * Tensor.Backend.ITensorFrontend&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.Tensor-Backend-ITensorBackend-1-BatchedSVD.html#Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_BatchedSVD_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__option___Tensor_Backend_ITensorFrontend__T__">interface ITensorBackend&lt;&#39;T&gt; with member BatchedSVD: ITensorFrontend&lt;&#39;T&gt; * ITensorFrontend&lt;&#39;T&gt; * ITensorFrontend&lt;&#39;T&gt; option * ITensorFrontend&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_Ceiling_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__" data-uid="Tensor.Host.TensorHostBackend`1.Tensor-Backend-ITensorBackend`1-Ceiling(Tensor.Backend.ITensorFrontend&lt;'T&gt; * Tensor.Backend.ITensorFrontend&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.Tensor-Backend-ITensorBackend-1-Ceiling.html#Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_Ceiling_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__">interface ITensorBackend&lt;&#39;T&gt; with member Ceiling: ITensorFrontend&lt;&#39;T&gt; * ITensorFrontend&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_Convert_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend___123664__" data-uid="Tensor.Host.TensorHostBackend`1.Tensor-Backend-ITensorBackend`1-Convert(Tensor.Backend.ITensorFrontend&lt;'T&gt; * Tensor.Backend.ITensorFrontend&lt;'?123664&gt;)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.Tensor-Backend-ITensorBackend-1-Convert.html#Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_Convert_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend___123664__">interface ITensorBackend&lt;&#39;T&gt; with member Convert: ITensorFrontend&lt;&#39;T&gt; * ITensorFrontend&lt;&#39;?123664&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_Copy_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__" data-uid="Tensor.Host.TensorHostBackend`1.Tensor-Backend-ITensorBackend`1-Copy(Tensor.Backend.ITensorFrontend&lt;'T&gt; * Tensor.Backend.ITensorFrontend&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.Tensor-Backend-ITensorBackend-1-Copy.html#Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_Copy_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__">interface ITensorBackend&lt;&#39;T&gt; with member Copy: ITensorFrontend&lt;&#39;T&gt; * ITensorFrontend&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_Cos_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__" data-uid="Tensor.Host.TensorHostBackend`1.Tensor-Backend-ITensorBackend`1-Cos(Tensor.Backend.ITensorFrontend&lt;'T&gt; * Tensor.Backend.ITensorFrontend&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.Tensor-Backend-ITensorBackend-1-Cos.html#Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_Cos_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__">interface ITensorBackend&lt;&#39;T&gt; with member Cos: ITensorFrontend&lt;&#39;T&gt; * ITensorFrontend&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_Cosh_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__" data-uid="Tensor.Host.TensorHostBackend`1.Tensor-Backend-ITensorBackend`1-Cosh(Tensor.Backend.ITensorFrontend&lt;'T&gt; * Tensor.Backend.ITensorFrontend&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.Tensor-Backend-ITensorBackend-1-Cosh.html#Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_Cosh_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__">interface ITensorBackend&lt;&#39;T&gt; with member Cosh: ITensorFrontend&lt;&#39;T&gt; * ITensorFrontend&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_CountTrueLastAxis_Tensor_Backend_ITensorFrontend_int64____Tensor_Backend_ITensorFrontend_bool__" data-uid="Tensor.Host.TensorHostBackend`1.Tensor-Backend-ITensorBackend`1-CountTrueLastAxis(Tensor.Backend.ITensorFrontend&lt;int64&gt; * Tensor.Backend.ITensorFrontend&lt;bool&gt;)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.Tensor-Backend-ITensorBackend-1-CountTrueLastAxis.html#Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_CountTrueLastAxis_Tensor_Backend_ITensorFrontend_int64____Tensor_Backend_ITensorFrontend_bool__">interface ITensorBackend&lt;&#39;T&gt; with member CountTrueLastAxis: ITensorFrontend&lt;int64&gt; * ITensorFrontend&lt;bool&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_Divide_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__" data-uid="Tensor.Host.TensorHostBackend`1.Tensor-Backend-ITensorBackend`1-Divide(Tensor.Backend.ITensorFrontend&lt;'T&gt; * Tensor.Backend.ITensorFrontend&lt;'T&gt; * Tensor.Backend.ITensorFrontend&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.Tensor-Backend-ITensorBackend-1-Divide.html#Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_Divide_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__">interface ITensorBackend&lt;&#39;T&gt; with member Divide: ITensorFrontend&lt;&#39;T&gt; * ITensorFrontend&lt;&#39;T&gt; * ITensorFrontend&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_Equal_Tensor_Backend_ITensorFrontend_bool____Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__" data-uid="Tensor.Host.TensorHostBackend`1.Tensor-Backend-ITensorBackend`1-Equal(Tensor.Backend.ITensorFrontend&lt;bool&gt; * Tensor.Backend.ITensorFrontend&lt;'T&gt; * Tensor.Backend.ITensorFrontend&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.Tensor-Backend-ITensorBackend-1-Equal.html#Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_Equal_Tensor_Backend_ITensorFrontend_bool____Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__">interface ITensorBackend&lt;&#39;T&gt; with member Equal: ITensorFrontend&lt;bool&gt; * ITensorFrontend&lt;&#39;T&gt; * ITensorFrontend&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_Exp_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__" data-uid="Tensor.Host.TensorHostBackend`1.Tensor-Backend-ITensorBackend`1-Exp(Tensor.Backend.ITensorFrontend&lt;'T&gt; * Tensor.Backend.ITensorFrontend&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.Tensor-Backend-ITensorBackend-1-Exp.html#Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_Exp_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__">interface ITensorBackend&lt;&#39;T&gt; with member Exp: ITensorFrontend&lt;&#39;T&gt; * ITensorFrontend&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_FillConst__T___Tensor_Backend_ITensorFrontend__T__" data-uid="Tensor.Host.TensorHostBackend`1.Tensor-Backend-ITensorBackend`1-FillConst('T * Tensor.Backend.ITensorFrontend&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.Tensor-Backend-ITensorBackend-1-FillConst.html#Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_FillConst__T___Tensor_Backend_ITensorFrontend__T__">interface ITensorBackend&lt;&#39;T&gt; with member FillConst: &#39;T * ITensorFrontend&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_FillIncrementing__T____T___Tensor_Backend_ITensorFrontend__T__" data-uid="Tensor.Host.TensorHostBackend`1.Tensor-Backend-ITensorBackend`1-FillIncrementing('T * 'T * Tensor.Backend.ITensorFrontend&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.Tensor-Backend-ITensorBackend-1-FillIncrementing.html#Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_FillIncrementing__T____T___Tensor_Backend_ITensorFrontend__T__">interface ITensorBackend&lt;&#39;T&gt; with member FillIncrementing: &#39;T * &#39;T * ITensorFrontend&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_FindLastAxis__T___Tensor_Backend_ITensorFrontend_int64____Tensor_Backend_ITensorFrontend__T__" data-uid="Tensor.Host.TensorHostBackend`1.Tensor-Backend-ITensorBackend`1-FindLastAxis('T * Tensor.Backend.ITensorFrontend&lt;int64&gt; * Tensor.Backend.ITensorFrontend&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.Tensor-Backend-ITensorBackend-1-FindLastAxis.html#Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_FindLastAxis__T___Tensor_Backend_ITensorFrontend_int64____Tensor_Backend_ITensorFrontend__T__">interface ITensorBackend&lt;&#39;T&gt; with member FindLastAxis: &#39;T * ITensorFrontend&lt;int64&gt; * ITensorFrontend&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_Floor_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__" data-uid="Tensor.Host.TensorHostBackend`1.Tensor-Backend-ITensorBackend`1-Floor(Tensor.Backend.ITensorFrontend&lt;'T&gt; * Tensor.Backend.ITensorFrontend&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.Tensor-Backend-ITensorBackend-1-Floor.html#Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_Floor_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__">interface ITensorBackend&lt;&#39;T&gt; with member Floor: ITensorFrontend&lt;&#39;T&gt; * ITensorFrontend&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_Gather_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend_int64__option_list___Tensor_Backend_ITensorFrontend__T__" data-uid="Tensor.Host.TensorHostBackend`1.Tensor-Backend-ITensorBackend`1-Gather(Tensor.Backend.ITensorFrontend&lt;'T&gt; * Tensor.Backend.ITensorFrontend&lt;int64&gt; option list * Tensor.Backend.ITensorFrontend&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.Tensor-Backend-ITensorBackend-1-Gather.html#Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_Gather_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend_int64__option_list___Tensor_Backend_ITensorFrontend__T__">interface ITensorBackend&lt;&#39;T&gt; with member Gather: ITensorFrontend&lt;&#39;T&gt; * ITensorFrontend&lt;int64&gt; option list * ITensorFrontend&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_get_Item_int64____" data-uid="Tensor.Host.TensorHostBackend`1.Tensor-Backend-ITensorBackend`1-get_Item(int64 [])">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.Tensor-Backend-ITensorBackend-1-get_Item.html#Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_get_Item_int64____">interface ITensorBackend&lt;&#39;T&gt; with member Item: int64 [] -&gt; &#39;T</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_Greater_Tensor_Backend_ITensorFrontend_bool____Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__" data-uid="Tensor.Host.TensorHostBackend`1.Tensor-Backend-ITensorBackend`1-Greater(Tensor.Backend.ITensorFrontend&lt;bool&gt; * Tensor.Backend.ITensorFrontend&lt;'T&gt; * Tensor.Backend.ITensorFrontend&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.Tensor-Backend-ITensorBackend-1-Greater.html#Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_Greater_Tensor_Backend_ITensorFrontend_bool____Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__">interface ITensorBackend&lt;&#39;T&gt; with member Greater: ITensorFrontend&lt;bool&gt; * ITensorFrontend&lt;&#39;T&gt; * ITensorFrontend&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_GreaterOrEqual_Tensor_Backend_ITensorFrontend_bool____Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__" data-uid="Tensor.Host.TensorHostBackend`1.Tensor-Backend-ITensorBackend`1-GreaterOrEqual(Tensor.Backend.ITensorFrontend&lt;bool&gt; * Tensor.Backend.ITensorFrontend&lt;'T&gt; * Tensor.Backend.ITensorFrontend&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.Tensor-Backend-ITensorBackend-1-GreaterOrEqual.html#Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_GreaterOrEqual_Tensor_Backend_ITensorFrontend_bool____Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__">interface ITensorBackend&lt;&#39;T&gt; with member GreaterOrEqual: ITensorFrontend&lt;bool&gt; * ITensorFrontend&lt;&#39;T&gt; * ITensorFrontend&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_IfThenElse_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend_bool____Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__" data-uid="Tensor.Host.TensorHostBackend`1.Tensor-Backend-ITensorBackend`1-IfThenElse(Tensor.Backend.ITensorFrontend&lt;'T&gt; * Tensor.Backend.ITensorFrontend&lt;bool&gt; * Tensor.Backend.ITensorFrontend&lt;'T&gt; * Tensor.Backend.ITensorFrontend&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.Tensor-Backend-ITensorBackend-1-IfThenElse.html#Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_IfThenElse_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend_bool____Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__">interface ITensorBackend&lt;&#39;T&gt; with member IfThenElse: ITensorFrontend&lt;&#39;T&gt; * ITensorFrontend&lt;bool&gt; * ITensorFrontend&lt;&#39;T&gt; * ITensorFrontend&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_IsFinite_Tensor_Backend_ITensorFrontend_bool____Tensor_Backend_ITensorFrontend__T__" data-uid="Tensor.Host.TensorHostBackend`1.Tensor-Backend-ITensorBackend`1-IsFinite(Tensor.Backend.ITensorFrontend&lt;bool&gt; * Tensor.Backend.ITensorFrontend&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.Tensor-Backend-ITensorBackend-1-IsFinite.html#Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_IsFinite_Tensor_Backend_ITensorFrontend_bool____Tensor_Backend_ITensorFrontend__T__">interface ITensorBackend&lt;&#39;T&gt; with member IsFinite: ITensorFrontend&lt;bool&gt; * ITensorFrontend&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_Less_Tensor_Backend_ITensorFrontend_bool____Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__" data-uid="Tensor.Host.TensorHostBackend`1.Tensor-Backend-ITensorBackend`1-Less(Tensor.Backend.ITensorFrontend&lt;bool&gt; * Tensor.Backend.ITensorFrontend&lt;'T&gt; * Tensor.Backend.ITensorFrontend&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.Tensor-Backend-ITensorBackend-1-Less.html#Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_Less_Tensor_Backend_ITensorFrontend_bool____Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__">interface ITensorBackend&lt;&#39;T&gt; with member Less: ITensorFrontend&lt;bool&gt; * ITensorFrontend&lt;&#39;T&gt; * ITensorFrontend&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_LessOrEqual_Tensor_Backend_ITensorFrontend_bool____Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__" data-uid="Tensor.Host.TensorHostBackend`1.Tensor-Backend-ITensorBackend`1-LessOrEqual(Tensor.Backend.ITensorFrontend&lt;bool&gt; * Tensor.Backend.ITensorFrontend&lt;'T&gt; * Tensor.Backend.ITensorFrontend&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.Tensor-Backend-ITensorBackend-1-LessOrEqual.html#Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_LessOrEqual_Tensor_Backend_ITensorFrontend_bool____Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__">interface ITensorBackend&lt;&#39;T&gt; with member LessOrEqual: ITensorFrontend&lt;bool&gt; * ITensorFrontend&lt;&#39;T&gt; * ITensorFrontend&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_Log_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__" data-uid="Tensor.Host.TensorHostBackend`1.Tensor-Backend-ITensorBackend`1-Log(Tensor.Backend.ITensorFrontend&lt;'T&gt; * Tensor.Backend.ITensorFrontend&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.Tensor-Backend-ITensorBackend-1-Log.html#Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_Log_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__">interface ITensorBackend&lt;&#39;T&gt; with member Log: ITensorFrontend&lt;&#39;T&gt; * ITensorFrontend&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_Log10_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__" data-uid="Tensor.Host.TensorHostBackend`1.Tensor-Backend-ITensorBackend`1-Log10(Tensor.Backend.ITensorFrontend&lt;'T&gt; * Tensor.Backend.ITensorFrontend&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.Tensor-Backend-ITensorBackend-1-Log10.html#Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_Log10_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__">interface ITensorBackend&lt;&#39;T&gt; with member Log10: ITensorFrontend&lt;&#39;T&gt; * ITensorFrontend&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_MaskedGet_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend_bool__option____" data-uid="Tensor.Host.TensorHostBackend`1.Tensor-Backend-ITensorBackend`1-MaskedGet(Tensor.Backend.ITensorFrontend&lt;'T&gt; * Tensor.Backend.ITensorFrontend&lt;'T&gt; * Tensor.Backend.ITensorFrontend&lt;bool&gt; option [])">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.Tensor-Backend-ITensorBackend-1-MaskedGet.html#Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_MaskedGet_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend_bool__option____">interface ITensorBackend&lt;&#39;T&gt; with member MaskedGet: ITensorFrontend&lt;&#39;T&gt; * ITensorFrontend&lt;&#39;T&gt; * ITensorFrontend&lt;bool&gt; option [] -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_MaskedSet_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend_bool__option______Tensor_Backend_ITensorFrontend__T__" data-uid="Tensor.Host.TensorHostBackend`1.Tensor-Backend-ITensorBackend`1-MaskedSet(Tensor.Backend.ITensorFrontend&lt;'T&gt; * Tensor.Backend.ITensorFrontend&lt;bool&gt; option [] * Tensor.Backend.ITensorFrontend&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.Tensor-Backend-ITensorBackend-1-MaskedSet.html#Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_MaskedSet_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend_bool__option______Tensor_Backend_ITensorFrontend__T__">interface ITensorBackend&lt;&#39;T&gt; with member MaskedSet: ITensorFrontend&lt;&#39;T&gt; * ITensorFrontend&lt;bool&gt; option [] * ITensorFrontend&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_MatMatDot_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__" data-uid="Tensor.Host.TensorHostBackend`1.Tensor-Backend-ITensorBackend`1-MatMatDot(Tensor.Backend.ITensorFrontend&lt;'T&gt; * Tensor.Backend.ITensorFrontend&lt;'T&gt; * Tensor.Backend.ITensorFrontend&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.Tensor-Backend-ITensorBackend-1-MatMatDot.html#Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_MatMatDot_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__">interface ITensorBackend&lt;&#39;T&gt; with member MatMatDot: ITensorFrontend&lt;&#39;T&gt; * ITensorFrontend&lt;&#39;T&gt; * ITensorFrontend&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_MatVecDot_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__" data-uid="Tensor.Host.TensorHostBackend`1.Tensor-Backend-ITensorBackend`1-MatVecDot(Tensor.Backend.ITensorFrontend&lt;'T&gt; * Tensor.Backend.ITensorFrontend&lt;'T&gt; * Tensor.Backend.ITensorFrontend&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.Tensor-Backend-ITensorBackend-1-MatVecDot.html#Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_MatVecDot_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__">interface ITensorBackend&lt;&#39;T&gt; with member MatVecDot: ITensorFrontend&lt;&#39;T&gt; * ITensorFrontend&lt;&#39;T&gt; * ITensorFrontend&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_MaxElemwise_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__" data-uid="Tensor.Host.TensorHostBackend`1.Tensor-Backend-ITensorBackend`1-MaxElemwise(Tensor.Backend.ITensorFrontend&lt;'T&gt; * Tensor.Backend.ITensorFrontend&lt;'T&gt; * Tensor.Backend.ITensorFrontend&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.Tensor-Backend-ITensorBackend-1-MaxElemwise.html#Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_MaxElemwise_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__">interface ITensorBackend&lt;&#39;T&gt; with member MaxElemwise: ITensorFrontend&lt;&#39;T&gt; * ITensorFrontend&lt;&#39;T&gt; * ITensorFrontend&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_MaxLastAxis_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__" data-uid="Tensor.Host.TensorHostBackend`1.Tensor-Backend-ITensorBackend`1-MaxLastAxis(Tensor.Backend.ITensorFrontend&lt;'T&gt; * Tensor.Backend.ITensorFrontend&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.Tensor-Backend-ITensorBackend-1-MaxLastAxis.html#Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_MaxLastAxis_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__">interface ITensorBackend&lt;&#39;T&gt; with member MaxLastAxis: ITensorFrontend&lt;&#39;T&gt; * ITensorFrontend&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_MinElemwise_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__" data-uid="Tensor.Host.TensorHostBackend`1.Tensor-Backend-ITensorBackend`1-MinElemwise(Tensor.Backend.ITensorFrontend&lt;'T&gt; * Tensor.Backend.ITensorFrontend&lt;'T&gt; * Tensor.Backend.ITensorFrontend&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.Tensor-Backend-ITensorBackend-1-MinElemwise.html#Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_MinElemwise_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__">interface ITensorBackend&lt;&#39;T&gt; with member MinElemwise: ITensorFrontend&lt;&#39;T&gt; * ITensorFrontend&lt;&#39;T&gt; * ITensorFrontend&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_MinLastAxis_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__" data-uid="Tensor.Host.TensorHostBackend`1.Tensor-Backend-ITensorBackend`1-MinLastAxis(Tensor.Backend.ITensorFrontend&lt;'T&gt; * Tensor.Backend.ITensorFrontend&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.Tensor-Backend-ITensorBackend-1-MinLastAxis.html#Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_MinLastAxis_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__">interface ITensorBackend&lt;&#39;T&gt; with member MinLastAxis: ITensorFrontend&lt;&#39;T&gt; * ITensorFrontend&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_Modulo_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__" data-uid="Tensor.Host.TensorHostBackend`1.Tensor-Backend-ITensorBackend`1-Modulo(Tensor.Backend.ITensorFrontend&lt;'T&gt; * Tensor.Backend.ITensorFrontend&lt;'T&gt; * Tensor.Backend.ITensorFrontend&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.Tensor-Backend-ITensorBackend-1-Modulo.html#Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_Modulo_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__">interface ITensorBackend&lt;&#39;T&gt; with member Modulo: ITensorFrontend&lt;&#39;T&gt; * ITensorFrontend&lt;&#39;T&gt; * ITensorFrontend&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_Multiply_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__" data-uid="Tensor.Host.TensorHostBackend`1.Tensor-Backend-ITensorBackend`1-Multiply(Tensor.Backend.ITensorFrontend&lt;'T&gt; * Tensor.Backend.ITensorFrontend&lt;'T&gt; * Tensor.Backend.ITensorFrontend&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.Tensor-Backend-ITensorBackend-1-Multiply.html#Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_Multiply_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__">interface ITensorBackend&lt;&#39;T&gt; with member Multiply: ITensorFrontend&lt;&#39;T&gt; * ITensorFrontend&lt;&#39;T&gt; * ITensorFrontend&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_Negate_Tensor_Backend_ITensorFrontend_bool____Tensor_Backend_ITensorFrontend_bool__" data-uid="Tensor.Host.TensorHostBackend`1.Tensor-Backend-ITensorBackend`1-Negate(Tensor.Backend.ITensorFrontend&lt;bool&gt; * Tensor.Backend.ITensorFrontend&lt;bool&gt;)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.Tensor-Backend-ITensorBackend-1-Negate.html#Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_Negate_Tensor_Backend_ITensorFrontend_bool____Tensor_Backend_ITensorFrontend_bool__">interface ITensorBackend&lt;&#39;T&gt; with member Negate: ITensorFrontend&lt;bool&gt; * ITensorFrontend&lt;bool&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_NotEqual_Tensor_Backend_ITensorFrontend_bool____Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__" data-uid="Tensor.Host.TensorHostBackend`1.Tensor-Backend-ITensorBackend`1-NotEqual(Tensor.Backend.ITensorFrontend&lt;bool&gt; * Tensor.Backend.ITensorFrontend&lt;'T&gt; * Tensor.Backend.ITensorFrontend&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.Tensor-Backend-ITensorBackend-1-NotEqual.html#Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_NotEqual_Tensor_Backend_ITensorFrontend_bool____Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__">interface ITensorBackend&lt;&#39;T&gt; with member NotEqual: ITensorFrontend&lt;bool&gt; * ITensorFrontend&lt;&#39;T&gt; * ITensorFrontend&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_Or_Tensor_Backend_ITensorFrontend_bool____Tensor_Backend_ITensorFrontend_bool____Tensor_Backend_ITensorFrontend_bool__" data-uid="Tensor.Host.TensorHostBackend`1.Tensor-Backend-ITensorBackend`1-Or(Tensor.Backend.ITensorFrontend&lt;bool&gt; * Tensor.Backend.ITensorFrontend&lt;bool&gt; * Tensor.Backend.ITensorFrontend&lt;bool&gt;)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.Tensor-Backend-ITensorBackend-1-Or.html#Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_Or_Tensor_Backend_ITensorFrontend_bool____Tensor_Backend_ITensorFrontend_bool____Tensor_Backend_ITensorFrontend_bool__">interface ITensorBackend&lt;&#39;T&gt; with member Or: ITensorFrontend&lt;bool&gt; * ITensorFrontend&lt;bool&gt; * ITensorFrontend&lt;bool&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_Power_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__" data-uid="Tensor.Host.TensorHostBackend`1.Tensor-Backend-ITensorBackend`1-Power(Tensor.Backend.ITensorFrontend&lt;'T&gt; * Tensor.Backend.ITensorFrontend&lt;'T&gt; * Tensor.Backend.ITensorFrontend&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.Tensor-Backend-ITensorBackend-1-Power.html#Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_Power_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__">interface ITensorBackend&lt;&#39;T&gt; with member Power: ITensorFrontend&lt;&#39;T&gt; * ITensorFrontend&lt;&#39;T&gt; * ITensorFrontend&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_ProductLastAxis_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__" data-uid="Tensor.Host.TensorHostBackend`1.Tensor-Backend-ITensorBackend`1-ProductLastAxis(Tensor.Backend.ITensorFrontend&lt;'T&gt; * Tensor.Backend.ITensorFrontend&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.Tensor-Backend-ITensorBackend-1-ProductLastAxis.html#Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_ProductLastAxis_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__">interface ITensorBackend&lt;&#39;T&gt; with member ProductLastAxis: ITensorFrontend&lt;&#39;T&gt; * ITensorFrontend&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_Round_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__" data-uid="Tensor.Host.TensorHostBackend`1.Tensor-Backend-ITensorBackend`1-Round(Tensor.Backend.ITensorFrontend&lt;'T&gt; * Tensor.Backend.ITensorFrontend&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.Tensor-Backend-ITensorBackend-1-Round.html#Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_Round_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__">interface ITensorBackend&lt;&#39;T&gt; with member Round: ITensorFrontend&lt;&#39;T&gt; * ITensorFrontend&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_Scatter_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend_int64__option_list___Tensor_Backend_ITensorFrontend__T__" data-uid="Tensor.Host.TensorHostBackend`1.Tensor-Backend-ITensorBackend`1-Scatter(Tensor.Backend.ITensorFrontend&lt;'T&gt; * Tensor.Backend.ITensorFrontend&lt;int64&gt; option list * Tensor.Backend.ITensorFrontend&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.Tensor-Backend-ITensorBackend-1-Scatter.html#Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_Scatter_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend_int64__option_list___Tensor_Backend_ITensorFrontend__T__">interface ITensorBackend&lt;&#39;T&gt; with member Scatter: ITensorFrontend&lt;&#39;T&gt; * ITensorFrontend&lt;int64&gt; option list * ITensorFrontend&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_set_Item_int64_______T_" data-uid="Tensor.Host.TensorHostBackend`1.Tensor-Backend-ITensorBackend`1-set_Item(int64 [] * 'T)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.Tensor-Backend-ITensorBackend-1-set_Item.html#Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_set_Item_int64_______T_">interface ITensorBackend&lt;&#39;T&gt; with member Item: int64 [] * &#39;T -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_Sgn_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__" data-uid="Tensor.Host.TensorHostBackend`1.Tensor-Backend-ITensorBackend`1-Sgn(Tensor.Backend.ITensorFrontend&lt;'T&gt; * Tensor.Backend.ITensorFrontend&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.Tensor-Backend-ITensorBackend-1-Sgn.html#Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_Sgn_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__">interface ITensorBackend&lt;&#39;T&gt; with member Sgn: ITensorFrontend&lt;&#39;T&gt; * ITensorFrontend&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_Sin_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__" data-uid="Tensor.Host.TensorHostBackend`1.Tensor-Backend-ITensorBackend`1-Sin(Tensor.Backend.ITensorFrontend&lt;'T&gt; * Tensor.Backend.ITensorFrontend&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.Tensor-Backend-ITensorBackend-1-Sin.html#Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_Sin_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__">interface ITensorBackend&lt;&#39;T&gt; with member Sin: ITensorFrontend&lt;&#39;T&gt; * ITensorFrontend&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_Sinh_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__" data-uid="Tensor.Host.TensorHostBackend`1.Tensor-Backend-ITensorBackend`1-Sinh(Tensor.Backend.ITensorFrontend&lt;'T&gt; * Tensor.Backend.ITensorFrontend&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.Tensor-Backend-ITensorBackend-1-Sinh.html#Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_Sinh_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__">interface ITensorBackend&lt;&#39;T&gt; with member Sinh: ITensorFrontend&lt;&#39;T&gt; * ITensorFrontend&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_Sqrt_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__" data-uid="Tensor.Host.TensorHostBackend`1.Tensor-Backend-ITensorBackend`1-Sqrt(Tensor.Backend.ITensorFrontend&lt;'T&gt; * Tensor.Backend.ITensorFrontend&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.Tensor-Backend-ITensorBackend-1-Sqrt.html#Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_Sqrt_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__">interface ITensorBackend&lt;&#39;T&gt; with member Sqrt: ITensorFrontend&lt;&#39;T&gt; * ITensorFrontend&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_Subtract_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__" data-uid="Tensor.Host.TensorHostBackend`1.Tensor-Backend-ITensorBackend`1-Subtract(Tensor.Backend.ITensorFrontend&lt;'T&gt; * Tensor.Backend.ITensorFrontend&lt;'T&gt; * Tensor.Backend.ITensorFrontend&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.Tensor-Backend-ITensorBackend-1-Subtract.html#Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_Subtract_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__">interface ITensorBackend&lt;&#39;T&gt; with member Subtract: ITensorFrontend&lt;&#39;T&gt; * ITensorFrontend&lt;&#39;T&gt; * ITensorFrontend&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_SumLastAxis_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__" data-uid="Tensor.Host.TensorHostBackend`1.Tensor-Backend-ITensorBackend`1-SumLastAxis(Tensor.Backend.ITensorFrontend&lt;'T&gt; * Tensor.Backend.ITensorFrontend&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.Tensor-Backend-ITensorBackend-1-SumLastAxis.html#Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_SumLastAxis_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__">interface ITensorBackend&lt;&#39;T&gt; with member SumLastAxis: ITensorFrontend&lt;&#39;T&gt; * ITensorFrontend&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_SymmetricEigenDecomposition_Tensor_MatrixPart___Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__" data-uid="Tensor.Host.TensorHostBackend`1.Tensor-Backend-ITensorBackend`1-SymmetricEigenDecomposition(Tensor.MatrixPart * Tensor.Backend.ITensorFrontend&lt;'T&gt; * Tensor.Backend.ITensorFrontend&lt;'T&gt; * Tensor.Backend.ITensorFrontend&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.Tensor-Backend-ITensorBackend-1-SymmetricEigenDecomposition.html#Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_SymmetricEigenDecomposition_Tensor_MatrixPart___Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__">interface ITensorBackend&lt;&#39;T&gt; with member SymmetricEigenDecomposition: MatrixPart * ITensorFrontend&lt;&#39;T&gt; * ITensorFrontend&lt;&#39;T&gt; * ITensorFrontend&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_Tan_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__" data-uid="Tensor.Host.TensorHostBackend`1.Tensor-Backend-ITensorBackend`1-Tan(Tensor.Backend.ITensorFrontend&lt;'T&gt; * Tensor.Backend.ITensorFrontend&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.Tensor-Backend-ITensorBackend-1-Tan.html#Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_Tan_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__">interface ITensorBackend&lt;&#39;T&gt; with member Tan: ITensorFrontend&lt;&#39;T&gt; * ITensorFrontend&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_Tanh_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__" data-uid="Tensor.Host.TensorHostBackend`1.Tensor-Backend-ITensorBackend`1-Tanh(Tensor.Backend.ITensorFrontend&lt;'T&gt; * Tensor.Backend.ITensorFrontend&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.Tensor-Backend-ITensorBackend-1-Tanh.html#Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_Tanh_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__">interface ITensorBackend&lt;&#39;T&gt; with member Tanh: ITensorFrontend&lt;&#39;T&gt; * ITensorFrontend&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_Transfer_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__" data-uid="Tensor.Host.TensorHostBackend`1.Tensor-Backend-ITensorBackend`1-Transfer(Tensor.Backend.ITensorFrontend&lt;'T&gt; * Tensor.Backend.ITensorFrontend&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.Tensor-Backend-ITensorBackend-1-Transfer.html#Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_Transfer_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__">interface ITensorBackend&lt;&#39;T&gt; with member Transfer: ITensorFrontend&lt;&#39;T&gt; * ITensorFrontend&lt;&#39;T&gt; -&gt; bool</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_TrueIndices_Tensor_Backend_ITensorFrontend_int64____Tensor_Backend_ITensorFrontend_bool__" data-uid="Tensor.Host.TensorHostBackend`1.Tensor-Backend-ITensorBackend`1-TrueIndices(Tensor.Backend.ITensorFrontend&lt;int64&gt; * Tensor.Backend.ITensorFrontend&lt;bool&gt;)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.Tensor-Backend-ITensorBackend-1-TrueIndices.html#Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_TrueIndices_Tensor_Backend_ITensorFrontend_int64____Tensor_Backend_ITensorFrontend_bool__">interface ITensorBackend&lt;&#39;T&gt; with member TrueIndices: ITensorFrontend&lt;int64&gt; * ITensorFrontend&lt;bool&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_Truncate_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__" data-uid="Tensor.Host.TensorHostBackend`1.Tensor-Backend-ITensorBackend`1-Truncate(Tensor.Backend.ITensorFrontend&lt;'T&gt; * Tensor.Backend.ITensorFrontend&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.Tensor-Backend-ITensorBackend-1-Truncate.html#Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_Truncate_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__">interface ITensorBackend&lt;&#39;T&gt; with member Truncate: ITensorFrontend&lt;&#39;T&gt; * ITensorFrontend&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_UnaryMinus_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__" data-uid="Tensor.Host.TensorHostBackend`1.Tensor-Backend-ITensorBackend`1-UnaryMinus(Tensor.Backend.ITensorFrontend&lt;'T&gt; * Tensor.Backend.ITensorFrontend&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.Tensor-Backend-ITensorBackend-1-UnaryMinus.html#Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_UnaryMinus_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__">interface ITensorBackend&lt;&#39;T&gt; with member UnaryMinus: ITensorFrontend&lt;&#39;T&gt; * ITensorFrontend&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_UnaryPlus_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__" data-uid="Tensor.Host.TensorHostBackend`1.Tensor-Backend-ITensorBackend`1-UnaryPlus(Tensor.Backend.ITensorFrontend&lt;'T&gt; * Tensor.Backend.ITensorFrontend&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.Tensor-Backend-ITensorBackend-1-UnaryPlus.html#Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_UnaryPlus_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__">interface ITensorBackend&lt;&#39;T&gt; with member UnaryPlus: ITensorFrontend&lt;&#39;T&gt; * ITensorFrontend&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_VecVecDot_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__" data-uid="Tensor.Host.TensorHostBackend`1.Tensor-Backend-ITensorBackend`1-VecVecDot(Tensor.Backend.ITensorFrontend&lt;'T&gt; * Tensor.Backend.ITensorFrontend&lt;'T&gt; * Tensor.Backend.ITensorFrontend&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.Tensor-Backend-ITensorBackend-1-VecVecDot.html#Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_VecVecDot_Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T____Tensor_Backend_ITensorFrontend__T__">interface ITensorBackend&lt;&#39;T&gt; with member VecVecDot: ITensorFrontend&lt;&#39;T&gt; * ITensorFrontend&lt;&#39;T&gt; * ITensorFrontend&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_Xor_Tensor_Backend_ITensorFrontend_bool____Tensor_Backend_ITensorFrontend_bool____Tensor_Backend_ITensorFrontend_bool__" data-uid="Tensor.Host.TensorHostBackend`1.Tensor-Backend-ITensorBackend`1-Xor(Tensor.Backend.ITensorFrontend&lt;bool&gt; * Tensor.Backend.ITensorFrontend&lt;bool&gt; * Tensor.Backend.ITensorFrontend&lt;bool&gt;)">
+          <a class="xref" href="Tensor.Host.TensorHostBackend-1.Tensor-Backend-ITensorBackend-1-Xor.html#Tensor_Host_TensorHostBackend_1_Tensor_Backend_ITensorBackend_1_Xor_Tensor_Backend_ITensorFrontend_bool____Tensor_Backend_ITensorFrontend_bool____Tensor_Backend_ITensorFrontend_bool__">interface ITensorBackend&lt;&#39;T&gt; with member Xor: ITensorFrontend&lt;bool&gt; * ITensorFrontend&lt;bool&gt; * ITensorFrontend&lt;bool&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

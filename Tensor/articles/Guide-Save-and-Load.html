@@ -1,0 +1,155 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Save and load | Tensor for F# </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Save and load | Tensor for F# ">
+    <meta name="generator" content="docfx 2.35.0.0">
+    
+    <link rel="shortcut icon" href="../images/tensor.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/tensor.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="save-and-load">Save and load</h1>
+
+<p>The primary data storage format is HDF5.
+For compatibility, Numpy files can also be read.</p>
+<h2 id="disk-storage-in-hdf5-format">Disk storage in HDF5 format</h2>
+<p>Tensors can be stored in and read from industry-standard <a href="https://en.wikipedia.org/wiki/Hierarchical_Data_Format">HDF5 files</a>.
+Multiple tensors can be stored in a single HDF5 file and accessed by assigning names to them.</p>
+<p>An opened HDF5 file is represented by an <a class="xref" href="../api/Tensor.HDF5.html">HDF5 object</a>.
+To close the file, dispose this object.</p>
+<h3 id="writing-tensors-to-disk">Writing tensors to disk</h3>
+<p>Use the <a class="xref" href="../api/Tensor.HostTensor.write.html">HostTensor.write</a> function to write a tensor to an HDF5 file opened for writing.</p>
+<p>The following code creates two tensors <code>k</code> and <code>l</code> and writes them into the HDF5 file <code>tensors.h5</code> in the current directory.</p>
+<pre><code class="lang-fsharp">let k = HostTensor.init [5L; 3L] (fun [|i; j|] -&gt; 3.0 * float i + float j)
+let l = HostTensor.init [5L] (fun [|i|] -&gt; 2.0 * float i)
+use hdfFile = HDF5.OpenWrite &quot;tensors.h5&quot;
+HostTensor.write hdfFile &quot;k&quot; k
+HostTensor.write hdfFile &quot;l&quot; l
+</code></pre><p>Tensor must be stored in host memory, before they can be written to disk.</p>
+<h3 id="loading-tensors-from-disk">Loading tensors from disk</h3>
+<p>Use the <a class="xref" href="../api/Tensor.HostTensor.read.html">HostTensor.read</a> function to read a tensor from an HDF5 file opened for reading.</p>
+<p>The following code loads the tensors <code>k</code> and <code>l</code> from the previously created HDF5 file <code>tensors.h5</code> and stores them in the variables <code>k2</code> and <code>l2</code>.</p>
+<pre><code class="lang-fsharp">use hdfFile2 = HDF5.OpenRead &quot;tensors.h5&quot;
+let k2 = HostTensor.read&lt;float&gt; hdfFile2 &quot;k&quot;
+let l2 = HostTensor.read&lt;float&gt; hdfFile2 &quot;l&quot;
+</code></pre><p>The data types of <code>k2</code> and <code>l2</code> must be specified explicitly, since they must be known at compile-time.
+If the declared data type does not match the data type encountered in the HDF5 file, an exception will be raised.
+If the data type is unknown at compile time, you can use the <a class="xref" href="../api/Tensor.HostTensor.readUntyped.html">HostTensor.readUntyped</a> function instead.</p>
+<h2 id="viewing-and-working-with-hdf5-files">Viewing and working with HDF5 files</h2>
+<p>The resulting file can be viewed using any HDF5 viewer, for example using the free, cross-platform <a href="https://www.hdfgroup.org/products/java/hdfview/">HDFView</a> application as shown below.
+Many useful tools for working with HDF5 file are provided at <a href="https://support.hdfgroup.org/products/hdf5_tools/toolsbycat.html">https://support.hdfgroup.org/products/hdf5_tools/toolsbycat.html</a>.</p>
+<p><img src="../images/hdfview.png" alt="HDFView screenshot"></p>
+<h2 id="reading-npy-and-npz-files-produced-by-numpy">Reading .npy and .npz files produced by Numpy</h2>
+<p>For compatibility, it is possible to read <code>.npy</code> and <code>.npz</code> files produced by Numpy.
+Not all features of the format are supported.
+Writing <code>.npy</code> and <code>.npz</code> files is not possible and the HDF5 format should be instead.</p>
+<p>Use the <a class="xref" href="../api/Tensor.Algorithm.NPYFile.load.html">NPYFile.load</a> function to read an <code>.npy</code> file and return its contents as a tensor.</p>
+<p>Use the <a class="xref" href="../api/Tensor.Algorithm.NPZFile.Open.html">NPZFile.Open</a> function to open an <code>.npz</code> file and the <a class="xref" href="../api/Tensor.Algorithm.NPZFile.Get.html">Get</a> method of the resulting object to obtain individual entries as tensors.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/DeepMLNet/DeepNet/blob/018df6c3f0e2ae11d0b2e0d3b3257bb0b88de366/Tensor/Tensor.Docs/articles/Guide-Save-and-Load.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

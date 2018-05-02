@@ -1,0 +1,207 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Shape operations | Tensor for F# </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Shape operations | Tensor for F# ">
+    <meta name="generator" content="docfx 2.35.0.0">
+    
+    <link rel="shortcut icon" href="../images/tensor.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/tensor.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="shape-operations">Shape operations</h1>
+
+<p>The shape of a tensor specifies the highest valid index for each dimension.</p>
+<h2 id="getting-the-shape">Getting the shape</h2>
+<p>The shape of a tensor can be accessed using the <a class="xref" href="../api/Tensor.Tensor-1.Shape.html">Shape</a> property.
+It is returned as an F# list.
+The rank (number of dimensions) can be accessed using the <a class="xref" href="../api/Tensor.Tensor-1.NDims.html">NDims</a> property.
+The number of elements can be accessed using the <a class="xref" href="../api/Tensor.Tensor-1.NElems.html">NElems</a> property.</p>
+<p>The following example shows the basic usage of these properties.</p>
+<pre><code class="lang-fsharp">printfn &quot;a has shape %A, rank %d and %d elements.&quot; a.Shape a.NDims a.NElems
+// a has shape [7L; 5L], rank 2 and 35 elements.
+</code></pre><h2 id="reshaping">Reshaping</h2>
+<p>Reshaping changes the shape of the tensor while keeping the number of elements constant.</p>
+<p>For example consider the <em>4x4</em> matrix <code>b</code>, that is created as follows.</p>
+<pre><code class="lang-fsharp">let b = HostTensor.init [4L; 4L] (fun [|y; x|] -&gt; 4 * int y + int x)
+// b =
+//    [[   0    1    2    3]
+//     [   4    5    6    7]
+//     [   8    9   10   11]
+//     [  12   13   14   15]]
+</code></pre><p>We can use the <a class="xref" href="../api/Tensor.Tensor-1.reshape.html">Tensor.reshape</a> function to transform this matrix into a vector of length <em>16</em>.</p>
+<pre><code class="lang-fsharp">let b1 = Tensor.reshape [16L] b
+// b1 = [   0    1    2    3    4    5 ...   12   13   14   15]
+</code></pre><p>We can also specify the special identifier <a class="xref" href="../api/Tensor.TensorVal.Remainder%28%29.html">Remainder</a> for the new size of at most one dimension.
+In this case, its size will be chosen automatically (so that the number of elements does not change).
+In the following example tensor <code>b</code> is reshaped into a three dimensional tensor of shape <em>4x2x2</em>.</p>
+<pre><code class="lang-fsharp">let b2 = Tensor.reshape [4L; 2L; Remainder] b
+// b2 =
+//    [[[   0    1]
+//      [   2    3]]
+//     [[   4    5]
+//      [   6    7]]
+//     [[   8    9]
+//      [  10   11]]
+//     [[  12   13]
+//      [  14   15]]]
+</code></pre><h3 id="view-or-copy">View or copy?</h3>
+<p>If the tensor to reshape has row-major memory layout, then <a class="xref" href="../api/Tensor.Tensor-1.reshape.html">Tensor.reshape</a> creates a new view into the existing tensor.
+Otherwise the tensor is copied during the reshape operation.</p>
+<p>If you need to ensure that no copy is performed, i.e. the original and reshaped tensor share the same memory, use the <a class="xref" href="../api/Tensor.Tensor-1.reshapeView.html">Tensor.reshapeView</a> function instead.
+It will raise an error, if creating a reshaped view of the original tensor is impossible.</p>
+<h2 id="reordering-axes-and-transposing">Reordering axes and transposing</h2>
+<p>The <a class="xref" href="../api/Tensor.Tensor-1.swapDim.html">Tensor.swapDim</a> function creates a new view of a tensor with the given dimensions swapped.
+For example, the following code transpose the matrix <code>b</code>.</p>
+<pre><code class="lang-fsharp">let b3 = Tensor.swapDim 0 1 b
+// b3 =
+//    [[   0    4    8   12]
+//     [   1    5    9   13]
+//     [   2    6   10   14]
+//     [   3    7   11   15]]
+</code></pre><p>The original and tensor with swapped axes share the same memory and modifications made to one of them will affect the other one.</p>
+<p>A matrix can also be transposed using the <a class="xref" href="../api/Tensor.Tensor-1.transpose.html">Tensor.transpose</a> function or the <a class="xref" href="../api/Tensor.Tensor-1.T.html">T</a> property, i.e. <code>b.T</code> means transpose of matrix <code>b</code>.</p>
+<p>The <a class="xref" href="../api/Tensor.Tensor-1.permuteAxes.html">Tensor.permuteAxes</a> function can reorder axes arbitrarily.
+It takes a list (of length equal to the rank of the tensor) with each element specifying the new position of the corresponding axis.
+The list must be a permutation of the axes indices, i.e. duplicating or leaving out axes is not permitted.
+For the rank three tensor <code>b2</code> from above, the following example code creates the view <code>b4</code> with shape <em>2x2x4</em>.</p>
+<pre><code class="lang-fsharp">let b4 = Tensor.permuteAxes [2; 0; 1] b2
+// b4.Shape = [2L; 2L; 4L]
+</code></pre><p>It is important to understand that each list entry specifies where the axis <em>moves to</em>, not where it is coming from.
+Thus, in this example, axis 0 becomes axis 2, axis 1 becomes axis 0 and axis 2 becomes axis 1.</p>
+<h2 id="adding-axes">Adding axes</h2>
+<p>The <a class="xref" href="../api/Tensor.Tensor-1.padLeft.html">Tensor.padLeft</a> and <a class="xref" href="../api/Tensor.Tensor-1.padRight.html">Tensor.padRight</a> functions add a new axis of size one on the left or right respectively.</p>
+<p>If you need to add an axis at another position, use the slicing operator with the special <a class="xref" href="../api/Tensor.TensorVal.NewAxis%28%29.html">NewAxis</a> identifier.
+The following example creates a view of shape <em>2x2x1x4</em>.</p>
+<pre><code class="lang-fsharp">let b5 = b4.[*, *, NewAxis, *]
+// b5.Shape = [2L; 2L; 1L; 4L]
+</code></pre><h2 id="broadcasting">Broadcasting</h2>
+<p>An axis of size one can be repeated multiple times with the same value.
+This is called broadcasting.</p>
+<p>Consider the <em>1x4</em> matrix <code>c</code> created using the following code.</p>
+<pre><code class="lang-fsharp">let c = HostTensor.init [1L; 4L] (fun [|_; i|] -&gt; int i)
+// c = [[   0    1    2    3]]
+</code></pre><p>We can use the <a class="xref" href="../api/Tensor.Tensor-1.broadcastTo.html">Tensor.broadcastTo</a> function to obtain a tensor with the first dimension repeated 3 times.</p>
+<pre><code class="lang-fsharp">let c1 = Tensor.broadcastTo [3L; 4L] c
+// c1 =
+//    [[   0    1    2    3]
+//     [   0    1    2    3]
+//     [   0    1    2    3]]
+</code></pre><p>Broadcasting creates a view of the original tensor, thus the repeated dimensions do not use additional memory and changing the broadcasted view will also change the original as well as all indices of a broadcasted dimension.
+This is demonstrated by the following example.</p>
+<pre><code class="lang-fsharp">c1.[[1L; 1L]] &lt;- 11
+// c1 =
+//    [[   0   11    2    3]
+//     [   0   11    2    3]
+//     [   0   11    2    3]]
+// c = [[   0   11    2    3]]
+</code></pre><h3 id="automatic-broadcasting">Automatic broadcasting</h3>
+<p>Broadcasting is also performed automatically when performing element-wise operations between two tensors of different, but compatible, shapes.
+This will be explained in the section about <a href="Guide-Operations.html">tensor operations</a> of the guide.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/DeepMLNet/DeepNet/blob/018df6c3f0e2ae11d0b2e0d3b3257bb0b88de366/Tensor/Tensor.Docs/articles/Guide-Shape.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

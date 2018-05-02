@@ -1,0 +1,211 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Elements and slicing | Tensor for F# </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Elements and slicing | Tensor for F# ">
+    <meta name="generator" content="docfx 2.35.0.0">
+    
+    <link rel="shortcut icon" href="../images/tensor.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/tensor.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="elements-and-slicing">Elements and slicing</h1>
+
+<p>The tensor library provides methods to access single elements of a tensor.
+Furthermore, it provides methods to access and manipulate ranges consisting of multiple elements within a tensor at once.</p>
+<p>This page provides an overview of both concepts.
+More information is available at the <a class="xref" href="../api/Tensor.Tensor-1.Item.html">Item property</a>.</p>
+<h2 id="accessing-individual-elements">Accessing individual elements</h2>
+<p>Individual elements of a tensor can be accessed using the <code>tensor.[[idx0; idx1; ...; idxN]]</code> notation.
+Zero-based indexing is used.</p>
+<pre><code class="lang-fsharp">// a =
+//    [[   0.0000    1.0000    2.0000    3.0000    4.0000]
+//     [   5.0000    6.0000    7.0000    8.0000    9.0000]
+//     [  10.0000   11.0000   12.0000   13.0000   14.0000]
+//     [  15.0000   16.0000   17.0000   18.0000   19.0000]
+//     [  20.0000   21.0000   22.0000   23.0000   24.0000]
+//     [  25.0000   26.0000   27.0000   28.0000   29.0000]
+//     [  30.0000   31.0000   32.0000   33.0000   34.0000]]
+let v = a.[[1L; 1L]]
+// v = 6.0
+</code></pre><p>The above example accesses the element at index <em>1,1</em>.
+Note that the indices are specified as 64-bit integers surrounded by double brackets (<code>[[</code> and <code>]]</code>) and separated using a semicolon.</p>
+<p>Tensors are mutable objects.
+An element can be changed using the <code>tensor.[[idx0; idx1; ...; idxN]] &lt;- newValue</code> notation.</p>
+<pre><code class="lang-fsharp">a.[[2L; 2L]] &lt;- 55.0
+// a =
+//    [[   0.0000    1.0000    2.0000    3.0000    4.0000]
+//     [   5.0000    6.0000    7.0000    8.0000    9.0000]
+//     [  10.0000   11.0000   55.0000   13.0000   14.0000]
+//     [  15.0000   16.0000   17.0000   18.0000   19.0000]
+//     [  20.0000   21.0000   22.0000   23.0000   24.0000]
+//     [  25.0000   26.0000   27.0000   28.0000   29.0000]
+//     [  30.0000   31.0000   32.0000   33.0000   34.0000]]
+</code></pre><p>The above example changes the value at index <em>2,2</em> to 55.</p>
+<h2 id="slicing">Slicing</h2>
+<p>Slicing creates a new view into an existing tensor.
+A view shares the same memory with the original tensor and thus any modification affects both the original tensor and all its views.</p>
+<p>Slicing is done using the <code>tensor.[rng0, rng1, ..., rngN]</code> notation.
+Note that the ranges are specified within single brackets and separated using commas.</p>
+<p>Let us select the first row of tensor <code>a</code>.</p>
+<pre><code class="lang-fsharp">let a1 = a.[0L, *]
+// a1 = [   0.0000    1.0000    2.0000    3.0000    4.0000]
+</code></pre><p>The asterisk (<code>*</code>) selects all elements of the corresponding dimension.
+Thus in this case the result is a tensor of rank one (i.e. a vector) as seen above.</p>
+<p>Since <code>a1</code> is a view of <code>a</code> it shares the same memory.
+Hence, changing an element of <code>a1</code> by assigning a new value to it changes the tensor <code>a</code> as well.</p>
+<pre><code class="lang-fsharp">a1.[[1L]] &lt;- 99.0
+// a1 = [   0.0000   99.0000    2.0000    3.0000    4.0000]
+// a =
+//  [[   0.0000   99.0000    2.0000    3.0000    4.0000]
+//   [   5.0000    6.0000    7.0000    8.0000    9.0000]
+//   [  10.0000   11.0000   55.0000   13.0000   14.0000]
+//   [  15.0000   16.0000   17.0000   18.0000   19.0000]
+//   [  20.0000   21.0000   22.0000   23.0000   24.0000]
+//   [  25.0000   26.0000   27.0000   28.0000   29.0000]
+//   [  30.0000   31.0000   32.0000   33.0000   34.0000]]
+</code></pre><p>Slicing can also be used to change multiple elements of a tensor at once.
+For example the following code sets all elements of the first row of <code>a</code> to 1.</p>
+<pre><code class="lang-fsharp">let a2 = HostTensor.ones&lt;float&gt; [5L]
+// a2 = [1.0  1.0  1.0  1.0  1.0]
+a.[0L, *] &lt;- a2
+// a =
+//  [[   1.0000    1.0000    1.0000    1.0000    1.0000]
+//   [   5.0000    6.0000    7.0000    8.0000    9.0000]
+//   [  10.0000   11.0000   55.0000   13.0000   14.0000]
+//   [  15.0000   16.0000   17.0000   18.0000   19.0000]
+//   [  20.0000   21.0000   22.0000   23.0000   24.0000]
+//   [  25.0000   26.0000   27.0000   28.0000   29.0000]
+//   [  30.0000   31.0000   32.0000   33.0000   34.0000]]
+</code></pre><h3 id="slice-specification">Slice specification</h3>
+<p>Consider the two-dimensional tensor <code>a</code> of shape <em>7x5</em> and the four-dimensional tensor <code>b</code> of shape <em>1x2x3x4</em>.
+A slice range can be one of the following.</p>
+<ul>
+<li><strong>A range, e.g. <code>1L..3L</code>.</strong>
+Selects the specified elements in the corresponding dimension.
+For example <code>a.[1L..3L, 0L..2L]</code> is the <em>3x3</em> sub-tensor of <code>a</code> containing rows <em>1,2,3</em> and columns <em>0,1,2</em>.
+As it is standard in F#, the ending index is inclusive.</li>
+<li><strong>A partial range, e.g. <code>1L..</code> or <code>..3L</code>.</strong>
+This selects all elements in the corresponding dimension to the end or from the beginning respectively. 
+Thus <code>a.[1L.., ..3L]</code> is equivalent to <code>a.[1L..6L, 0L..3L]</code>.</li>
+<li><strong>An asterisk <code>*</code>.</strong>
+Selects all elements in the corresponding dimension.
+For example <code>a.[1L..3L, *]</code> is equivalent to <code>a.[1L..3L, 0L..4L]</code>.</li>
+<li><strong>An 64-bit integer.</strong>
+The corresponding dimension collapses, e.g. <code>a.[*, 0L]</code> specifies a one-dimensional tensor of shape <em>7</em> corresponding to the first column of <code>a</code>.</li>
+<li><strong>The special identifier <code>NewAxis</code>.</strong>
+It inserts a new axis of size one at the given position. 
+For example <code>a.[*, NewAxis, *]</code> produces a view of shape <em>7x1x5</em>.</li>
+<li><strong>The special identifier <code>Fill</code>.</strong>
+It fills any dimensions not specified (if any) with an asterisk <code>*</code>.
+For example <code>b.[0L, Fill, 2L]</code> is equivalent to <code>b.[0L, *, *, 4L]</code> and results into a two-dimensional view into tensor <code>b</code>.</li>
+</ul>
+<p>All slice ranges can be combined arbitrarily.</p>
+<p>The result of selecting a single element using the slicing operator, e.g. <code>a.[1L,1L]</code> is a <em>tensor</em> of dimension zero referencing a single element inside <code>a</code>.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/DeepMLNet/DeepNet/blob/018df6c3f0e2ae11d0b2e0d3b3257bb0b88de366/Tensor/Tensor.Docs/articles/Guide-Elements.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

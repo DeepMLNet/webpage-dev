@@ -1,0 +1,220 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Creating and transferring tensors | Tensor for F# </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Creating and transferring tensors | Tensor for F# ">
+    <meta name="generator" content="docfx 2.35.0.0">
+    
+    <link rel="shortcut icon" href="../images/tensor.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/tensor.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="creating-and-transferring-tensors">Creating and transferring tensors</h1>
+
+<p>To work with the Tensor library, install the NuGet packages as described in the <a href="Guide-Installation.html">installation guide</a> and open the <code>Tensor</code> namespace within your source file.
+You can run the following examples by pasting the code into the <code>main</code> function in <code>Program.fs</code> of the skeleton project.</p>
+<p>You can also clone the official example project, which follows this guide, from <a href="https://github.com/DeepMLNet/Tensor.Sample">https://github.com/DeepMLNet/Tensor.Sample</a>.</p>
+<p>The primary type you will work with is <a class="xref" href="../api/Tensor.Tensor-1.html">Tensor&lt;&#39;T&gt;</a>.
+It provides functions to work with tensors regardless of their storage device.
+The modules <a class="xref" href="../api/Tensor.HostTensor.html">HostTensor</a> and <a class="xref" href="../api/Tensor.CudaTensor.html">CudaTensor</a> contain additional functions that are only applicable to tensors stored in host or GPU memory respectively.</p>
+<h2 id="creating-a-tensor-filled-with-zeros">Creating a tensor filled with zeros</h2>
+<p>Let us create a <em>3x2</em> matrix, i.e. a two-dimensional tensor, of data type <code>int</code> filled with zeros in host memory.
+For this purpose we use the <a class="xref" href="../api/Tensor.Tensor-1.zeros.html">Tensor&lt;&#39;T&gt;.zeros</a> function.</p>
+<pre><code class="lang-fsharp">let z1 = Tensor&lt;int&gt;.zeros HostTensor.Dev [3L; 2L]
+// z1 = [[0; 0]
+//       [0; 0]
+//       [0; 0]]
+</code></pre><p>The type argument <code>int</code> tells the function which data type to use.
+In many cases, it can be automatically inferred and thus omitted, but in this example there is not way for the compiler to automatically find out which data type to use.</p>
+<p>The first argument to the <code>zeros</code> function specifies the device to use.
+In this case we specified <a class="xref" href="../api/Tensor.HostTensor.Dev%28%29.html">HostTensor.Dev</a> to store the tensor in host memory.
+The second argument specifies the desired shape.
+All shapes and indices in this tensor library are 64-bit integers.
+Thus we have to use the <code>L</code> postfix when writing integer literals, i.e. <code>3L</code> instead of <code>3</code>.</p>
+<p>Since creating tensors in host memory is a very common operation, the library also provides the shorter notation shown below to perform the same task.</p>
+<pre><code class="lang-fsharp">let z1 = HostTensor.zeros&lt;int&gt; [3L; 2L]
+// z1 = [[0; 0]
+//       [0; 0]
+//       [0; 0]]
+</code></pre><p>These shorthands are available for all tensor creation function and listed in the <a class="xref" href="../api/Tensor.HostTensor.html">HostTensor</a> module.</p>
+<h2 id="other-initialization-possibilities">Other initialization possibilities</h2>
+<p>Similarly, we can use the <a class="xref" href="../api/Tensor.Tensor-1.ones.html">Tensor&lt;&#39;T&gt;.ones</a> function to obtain a vector of data type <code>single</code> and size <code>3</code> filled with ones.</p>
+<pre><code class="lang-fsharp">let o1 = Tensor&lt;single&gt;.ones HostTensor.Dev [3L]
+// o1 = [0.0f; 0.0f; 0.0f]
+</code></pre><p>The <a class="xref" href="../api/Tensor.Tensor-1.identity.html">Tensor&lt;&#39;T&gt;.identity</a> function creates an identity matrix of the given size.</p>
+<pre><code class="lang-fsharp">let id1 = Tensor&lt;float&gt;.identity HostTensor.Dev 3L
+// id1 = [[1.0; 0.0; 0.0]
+//        [0.0; 1.0; 0.0]
+//        [0.0; 0.0; 1.0]]
+</code></pre><p>This created a <em>3x3</em> identity matrix.</p>
+<h2 id="scalar-tensors">Scalar tensors</h2>
+<p>A scalar tensor is a tensor that has a dimensionality of zero.
+It contains exactly one element and can be treated like a tensor of any other dimensionality.
+However, for convenience, special functions are provided to make working with scalar tensors easier.</p>
+<p>A scalar tensor can be created with the <a class="xref" href="../api/Tensor.Tensor-1.scalar.html">Tensor.scalar</a> function (or its corresponding <a class="xref" href="../api/Tensor.HostTensor.scalar.html">HostTensor.scalar</a> shorthand).</p>
+<pre><code class="lang-fsharp">let s1 = Tensor.scalar HostTensor.Dev 33.2
+// s1 = 33.2
+// s1.NDims = 0
+// s1.Shape = []
+// s1.NElems = 1L
+</code></pre><p>Specifying an empty shape when using other creation methods, such as <a class="xref" href="../api/Tensor.Tensor-1.zeros.html">Tensor&lt;&#39;T&gt;.zeros</a>, will also create a scalar tensor.</p>
+<p>The numeric value of a scalar tensor can be obtained (and changed) using the <a class="xref" href="../api/Tensor.Tensor-1.Value.html">Value</a> property.</p>
+<pre><code class="lang-fsharp">printfn &quot;The numeric value of s1 is %f.&quot; s1.Value
+// The numeric value of s1 is 33.2.
+</code></pre><p>If you try to use this property on a non-scalar tensor, an exception will be raised.</p>
+<h2 id="host-only-creation-methods">Host-only creation methods</h2>
+<p>Some tensor creation methods can only produce tensors stored in host memory, which, of course, can be transferred to GPU memory subsequently.
+For example the <a class="xref" href="../api/Tensor.HostTensor.init.html">HostTensor.init</a> function takes a function and uses it to compute the initial value of each element of the tensor.</p>
+<pre><code class="lang-fsharp">let a = HostTensor.init [7L; 5L] (fun [|i; j|] -&gt; 5.0 * float i + float j)
+// a =
+//    [[   0.0000    1.0000    2.0000    3.0000    4.0000]
+//     [   5.0000    6.0000    7.0000    8.0000    9.0000]
+//     [  10.0000   11.0000   12.0000   13.0000   14.0000]
+//     [  15.0000   16.0000   17.0000   18.0000   19.0000]
+//     [  20.0000   21.0000   22.0000   23.0000   24.0000]
+//     [  25.0000   26.0000   27.0000   28.0000   29.0000]
+//     [  30.0000   31.0000   32.0000   33.0000   34.0000]]
+</code></pre><p>The first argument specifies the shape of the tensor.
+The second argument is a function that takes the n-dimensional index (zero-based) of an entry and computes its initial value; here we use the formula <em>5i + j</em> where <em>i</em> is the row and <em>j</em> is the column of the matrix.
+The data type (here <code>float</code>) is automatically inferred from the return type of the initialization function.</p>
+<h2 id="creation-from-f-sequences-lists-and-arrays">Creation from F# sequences, lists and arrays</h2>
+<p>The <a class="xref" href="../api/Tensor.HostTensor.ofSeq.html">HostTensor.ofSeq</a> converts an <a href="https://en.wikibooks.org/wiki/F_Sharp_Programming/Sequences">F# sequence</a> of finite length into a one-dimensional tensor.</p>
+<pre><code class="lang-fsharp">let seq1 = seq { for i=0 to 20 do if i % 3 = 0 then yield i } |&gt; HostTensor.ofSeq
+// seq1 = [   0    3    6    9   12   15   18]
+</code></pre><p>The example above creates a vector of all multiplies of 3 in the range between 0 and 20.</p>
+<p>A list can be converted into a one-dimensional tensor using the <a class="xref" href="../api/Tensor.HostTensor.ofList.html">HostTensor.ofList</a> function.
+To convert an array into a tensor use the <a class="xref" href="../api/Tensor.HostTensor.ofArray.html">HostTensor.ofArray</a> function.
+The <a class="xref" href="../api/Tensor.HostTensor.ofList2D.html">HostTensor.ofList2D</a> and <a class="xref" href="../api/Tensor.HostTensor.ofArray2D.html">HostTensor.ofArray2D</a> take two-dimensional lists or arrays and convert them into tensors of respective shapes.</p>
+<h2 id="conversion-to-f-sequences-lists-and-arrays">Conversion to F# sequences, lists and arrays</h2>
+<p>Use the <a class="xref" href="../api/Tensor.HostTensor.toSeq.html">HostTensor.toSeq</a> function to expose the elements of a tensor as a sequence.
+If the tensor has more than one dimension, it is flattened before the operation is performed.</p>
+<p>Use the <a class="xref" href="../api/Tensor.HostTensor.toList.html">HostTensor.toList</a> or <a class="xref" href="../api/Tensor.HostTensor.toList2D.html">HostTensor.toList2D</a> functions to convert a tensor into a list.
+The <a class="xref" href="../api/Tensor.HostTensor.toArray.html">HostTensor.toArray</a>, <a class="xref" href="../api/Tensor.HostTensor.toArray2D.html">HostTensor.toArray2D</a>, <a class="xref" href="../api/Tensor.HostTensor.toArray3D.html">HostTensor.toArray3D</a> convert a tensor into an array of respective dimensionality.</p>
+<p>All these operations copy the elements of the tensor.</p>
+<h2 id="printing-tensors-and-string-representation">Printing tensors and string representation</h2>
+<p>Tensors can be printed using the <code>%A</code> format specifier of the standard <code>printf</code> function.</p>
+<pre><code class="lang-fsharp">printfn &quot;The tensor seq1 is\n%A&quot; seq1
+// The tensor seq1 is
+// [   0    3    6    9   12   15   18]
+</code></pre><p>The output of large tensors is automatically truncated to a reasonable size.
+The corresponding string representation can also be accessed thorugh the <a class="xref" href="../api/Tensor.Tensor-1.Pretty.html">Pretty</a> property.
+The full (untruncated) string representation is available through the <a class="xref" href="../api/Tensor.Tensor-1.Full.html">Full</a> property.
+Use the <a class="xref" href="../api/Tensor.Tensor-1.ToString.html">ToString</a> method when it is required to adjust the maximum number of elements that are printed before truncation occurs.</p>
+<h2 id="transferring-tensors-to-the-gpu">Transferring tensors to the GPU</h2>
+<p>If your workstation is equipped with a CUDA capable GPU, you can transfer tensors to GPU memory and perform operations on the GPU.</p>
+<p>Tensors can be transferred to the GPU by using the <a class="xref" href="../api/Tensor.CudaTensor.transfer.html">CudaTensor.transfer</a> function.
+Transfer back to host memory is done using the <a class="xref" href="../api/Tensor.HostTensor.transfer.html">HostTensor.transfer</a> function.</p>
+<pre><code class="lang-fsharp">let m = seq {1 .. 10} |&gt; HostTensor.ofSeq
+// m.Dev = HostTensor.Dev
+let mGpu = CudaTensor.transfer m
+// mGpu.Dev = CudaTensor.Dev
+</code></pre><p>The above sample code creates tensor <code>m</code> in host memory and then creates the copy <code>mGpu</code> in GPU memory.
+All operations performed on <code>mGpu</code> will execute directly on the GPU.</p>
+<p>If you receive an error message when trying to perform GPU operations, read the <a href="Troubleshooting.html">troubleshooting guide</a> to get help.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/DeepMLNet/DeepNet/blob/018df6c3f0e2ae11d0b2e0d3b3257bb0b88de366/Tensor/Tensor.Docs/articles/Guide-Creation.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

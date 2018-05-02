@@ -1,0 +1,2230 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class Tensor&lt;'T&gt;
+   | Tensor for F# </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class Tensor&lt;'T&gt;
+   | Tensor for F# ">
+    <meta name="generator" content="docfx 2.35.0.0">
+    
+    <link rel="shortcut icon" href="../images/tensor.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/tensor.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Tensor.Tensor`1">
+  
+  
+  <h1 id="Tensor_Tensor_1" data-uid="Tensor.Tensor`1" class="text-break">Class Tensor&lt;'T&gt;
+  </h1>
+  <div class="markdown level0 summary"><p>An N-dimensional array with elements of type &apos;T.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">Tensor&lt;'T&gt;</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="Tensor.Backend.ITensorFrontend-1.html">ITensorFrontend</a>&lt;&#39;T&gt;</div>
+    <div><a class="xref" href="Tensor.ITensor.html">ITensor</a></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Tensor.html">Tensor</a></h6>
+  <h6><strong>Assembly</strong>: Tensor.dll</h6>
+  <h5 id="Tensor_Tensor_1_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">type Tensor&lt;'T&gt; (layout:TensorLayout, storage:ITensorStorage&lt;'T&gt;)
+    interface ITensor
+    interface ITensorFrontend&lt;'T&gt;</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Tensor.Backend.TensorLayout.html">TensorLayout</a></td>
+        <td><span class="parametername">layout</span></td>
+        <td><p>The memory layout to use.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Tensor.Backend.ITensorStorage-1.html">ITensorStorage</a>&lt;&#39;T&gt;</td>
+        <td><span class="parametername">storage</span></td>
+        <td><p>The storage to use.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">'T</span></td>
+        <td><p>The type of the data stored within the tensor.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Tensor_Tensor_1_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>The data of a tensor can be stored on different devices. Currently supported devices are host memory
+and CUDA GPU memory.</p>
+<p>Different tensors can share the whole or parts of the underlying data.</p>
+<p>The recommended way to create a new tensor is to use <a class="xref" href="Tensor.Tensor-1.zeros.html#Tensor_Tensor_1_zeros_Tensor_Backend_ITensorDevice____int64_list_">static member zeros: ITensorDevice -&gt; int64 list -&gt; Tensor&lt;&#39;T&gt;</a>.
+The implicit constructor creates a view into the specified storage using the specified memory layout.
+In most cases, it is not necessary to use the implicit constructor.</p>
+</div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="Tensor_Tensor_1__ctor_int64_list___Tensor_Backend_ITensorDevice___Tensor_TensorOrder_option_" data-uid="Tensor.Tensor`1.#ctor(int64 list * Tensor.Backend.ITensorDevice * Tensor.TensorOrder option)">
+          <a class="xref" href="Tensor.Tensor-1.-ctor.html#Tensor_Tensor_1__ctor_int64_list___Tensor_Backend_ITensorDevice___Tensor_TensorOrder_option_">new: int64 list * ITensorDevice * TensorOrder option -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Creates a new, uninitialized tensor with a new storage.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1__ctor_Tensor_Backend_TensorLayout___Tensor_Backend_ITensorStorage__T__" data-uid="Tensor.Tensor`1.#ctor(Tensor.Backend.TensorLayout * Tensor.Backend.ITensorStorage&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.-ctor.html#Tensor_Tensor_1__ctor_Tensor_Backend_TensorLayout___Tensor_Backend_ITensorStorage__T__">new: TensorLayout * ITensorStorage&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Implicit constructor.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="Tensor_Tensor_1_DataType_unit_" data-uid="Tensor.Tensor`1.DataType(unit)">
+          <a class="xref" href="Tensor.Tensor-1.DataType.html#Tensor_Tensor_1_DataType_unit_">property DataType: Type</a>
+        </td>
+        <td class="markdown level1 summary"><p>Type of data stored within this tensor.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_Dev_unit_" data-uid="Tensor.Tensor`1.Dev(unit)">
+          <a class="xref" href="Tensor.Tensor-1.Dev.html#Tensor_Tensor_1_Dev_unit_">property Dev: ITensorDevice</a>
+        </td>
+        <td class="markdown level1 summary"><p>Device the data of tensor is stored on.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_Full_unit_" data-uid="Tensor.Tensor`1.Full(unit)">
+          <a class="xref" href="Tensor.Tensor-1.Full.html#Tensor_Tensor_1_Full_unit_">property Full: string</a>
+        </td>
+        <td class="markdown level1 summary"><p>Unabreviated string representation of the tensor.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_Item_int64____" data-uid="Tensor.Tensor`1.Item(int64 [])">
+          <a class="xref" href="Tensor.Tensor-1.Item.html#Tensor_Tensor_1_Item_int64____">property Item: int64 [] -&gt; &#39;T</a>
+        </td>
+        <td class="markdown level1 summary"><p>Accesses a single element within the tensor.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_Item_int64_list_" data-uid="Tensor.Tensor`1.Item(int64 list)">
+          <a class="xref" href="Tensor.Tensor-1.Item.html#Tensor_Tensor_1_Item_int64_list_">property Item: int64 list -&gt; &#39;T</a>
+        </td>
+        <td class="markdown level1 summary"><p>Accesses a single element within the tensor.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_Item_int64_" data-uid="Tensor.Tensor`1.Item(int64)">
+          <a class="xref" href="Tensor.Tensor-1.Item.html#Tensor_Tensor_1_Item_int64_">property Item: int64 -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Accesses a slice (part) of the tensor.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_Item_Tensor_Rng_list_" data-uid="Tensor.Tensor`1.Item(Tensor.Rng list)">
+          <a class="xref" href="Tensor.Tensor-1.Item.html#Tensor_Tensor_1_Item_Tensor_Rng_list_">property Item: Rng list -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Accesses a slice (part) of the tensor.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_Layout_unit_" data-uid="Tensor.Tensor`1.Layout(unit)">
+          <a class="xref" href="Tensor.Tensor-1.Layout.html#Tensor_Tensor_1_Layout_unit_">property Layout: TensorLayout</a>
+        </td>
+        <td class="markdown level1 summary"><p>Memory layout of this tensor.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_M_Tensor_Tensor_bool__list_" data-uid="Tensor.Tensor`1.M(Tensor.Tensor&lt;bool&gt; list)">
+          <a class="xref" href="Tensor.Tensor-1.M.html#Tensor_Tensor_1_M_Tensor_Tensor_bool__list_">property M: Tensor&lt;bool&gt; list -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Picks elements from a tensor using one or more boolean mask tensors.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_M_Tensor_Tensor_bool__" data-uid="Tensor.Tensor`1.M(Tensor.Tensor&lt;bool&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.M.html#Tensor_Tensor_1_M_Tensor_Tensor_bool__">property M: Tensor&lt;bool&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Picks elements from a tensor using one or more boolean mask tensors.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_NDims_unit_" data-uid="Tensor.Tensor`1.NDims(unit)">
+          <a class="xref" href="Tensor.Tensor-1.NDims.html#Tensor_Tensor_1_NDims_unit_">property NDims: int</a>
+        </td>
+        <td class="markdown level1 summary"><p>Dimensionality of this tensor.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_NElems_unit_" data-uid="Tensor.Tensor`1.NElems(unit)">
+          <a class="xref" href="Tensor.Tensor-1.NElems.html#Tensor_Tensor_1_NElems_unit_">property NElems: int64</a>
+        </td>
+        <td class="markdown level1 summary"><p>Total number of elements within this tensor.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_Pretty_unit_" data-uid="Tensor.Tensor`1.Pretty(unit)">
+          <a class="xref" href="Tensor.Tensor-1.Pretty.html#Tensor_Tensor_1_Pretty_unit_">property Pretty: string</a>
+        </td>
+        <td class="markdown level1 summary"><p>String representation of the tensor limited to 10 elements per dimension.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_Shape_unit_" data-uid="Tensor.Tensor`1.Shape(unit)">
+          <a class="xref" href="Tensor.Tensor-1.Shape.html#Tensor_Tensor_1_Shape_unit_">property Shape: int64 list</a>
+        </td>
+        <td class="markdown level1 summary"><p>Shape of this tensor.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_Storage_unit_" data-uid="Tensor.Tensor`1.Storage(unit)">
+          <a class="xref" href="Tensor.Tensor-1.Storage.html#Tensor_Tensor_1_Storage_unit_">property Storage: ITensorStorage&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>The storage object that holds the data of this tensor.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_T_unit_" data-uid="Tensor.Tensor`1.T(unit)">
+          <a class="xref" href="Tensor.Tensor-1.T.html#Tensor_Tensor_1_T_unit_">property T: Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Transpose of a matrix.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_Value_unit_" data-uid="Tensor.Tensor`1.Value(unit)">
+          <a class="xref" href="Tensor.Tensor-1.Value.html#Tensor_Tensor_1_Value_unit_">property Value: &#39;T</a>
+        </td>
+        <td class="markdown level1 summary"><p>Accesses the value of a zero-dimensional (scalar) tensor.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="Tensor_Tensor_1_Abs_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.Abs(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.Abs.html#Tensor_Tensor_1_Abs_Tensor_Tensor__T__">static member Abs: Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Element-wise absolute value.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_Acos_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.Acos(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.Acos.html#Tensor_Tensor_1_Acos_Tensor_Tensor__T__">static member Acos: Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Element-wise arccosine (inverse cosine).</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_all_Tensor_Tensor_bool__" data-uid="Tensor.Tensor`1.all(Tensor.Tensor&lt;bool&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.all.html#Tensor_Tensor_1_all_Tensor_Tensor_bool__">static member all: Tensor&lt;bool&gt; -&gt; bool</a>
+        </td>
+        <td class="markdown level1 summary"><p>Checks if all elements of the tensor are true.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_allAxis_int____Tensor_Tensor_bool__" data-uid="Tensor.Tensor`1.allAxis(int -&gt; Tensor.Tensor&lt;bool&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.allAxis.html#Tensor_Tensor_1_allAxis_int____Tensor_Tensor_bool__">static member allAxis: int -&gt; Tensor&lt;bool&gt; -&gt; Tensor&lt;bool&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Checks if all elements along the specified axis are true.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_allElems_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.allElems(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.allElems.html#Tensor_Tensor_1_allElems_Tensor_Tensor__T__">static member allElems: Tensor&lt;&#39;T&gt; -&gt; seq&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets a sequence of all all elements within the tensor.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_allFinite_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.allFinite(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.allFinite.html#Tensor_Tensor_1_allFinite_Tensor_Tensor__T__">static member allFinite: Tensor&lt;&#39;T&gt; -&gt; bool</a>
+        </td>
+        <td class="markdown level1 summary"><p>Checks that all elements of the tensor are finite.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_allIdx_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.allIdx(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.allIdx.html#Tensor_Tensor_1_allIdx_Tensor_Tensor__T__">static member allIdx: Tensor&lt;&#39;T&gt; -&gt; seq&lt;int64 list&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets a sequence of all indices to enumerate all elements within the tensor.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_allTensor_Tensor_Tensor_bool__" data-uid="Tensor.Tensor`1.allTensor(Tensor.Tensor&lt;bool&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.allTensor.html#Tensor_Tensor_1_allTensor_Tensor_Tensor_bool__">static member allTensor: Tensor&lt;bool&gt; -&gt; Tensor&lt;bool&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Checks if all elements of the tensor are true returning the result as a tensor.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_almostEqual_Tensor_Tensor__T____Tensor_Tensor__T_____T_option____T_option_" data-uid="Tensor.Tensor`1.almostEqual(Tensor.Tensor&lt;'T&gt; * Tensor.Tensor&lt;'T&gt; * 'T option * 'T option)">
+          <a class="xref" href="Tensor.Tensor-1.almostEqual.html#Tensor_Tensor_1_almostEqual_Tensor_Tensor__T____Tensor_Tensor__T_____T_option____T_option_">static member almostEqual: Tensor&lt;&#39;T&gt; * Tensor&lt;&#39;T&gt; * &#39;T option * &#39;T option -&gt; bool</a>
+        </td>
+        <td class="markdown level1 summary"><p>Checks if two tensors have the same (within machine precision) values in all elements.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_any_Tensor_Tensor_bool__" data-uid="Tensor.Tensor`1.any(Tensor.Tensor&lt;bool&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.any.html#Tensor_Tensor_1_any_Tensor_Tensor_bool__">static member any: Tensor&lt;bool&gt; -&gt; bool</a>
+        </td>
+        <td class="markdown level1 summary"><p>Checks if any elements of the tensor are true.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_anyAxis_int____Tensor_Tensor_bool__" data-uid="Tensor.Tensor`1.anyAxis(int -&gt; Tensor.Tensor&lt;bool&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.anyAxis.html#Tensor_Tensor_1_anyAxis_int____Tensor_Tensor_bool__">static member anyAxis: int -&gt; Tensor&lt;bool&gt; -&gt; Tensor&lt;bool&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Checks if any element along the specified axis is true.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_anyTensor_Tensor_Tensor_bool__" data-uid="Tensor.Tensor`1.anyTensor(Tensor.Tensor&lt;bool&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.anyTensor.html#Tensor_Tensor_1_anyTensor_Tensor_Tensor_bool__">static member anyTensor: Tensor&lt;bool&gt; -&gt; Tensor&lt;bool&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Checks if any element of the tensor is true returning the result as a tensor.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_arange_Tensor_Backend_ITensorDevice_____T_____T_____T_" data-uid="Tensor.Tensor`1.arange(Tensor.Backend.ITensorDevice -&gt; 'T -&gt; 'T -&gt; 'T)">
+          <a class="xref" href="Tensor.Tensor-1.arange.html#Tensor_Tensor_1_arange_Tensor_Backend_ITensorDevice_____T_____T_____T_">static member arange: ITensorDevice -&gt; &#39;T -&gt; &#39;T -&gt; &#39;T -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Creates a new vector filled with equaly spaced values using a specifed increment.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_argMax_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.argMax(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.argMax.html#Tensor_Tensor_1_argMax_Tensor_Tensor__T__">static member argMax: Tensor&lt;&#39;T&gt; -&gt; int64 list</a>
+        </td>
+        <td class="markdown level1 summary"><p>Finds the indicies of the maximum value of the tensor.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_argMaxAxis_int____Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.argMaxAxis(int -&gt; Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.argMaxAxis.html#Tensor_Tensor_1_argMaxAxis_int____Tensor_Tensor__T__">static member argMaxAxis: int -&gt; Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;int64&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Finds the index of the maximum value along the specified axis.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_argMin_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.argMin(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.argMin.html#Tensor_Tensor_1_argMin_Tensor_Tensor__T__">static member argMin: Tensor&lt;&#39;T&gt; -&gt; int64 list</a>
+        </td>
+        <td class="markdown level1 summary"><p>Finds the indicies of the minimum value of the tensor.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_argMinAxis_int____Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.argMinAxis(int -&gt; Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.argMinAxis.html#Tensor_Tensor_1_argMinAxis_int____Tensor_Tensor__T__">static member argMinAxis: int -&gt; Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;int64&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Finds the index of the minimum value along the specified axis.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_Asin_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.Asin(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.Asin.html#Tensor_Tensor_1_Asin_Tensor_Tensor__T__">static member Asin: Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Element-wise arcsine (inverse sine).</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_Atan_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.Atan(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.Atan.html#Tensor_Tensor_1_Atan_Tensor_Tensor__T__">static member Atan: Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Element-wise arctanget (inverse tangent).</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_atLeast1D_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.atLeast1D(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.atLeast1D.html#Tensor_Tensor_1_atLeast1D_Tensor_Tensor__T__">static member atLeast1D: Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Pads the tensor from the left with size-one dimensions until it has at least one dimension.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_atLeast2D_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.atLeast2D(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.atLeast2D.html#Tensor_Tensor_1_atLeast2D_Tensor_Tensor__T__">static member atLeast2D: Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Pads the tensor from the left with size-one dimensions until it has at least two dimensions.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_atLeast3D_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.atLeast3D(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.atLeast3D.html#Tensor_Tensor_1_atLeast3D_Tensor_Tensor__T__">static member atLeast3D: Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Pads the tensor from the left with size-one dimensions until it has at least three dimensions.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_atLeastND_int____Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.atLeastND(int -&gt; Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.atLeastND.html#Tensor_Tensor_1_atLeastND_int____Tensor_Tensor__T__">static member atLeastND: int -&gt; Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Pads the tensor from the left with size-one dimensions until it has at least the specified number of
+dimensions.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_broadcastDim_int____int64____Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.broadcastDim(int -&gt; int64 -&gt; Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.broadcastDim.html#Tensor_Tensor_1_broadcastDim_int____int64____Tensor_Tensor__T__">static member broadcastDim: int -&gt; int64 -&gt; Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Broadcast a dimension to a specified size.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_broadcastTo_int64_list____Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.broadcastTo(int64 list -&gt; Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.broadcastTo.html#Tensor_Tensor_1_broadcastTo_int64_list____Tensor_Tensor__T__">static member broadcastTo: int64 list -&gt; Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Broadcasts the specified tensor to the specified shape.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_broadcastToSame_Tensor_Tensor__T__list_" data-uid="Tensor.Tensor`1.broadcastToSame(Tensor.Tensor&lt;'T&gt; list)">
+          <a class="xref" href="Tensor.Tensor-1.broadcastToSame.html#Tensor_Tensor_1_broadcastToSame_Tensor_Tensor__T__list_">static member broadcastToSame: Tensor&lt;&#39;T&gt; list -&gt; Tensor&lt;&#39;T&gt; list</a>
+        </td>
+        <td class="markdown level1 summary"><p>Broadcasts all specified tensors to have the same shape.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_broadcastToSame_Tensor_Tensor__TA____Tensor_Tensor__TB____Tensor_Tensor__TC__" data-uid="Tensor.Tensor`1.broadcastToSame(Tensor.Tensor&lt;'TA&gt; * Tensor.Tensor&lt;'TB&gt; * Tensor.Tensor&lt;'TC&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.broadcastToSame.html#Tensor_Tensor_1_broadcastToSame_Tensor_Tensor__TA____Tensor_Tensor__TB____Tensor_Tensor__TC__">static member broadcastToSame: Tensor&lt;&#39;TA&gt; * Tensor&lt;&#39;TB&gt; * Tensor&lt;&#39;TC&gt; -&gt; Tensor&lt;&#39;TA&gt; * Tensor&lt;&#39;TB&gt; * Tensor&lt;&#39;TC&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Broadcasts all specified tensors to have the same shape.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_broadcastToSame_Tensor_Tensor__TA____Tensor_Tensor__TB__" data-uid="Tensor.Tensor`1.broadcastToSame(Tensor.Tensor&lt;'TA&gt; * Tensor.Tensor&lt;'TB&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.broadcastToSame.html#Tensor_Tensor_1_broadcastToSame_Tensor_Tensor__TA____Tensor_Tensor__TB__">static member broadcastToSame: Tensor&lt;&#39;TA&gt; * Tensor&lt;&#39;TB&gt; -&gt; Tensor&lt;&#39;TA&gt; * Tensor&lt;&#39;TB&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Broadcasts all specified tensors to have the same shape.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_broadcastToSameInDims_seq_int____Tensor_Tensor__T__list_" data-uid="Tensor.Tensor`1.broadcastToSameInDims(seq&lt;int&gt; * Tensor.Tensor&lt;'T&gt; list)">
+          <a class="xref" href="Tensor.Tensor-1.broadcastToSameInDims.html#Tensor_Tensor_1_broadcastToSameInDims_seq_int____Tensor_Tensor__T__list_">static member broadcastToSameInDims: seq&lt;int&gt; * Tensor&lt;&#39;T&gt; list -&gt; Tensor&lt;&#39;T&gt; list</a>
+        </td>
+        <td class="markdown level1 summary"><p>Broadcasts all specified tensors to have the same size in the specified dimensions.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_broadcastToSameInDims_seq_int____Tensor_Tensor__TA____Tensor_Tensor__TB____Tensor_Tensor__TC__" data-uid="Tensor.Tensor`1.broadcastToSameInDims(seq&lt;int&gt; * Tensor.Tensor&lt;'TA&gt; * Tensor.Tensor&lt;'TB&gt; * Tensor.Tensor&lt;'TC&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.broadcastToSameInDims.html#Tensor_Tensor_1_broadcastToSameInDims_seq_int____Tensor_Tensor__TA____Tensor_Tensor__TB____Tensor_Tensor__TC__">static member broadcastToSameInDims: seq&lt;int&gt; * Tensor&lt;&#39;TA&gt; * Tensor&lt;&#39;TB&gt; * Tensor&lt;&#39;TC&gt; -&gt; Tensor&lt;&#39;TA&gt; * Tensor&lt;&#39;TB&gt; * Tensor&lt;&#39;TC&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Broadcasts all specified tensors to have the same size in the specified dimensions.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_broadcastToSameInDims_seq_int____Tensor_Tensor__TA____Tensor_Tensor__TB__" data-uid="Tensor.Tensor`1.broadcastToSameInDims(seq&lt;int&gt; * Tensor.Tensor&lt;'TA&gt; * Tensor.Tensor&lt;'TB&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.broadcastToSameInDims.html#Tensor_Tensor_1_broadcastToSameInDims_seq_int____Tensor_Tensor__TA____Tensor_Tensor__TB__">static member broadcastToSameInDims: seq&lt;int&gt; * Tensor&lt;&#39;TA&gt; * Tensor&lt;&#39;TB&gt; -&gt; Tensor&lt;&#39;TA&gt; * Tensor&lt;&#39;TB&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Broadcasts all specified tensors to have the same size in the specified dimensions.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_Ceiling_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.Ceiling(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.Ceiling.html#Tensor_Tensor_1_Ceiling_Tensor_Tensor__T__">static member Ceiling: Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Element-wise ceiling (round towards positive infinity).</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_CheckAxis_int_" data-uid="Tensor.Tensor`1.CheckAxis(int)">
+          <a class="xref" href="Tensor.Tensor-1.CheckAxis.html#Tensor_Tensor_1_CheckAxis_int_">member CheckAxis: int -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p>Checks the the specified axis is valid for this tensor.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_concat_int____seq_Tensor_Tensor__T___" data-uid="Tensor.Tensor`1.concat(int -&gt; seq&lt;Tensor.Tensor&lt;'T&gt;&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.concat.html#Tensor_Tensor_1_concat_int____seq_Tensor_Tensor__T___">static member concat: int -&gt; seq&lt;Tensor&lt;&#39;T&gt;&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Concatenates tensors along an axis.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_convert_Tensor_Tensor__C__" data-uid="Tensor.Tensor`1.convert(Tensor.Tensor&lt;'C&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.convert.html#Tensor_Tensor_1_convert_Tensor_Tensor__C__">static member convert: Tensor&lt;&#39;C&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Convert the elements of a tensor to the specifed type.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_copy_Tensor_Tensor__T____Tensor_TensorOrder_option_" data-uid="Tensor.Tensor`1.copy(Tensor.Tensor&lt;'T&gt; * Tensor.TensorOrder option)">
+          <a class="xref" href="Tensor.Tensor-1.copy.html#Tensor_Tensor_1_copy_Tensor_Tensor__T____Tensor_TensorOrder_option_">static member copy: Tensor&lt;&#39;T&gt; * TensorOrder option -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Returns a copy of the tensor.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_CopyFrom_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.CopyFrom(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.CopyFrom.html#Tensor_Tensor_1_CopyFrom_Tensor_Tensor__T__">member CopyFrom: Tensor&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p>Fills this tensor with a copy of the specified tensor.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_Cos_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.Cos(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.Cos.html#Tensor_Tensor_1_Cos_Tensor_Tensor__T__">static member Cos: Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Element-wise cosine.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_Cosh_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.Cosh(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.Cosh.html#Tensor_Tensor_1_Cosh_Tensor_Tensor__T__">static member Cosh: Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Element-wise hyperbolic cosine.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_counting_Tensor_Backend_ITensorDevice____int64_" data-uid="Tensor.Tensor`1.counting(Tensor.Backend.ITensorDevice -&gt; int64)">
+          <a class="xref" href="Tensor.Tensor-1.counting.html#Tensor_Tensor_1_counting_Tensor_Backend_ITensorDevice____int64_">static member counting: ITensorDevice -&gt; int64 -&gt; Tensor&lt;int64&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Creates a new vector filled with the integers from zero to the specified maximum.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_countTrue_Tensor_Tensor_bool__" data-uid="Tensor.Tensor`1.countTrue(Tensor.Tensor&lt;bool&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.countTrue.html#Tensor_Tensor_1_countTrue_Tensor_Tensor_bool__">static member countTrue: Tensor&lt;bool&gt; -&gt; int64</a>
+        </td>
+        <td class="markdown level1 summary"><p>Counts the elements being true.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_countTrueAxis_int____Tensor_Tensor_bool__" data-uid="Tensor.Tensor`1.countTrueAxis(int -&gt; Tensor.Tensor&lt;bool&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.countTrueAxis.html#Tensor_Tensor_1_countTrueAxis_int____Tensor_Tensor_bool__">static member countTrueAxis: int -&gt; Tensor&lt;bool&gt; -&gt; Tensor&lt;int64&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Counts the elements being true along the specified axis.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_countTrueTensor_Tensor_Tensor_bool__" data-uid="Tensor.Tensor`1.countTrueTensor(Tensor.Tensor&lt;bool&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.countTrueTensor.html#Tensor_Tensor_1_countTrueTensor_Tensor_Tensor_bool__">static member countTrueTensor: Tensor&lt;bool&gt; -&gt; Tensor&lt;int64&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Counts the elements being true returning the result as a Tensor.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_cutLeft_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.cutLeft(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.cutLeft.html#Tensor_Tensor_1_cutLeft_Tensor_Tensor__T__">static member cutLeft: Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Removes the first dimension.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_cutRight_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.cutRight(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.cutRight.html#Tensor_Tensor_1_cutRight_Tensor_Tensor__T__">static member cutRight: Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Removes the last dimension.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_dataType_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.dataType(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.dataType.html#Tensor_Tensor_1_dataType_Tensor_Tensor__T__">static member dataType: Tensor&lt;&#39;T&gt; -&gt; Type</a>
+        </td>
+        <td class="markdown level1 summary"><p>Type of data stored within the tensor.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_dev_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.dev(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.dev.html#Tensor_Tensor_1_dev_Tensor_Tensor__T__">static member dev: Tensor&lt;&#39;T&gt; -&gt; ITensorDevice</a>
+        </td>
+        <td class="markdown level1 summary"><p>Device the data of tensor is stored on.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_diag_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.diag(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.diag.html#Tensor_Tensor_1_diag_Tensor_Tensor__T__">static member diag: Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Returns a view of the diagonal of the matrix.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_diagAxis_int____int____Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.diagAxis(int -&gt; int -&gt; Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.diagAxis.html#Tensor_Tensor_1_diagAxis_int____int____Tensor_Tensor__T__">static member diagAxis: int -&gt; int -&gt; Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Returns a view of the diagonal along the given axes.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_diagMat_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.diagMat(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.diagMat.html#Tensor_Tensor_1_diagMat_Tensor_Tensor__T__">static member diagMat: Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Creates a matrix with the specified diagonal.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_diagMatAxis_int____int____Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.diagMatAxis(int -&gt; int -&gt; Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.diagMatAxis.html#Tensor_Tensor_1_diagMatAxis_int____int____Tensor_Tensor__T__">static member diagMatAxis: int -&gt; int -&gt; Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Creates a tensor with the specified diagonal along the given axes.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_diff_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.diff(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.diff.html#Tensor_Tensor_1_diff_Tensor_Tensor__T__">static member diff: Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Calculates the difference between adjoining elements of the vector.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_diffAxis_int____Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.diffAxis(int -&gt; Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.diffAxis.html#Tensor_Tensor_1_diffAxis_int____Tensor_Tensor__T__">static member diffAxis: int -&gt; Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Calculates the difference between adjoining elements along the specified axes.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_dot_Tensor_Tensor__T_____Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.dot(Tensor.Tensor&lt;'T&gt; -&gt; Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.dot.html#Tensor_Tensor_1_dot_Tensor_Tensor__T_____Tensor_Tensor__T__">static member dot: Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Computes the (batched) matrix product, (batched) matrix-vector product or scalar product.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_empty_Tensor_Backend_ITensorDevice____int_" data-uid="Tensor.Tensor`1.empty(Tensor.Backend.ITensorDevice -&gt; int)">
+          <a class="xref" href="Tensor.Tensor-1.empty.html#Tensor_Tensor_1_empty_Tensor_Backend_ITensorDevice____int_">static member empty: ITensorDevice -&gt; int -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Creates a new, empty tensor with the given number of dimensions.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_Equals_obj_" data-uid="Tensor.Tensor`1.Equals(obj)">
+          <a class="xref" href="Tensor.Tensor-1.Equals.html#Tensor_Tensor_1_Equals_obj_">override member Equals: obj -&gt; bool</a>
+        </td>
+        <td class="markdown level1 summary"><p>Tests for equality to another object.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_Exp_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.Exp(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.Exp.html#Tensor_Tensor_1_Exp_Tensor_Tensor__T__">static member Exp: Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Element-wise exponential function.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_falses_Tensor_Backend_ITensorDevice____int64_list_" data-uid="Tensor.Tensor`1.falses(Tensor.Backend.ITensorDevice -&gt; int64 list)">
+          <a class="xref" href="Tensor.Tensor-1.falses.html#Tensor_Tensor_1_falses_Tensor_Backend_ITensorDevice____int64_list_">static member falses: ITensorDevice -&gt; int64 list -&gt; Tensor&lt;bool&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Creates a new boolean tensor filled with falses.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_FillAbs_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.FillAbs(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.FillAbs.html#Tensor_Tensor_1_FillAbs_Tensor_Tensor__T__">member FillAbs: Tensor&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p>Fills this tensor with the element-wise absolute value of the argument.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_FillAcos_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.FillAcos(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.FillAcos.html#Tensor_Tensor_1_FillAcos_Tensor_Tensor__T__">member FillAcos: Tensor&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p>Fills this tensor with the element-wise arccosine (inverse cosine) of the argument.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_FillAdd_Tensor_Tensor__T_____Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.FillAdd(Tensor.Tensor&lt;'T&gt; -&gt; Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.FillAdd.html#Tensor_Tensor_1_FillAdd_Tensor_Tensor__T_____Tensor_Tensor__T__">member FillAdd: Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p>Fills this tensor with the element-wise addition of the arguments.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_FillAllAxis_int____Tensor_Tensor_bool__" data-uid="Tensor.Tensor`1.FillAllAxis(int -&gt; Tensor.Tensor&lt;bool&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.FillAllAxis.html#Tensor_Tensor_1_FillAllAxis_int____Tensor_Tensor_bool__">member FillAllAxis: int -&gt; Tensor&lt;bool&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p>Checks if all elements along the specified axis are true using this tensor as target.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_FillAnd_Tensor_Tensor_bool_____Tensor_Tensor_bool__" data-uid="Tensor.Tensor`1.FillAnd(Tensor.Tensor&lt;bool&gt; -&gt; Tensor.Tensor&lt;bool&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.FillAnd.html#Tensor_Tensor_1_FillAnd_Tensor_Tensor_bool_____Tensor_Tensor_bool__">member FillAnd: Tensor&lt;bool&gt; -&gt; Tensor&lt;bool&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p>Fills this tensor with the element-wise logical and of the arguments.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_FillAnyAxis_int____Tensor_Tensor_bool__" data-uid="Tensor.Tensor`1.FillAnyAxis(int -&gt; Tensor.Tensor&lt;bool&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.FillAnyAxis.html#Tensor_Tensor_1_FillAnyAxis_int____Tensor_Tensor_bool__">member FillAnyAxis: int -&gt; Tensor&lt;bool&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p>Checks if any element along the specified axis is true using this tensor as target.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_FillArgMaxAxis_int____Tensor_Tensor__R__" data-uid="Tensor.Tensor`1.FillArgMaxAxis(int -&gt; Tensor.Tensor&lt;'R&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.FillArgMaxAxis.html#Tensor_Tensor_1_FillArgMaxAxis_int____Tensor_Tensor__R__">member FillArgMaxAxis: int -&gt; Tensor&lt;&#39;R&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p>Finds the index of the maximum value along the specified axis and writes it into this tensor.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_FillArgMinAxis_int____Tensor_Tensor__R__" data-uid="Tensor.Tensor`1.FillArgMinAxis(int -&gt; Tensor.Tensor&lt;'R&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.FillArgMinAxis.html#Tensor_Tensor_1_FillArgMinAxis_int____Tensor_Tensor__R__">member FillArgMinAxis: int -&gt; Tensor&lt;&#39;R&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p>Finds the index of the minimum value along the specified axis and writes it into this tensor.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_FillAsin_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.FillAsin(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.FillAsin.html#Tensor_Tensor_1_FillAsin_Tensor_Tensor__T__">member FillAsin: Tensor&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p>Fills this tensor with the element-wise arcsine (inverse sine) of the argument.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_FillAtan_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.FillAtan(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.FillAtan.html#Tensor_Tensor_1_FillAtan_Tensor_Tensor__T__">member FillAtan: Tensor&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p>Fills this tensor with the element-wise arctanget (inverse tangent) of the argument.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_FillCeiling_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.FillCeiling(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.FillCeiling.html#Tensor_Tensor_1_FillCeiling_Tensor_Tensor__T__">member FillCeiling: Tensor&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p>Fills this tensor with the element-wise ceiling (round towards positive infinity) of the argument.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_FillConst__T_" data-uid="Tensor.Tensor`1.FillConst('T)">
+          <a class="xref" href="Tensor.Tensor-1.FillConst.html#Tensor_Tensor_1_FillConst__T_">member FillConst: &#39;T -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p>Fills this tensor with the specified constant value.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_FillConvert_Tensor_Tensor__C__" data-uid="Tensor.Tensor`1.FillConvert(Tensor.Tensor&lt;'C&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.FillConvert.html#Tensor_Tensor_1_FillConvert_Tensor_Tensor__C__">member FillConvert: Tensor&lt;&#39;C&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p>Copies elements from a tensor of different data type into this tensor and converts their type.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_FillCos_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.FillCos(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.FillCos.html#Tensor_Tensor_1_FillCos_Tensor_Tensor__T__">member FillCos: Tensor&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p>Fills this tensor with the element-wise cosine of the argument.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_FillCosh_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.FillCosh(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.FillCosh.html#Tensor_Tensor_1_FillCosh_Tensor_Tensor__T__">member FillCosh: Tensor&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p>Fills this tensor with the element-wise hyperbolic cosine of the argument.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_FillCountTrueAxis_int____Tensor_Tensor_bool__" data-uid="Tensor.Tensor`1.FillCountTrueAxis(int -&gt; Tensor.Tensor&lt;bool&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.FillCountTrueAxis.html#Tensor_Tensor_1_FillCountTrueAxis_int____Tensor_Tensor_bool__">member FillCountTrueAxis: int -&gt; Tensor&lt;bool&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p>Counts the elements being true along the specified axis and writes the result into this tensor.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_FillDivide_Tensor_Tensor__T_____Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.FillDivide(Tensor.Tensor&lt;'T&gt; -&gt; Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.FillDivide.html#Tensor_Tensor_1_FillDivide_Tensor_Tensor__T_____Tensor_Tensor__T__">member FillDivide: Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p>Fills this tensor with the element-wise division of the arguments.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_FillDot_Tensor_Tensor__T_____Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.FillDot(Tensor.Tensor&lt;'T&gt; -&gt; Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.FillDot.html#Tensor_Tensor_1_FillDot_Tensor_Tensor__T_____Tensor_Tensor__T__">member FillDot: Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p>Fill this tensor with the (batched) matrix product, matrix-vector product or scalar product of the 
+arguments.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_filled_Tensor_Backend_ITensorDevice____int64_list_____T_" data-uid="Tensor.Tensor`1.filled(Tensor.Backend.ITensorDevice -&gt; int64 list -&gt; 'T)">
+          <a class="xref" href="Tensor.Tensor-1.filled.html#Tensor_Tensor_1_filled_Tensor_Backend_ITensorDevice____int64_list_____T_">static member filled: ITensorDevice -&gt; int64 list -&gt; &#39;T -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Creates a new tensor filled with the specified value.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_FillEqual_Tensor_Tensor__R_____Tensor_Tensor__R__" data-uid="Tensor.Tensor`1.FillEqual(Tensor.Tensor&lt;'R&gt; -&gt; Tensor.Tensor&lt;'R&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.FillEqual.html#Tensor_Tensor_1_FillEqual_Tensor_Tensor__R_____Tensor_Tensor__R__">member FillEqual: Tensor&lt;&#39;R&gt; -&gt; Tensor&lt;&#39;R&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p>Fills this tensor with the element-wise equality test of the arguments.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_FillExp_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.FillExp(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.FillExp.html#Tensor_Tensor_1_FillExp_Tensor_Tensor__T__">member FillExp: Tensor&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p>Fills this tensor with the element-wise exponential function of the argument.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_FillFindAxis__R____int____Tensor_Tensor__R__" data-uid="Tensor.Tensor`1.FillFindAxis('R -&gt; int -&gt; Tensor.Tensor&lt;'R&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.FillFindAxis.html#Tensor_Tensor_1_FillFindAxis__R____int____Tensor_Tensor__R__">member FillFindAxis: &#39;R -&gt; int -&gt; Tensor&lt;&#39;R&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p>Finds the first occurence of the specfied value along the specified axis and write its index into this tensor.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_FillFloor_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.FillFloor(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.FillFloor.html#Tensor_Tensor_1_FillFloor_Tensor_Tensor__T__">member FillFloor: Tensor&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p>Fills this tensor with the element-wise floor (round towards negative infinity) of the argument.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_FillFrom_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.FillFrom(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.FillFrom.html#Tensor_Tensor_1_FillFrom_Tensor_Tensor__T__">member FillFrom: Tensor&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p>Fills this tensor with a copy of the specified tensor.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_FillGather_Tensor_Tensor_int64__option_list____Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.FillGather(Tensor.Tensor&lt;int64&gt; option list -&gt; Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.FillGather.html#Tensor_Tensor_1_FillGather_Tensor_Tensor_int64__option_list____Tensor_Tensor__T__">member FillGather: Tensor&lt;int64&gt; option list -&gt; Tensor&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p>Selects elements from a tensor according to specified indices.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_FillGreater_Tensor_Tensor__R_____Tensor_Tensor__R__" data-uid="Tensor.Tensor`1.FillGreater(Tensor.Tensor&lt;'R&gt; -&gt; Tensor.Tensor&lt;'R&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.FillGreater.html#Tensor_Tensor_1_FillGreater_Tensor_Tensor__R_____Tensor_Tensor__R__">member FillGreater: Tensor&lt;&#39;R&gt; -&gt; Tensor&lt;&#39;R&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p>Fills this tensor with the element-wise greater-than test of the arguments.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_FillGreaterOrEqual_Tensor_Tensor__R_____Tensor_Tensor__R__" data-uid="Tensor.Tensor`1.FillGreaterOrEqual(Tensor.Tensor&lt;'R&gt; -&gt; Tensor.Tensor&lt;'R&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.FillGreaterOrEqual.html#Tensor_Tensor_1_FillGreaterOrEqual_Tensor_Tensor__R_____Tensor_Tensor__R__">member FillGreaterOrEqual: Tensor&lt;&#39;R&gt; -&gt; Tensor&lt;&#39;R&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p>Fills this tensor with the element-wise greater-than-or-equal test of the arguments.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_FillIfThenElse_Tensor_Tensor_bool_____Tensor_Tensor__T_____Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.FillIfThenElse(Tensor.Tensor&lt;bool&gt; -&gt; Tensor.Tensor&lt;'T&gt; -&gt; Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.FillIfThenElse.html#Tensor_Tensor_1_FillIfThenElse_Tensor_Tensor_bool_____Tensor_Tensor__T_____Tensor_Tensor__T__">member FillIfThenElse: Tensor&lt;bool&gt; -&gt; Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p>Fills this tensor with an element-wise choice between two sources depending on a condition.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_FillIncrementing__T____T_" data-uid="Tensor.Tensor`1.FillIncrementing('T * 'T)">
+          <a class="xref" href="Tensor.Tensor-1.FillIncrementing.html#Tensor_Tensor_1_FillIncrementing__T____T_">member FillIncrementing: &#39;T * &#39;T -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p>Fills this vector with an equispaced sequence of elements.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_FillInvert_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.FillInvert(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.FillInvert.html#Tensor_Tensor_1_FillInvert_Tensor_Tensor__T__">member FillInvert: Tensor&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p>Fills this tensor with the (batch) inverse of a matrix.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_FillIsFinite_Tensor_Tensor__R__" data-uid="Tensor.Tensor`1.FillIsFinite(Tensor.Tensor&lt;'R&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.FillIsFinite.html#Tensor_Tensor_1_FillIsFinite_Tensor_Tensor__R__">member FillIsFinite: Tensor&lt;&#39;R&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p>Fills this tensor with the element-wise finity check (not -Inf, Inf or NaN) of the argument.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_FillLess_Tensor_Tensor__R_____Tensor_Tensor__R__" data-uid="Tensor.Tensor`1.FillLess(Tensor.Tensor&lt;'R&gt; -&gt; Tensor.Tensor&lt;'R&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.FillLess.html#Tensor_Tensor_1_FillLess_Tensor_Tensor__R_____Tensor_Tensor__R__">member FillLess: Tensor&lt;&#39;R&gt; -&gt; Tensor&lt;&#39;R&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p>Fills this tensor with the element-wise less-than test of the arguments.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_FillLessOrEqual_Tensor_Tensor__R_____Tensor_Tensor__R__" data-uid="Tensor.Tensor`1.FillLessOrEqual(Tensor.Tensor&lt;'R&gt; -&gt; Tensor.Tensor&lt;'R&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.FillLessOrEqual.html#Tensor_Tensor_1_FillLessOrEqual_Tensor_Tensor__R_____Tensor_Tensor__R__">member FillLessOrEqual: Tensor&lt;&#39;R&gt; -&gt; Tensor&lt;&#39;R&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p>Fills this tensor with the element-wise less-than-or-equal test of the arguments.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_FillLog_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.FillLog(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.FillLog.html#Tensor_Tensor_1_FillLog_Tensor_Tensor__T__">member FillLog: Tensor&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p>Fills this tensor with the element-wise natural logarithm of the argument.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_FillLog10_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.FillLog10(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.FillLog10.html#Tensor_Tensor_1_FillLog10_Tensor_Tensor__T__">member FillLog10: Tensor&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p>Fills this tensor with the element-wise common logarithm of the argument.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_FillMaxAxis_int____Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.FillMaxAxis(int -&gt; Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.FillMaxAxis.html#Tensor_Tensor_1_FillMaxAxis_int____Tensor_Tensor__T__">member FillMaxAxis: int -&gt; Tensor&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p>Calculates the maximum value of the elements over the specified axis and writes the result into this tensor.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_FillMaxElemwise_Tensor_Tensor__T_____Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.FillMaxElemwise(Tensor.Tensor&lt;'T&gt; -&gt; Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.FillMaxElemwise.html#Tensor_Tensor_1_FillMaxElemwise_Tensor_Tensor__T_____Tensor_Tensor__T__">member FillMaxElemwise: Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p>Fills this tensor with the element-wise maximum of the arguments.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_FillMinAxis_int____Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.FillMinAxis(int -&gt; Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.FillMinAxis.html#Tensor_Tensor_1_FillMinAxis_int____Tensor_Tensor__T__">member FillMinAxis: int -&gt; Tensor&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p>Calculates the minimum value of the elements over the specified axis and writes the result into this tensor.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_FillMinElemwise_Tensor_Tensor__T_____Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.FillMinElemwise(Tensor.Tensor&lt;'T&gt; -&gt; Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.FillMinElemwise.html#Tensor_Tensor_1_FillMinElemwise_Tensor_Tensor__T_____Tensor_Tensor__T__">member FillMinElemwise: Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p>Fills this tensor with the element-wise minimum of the arguments.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_FillModulo_Tensor_Tensor__T_____Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.FillModulo(Tensor.Tensor&lt;'T&gt; -&gt; Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.FillModulo.html#Tensor_Tensor_1_FillModulo_Tensor_Tensor__T_____Tensor_Tensor__T__">member FillModulo: Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p>Fills this tensor with the element-wise remainder of the division of the arguments.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_FillMultiply_Tensor_Tensor__T_____Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.FillMultiply(Tensor.Tensor&lt;'T&gt; -&gt; Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.FillMultiply.html#Tensor_Tensor_1_FillMultiply_Tensor_Tensor__T_____Tensor_Tensor__T__">member FillMultiply: Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p>Fills this tensor with the element-wise multiplication of the arguments.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_FillNegate_Tensor_Tensor_bool__" data-uid="Tensor.Tensor`1.FillNegate(Tensor.Tensor&lt;bool&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.FillNegate.html#Tensor_Tensor_1_FillNegate_Tensor_Tensor_bool__">member FillNegate: Tensor&lt;bool&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p>Fills this tensor with the element-wise logical negation of the argument.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_FillNotEqual_Tensor_Tensor__R_____Tensor_Tensor__R__" data-uid="Tensor.Tensor`1.FillNotEqual(Tensor.Tensor&lt;'R&gt; -&gt; Tensor.Tensor&lt;'R&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.FillNotEqual.html#Tensor_Tensor_1_FillNotEqual_Tensor_Tensor__R_____Tensor_Tensor__R__">member FillNotEqual: Tensor&lt;&#39;R&gt; -&gt; Tensor&lt;&#39;R&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p>Fills this tensor with the element-wise not-equality test or of the arguments.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_FillOr_Tensor_Tensor_bool_____Tensor_Tensor_bool__" data-uid="Tensor.Tensor`1.FillOr(Tensor.Tensor&lt;bool&gt; -&gt; Tensor.Tensor&lt;bool&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.FillOr.html#Tensor_Tensor_1_FillOr_Tensor_Tensor_bool_____Tensor_Tensor_bool__">member FillOr: Tensor&lt;bool&gt; -&gt; Tensor&lt;bool&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p>Fills this tensor with the element-wise logical or of the arguments.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_FillPower_Tensor_Tensor__T_____Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.FillPower(Tensor.Tensor&lt;'T&gt; -&gt; Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.FillPower.html#Tensor_Tensor_1_FillPower_Tensor_Tensor__T_____Tensor_Tensor__T__">member FillPower: Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p>Fills this tensor with the element-wise exponentiation.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_FillProductAxis_int____Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.FillProductAxis(int -&gt; Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.FillProductAxis.html#Tensor_Tensor_1_FillProductAxis_int____Tensor_Tensor__T__">member FillProductAxis: int -&gt; Tensor&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p>Calculates the product of the elements over the specified axis and writes the result into this tensor.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_FillPseudoInvert_Tensor_Tensor__T_____T_option_" data-uid="Tensor.Tensor`1.FillPseudoInvert(Tensor.Tensor&lt;'T&gt; * 'T option)">
+          <a class="xref" href="Tensor.Tensor-1.FillPseudoInvert.html#Tensor_Tensor_1_FillPseudoInvert_Tensor_Tensor__T_____T_option_">member FillPseudoInvert: Tensor&lt;&#39;T&gt; * &#39;T option -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p>Fills this tensor with the (batched) Moore-Penrose pseudo-inverse of the specified matrix.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_FillRound_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.FillRound(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.FillRound.html#Tensor_Tensor_1_FillRound_Tensor_Tensor__T__">member FillRound: Tensor&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p>Fills this tensor with the element-wise rounding of the argument.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_FillScatter_Tensor_Tensor_int64__option_list____Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.FillScatter(Tensor.Tensor&lt;int64&gt; option list -&gt; Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.FillScatter.html#Tensor_Tensor_1_FillScatter_Tensor_Tensor_int64__option_list____Tensor_Tensor__T__">member FillScatter: Tensor&lt;int64&gt; option list -&gt; Tensor&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p>Disperses elements from a source tensor to this tensor according to the specified indices.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_FillSgn_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.FillSgn(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.FillSgn.html#Tensor_Tensor_1_FillSgn_Tensor_Tensor__T__">member FillSgn: Tensor&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p>Fills this tensor with the element-wise sign of the argument.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_FillSin_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.FillSin(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.FillSin.html#Tensor_Tensor_1_FillSin_Tensor_Tensor__T__">member FillSin: Tensor&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p>Fills this tensor with the element-wise sine of the argument.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_FillSinh_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.FillSinh(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.FillSinh.html#Tensor_Tensor_1_FillSinh_Tensor_Tensor__T__">member FillSinh: Tensor&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p>Fills this tensor with the element-wise hyperbolic sine of the argument.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_FillSqrt_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.FillSqrt(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.FillSqrt.html#Tensor_Tensor_1_FillSqrt_Tensor_Tensor__T__">member FillSqrt: Tensor&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p>Fills this tensor with the element-wise square root of the argument.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_FillSubtract_Tensor_Tensor__T_____Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.FillSubtract(Tensor.Tensor&lt;'T&gt; -&gt; Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.FillSubtract.html#Tensor_Tensor_1_FillSubtract_Tensor_Tensor__T_____Tensor_Tensor__T__">member FillSubtract: Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p>Fills this tensor with the element-wise substraction of the arguments.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_FillSumAxis_int____Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.FillSumAxis(int -&gt; Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.FillSumAxis.html#Tensor_Tensor_1_FillSumAxis_int____Tensor_Tensor__T__">member FillSumAxis: int -&gt; Tensor&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p>Sums the elements over the specified axis and writes the result into this tensor.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_FillSVD_Tensor_Tensor__T____Tensor_Tensor__T____Tensor_Tensor__T__option_" data-uid="Tensor.Tensor`1.FillSVD(Tensor.Tensor&lt;'T&gt; * Tensor.Tensor&lt;'T&gt; * Tensor.Tensor&lt;'T&gt; option)">
+          <a class="xref" href="Tensor.Tensor-1.FillSVD.html#Tensor_Tensor_1_FillSVD_Tensor_Tensor__T____Tensor_Tensor__T____Tensor_Tensor__T__option_">member FillSVD: Tensor&lt;&#39;T&gt; * Tensor&lt;&#39;T&gt; * Tensor&lt;&#39;T&gt; option -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p>Fills this tensor with the (batched) singular values of the specified matrix.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_FillSymmetricEigenDecomposition_Tensor_MatrixPart____Tensor_Tensor__T_____Tensor_Tensor__T_____Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.FillSymmetricEigenDecomposition(Tensor.MatrixPart -&gt; Tensor.Tensor&lt;'T&gt; -&gt; Tensor.Tensor&lt;'T&gt; -&gt; Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.FillSymmetricEigenDecomposition.html#Tensor_Tensor_1_FillSymmetricEigenDecomposition_Tensor_MatrixPart____Tensor_Tensor__T_____Tensor_Tensor__T_____Tensor_Tensor__T__">static member FillSymmetricEigenDecomposition: MatrixPart -&gt; Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p>Computes the (real) eigendecomposition of a symmetric matrix and writes it into the specified 
+target tensors.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_FillTan_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.FillTan(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.FillTan.html#Tensor_Tensor_1_FillTan_Tensor_Tensor__T__">member FillTan: Tensor&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p>Fills this tensor with the element-wise tangent of the argument.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_FillTanh_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.FillTanh(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.FillTanh.html#Tensor_Tensor_1_FillTanh_Tensor_Tensor__T__">member FillTanh: Tensor&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p>Fills this tensor with the element-wise hyperbolic tangent of the argument.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_FillTruncate_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.FillTruncate(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.FillTruncate.html#Tensor_Tensor_1_FillTruncate_Tensor_Tensor__T__">member FillTruncate: Tensor&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p>Fills this tensor with the element-wise truncation (rounding towards zero) of the argument.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_FillUnaryMinus_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.FillUnaryMinus(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.FillUnaryMinus.html#Tensor_Tensor_1_FillUnaryMinus_Tensor_Tensor__T__">member FillUnaryMinus: Tensor&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p>Fills this tensor with the element-wise negation of the argument.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_FillUnaryPlus_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.FillUnaryPlus(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.FillUnaryPlus.html#Tensor_Tensor_1_FillUnaryPlus_Tensor_Tensor__T__">member FillUnaryPlus: Tensor&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p>Fills this tensor with the element-wise prefix plus of the argument.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_FillXor_Tensor_Tensor_bool_____Tensor_Tensor_bool__" data-uid="Tensor.Tensor`1.FillXor(Tensor.Tensor&lt;bool&gt; -&gt; Tensor.Tensor&lt;bool&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.FillXor.html#Tensor_Tensor_1_FillXor_Tensor_Tensor_bool_____Tensor_Tensor_bool__">member FillXor: Tensor&lt;bool&gt; -&gt; Tensor&lt;bool&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p>Fills this tensor with the element-wise logical xor of the arguments.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_find__T____Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.find('T -&gt; Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.find.html#Tensor_Tensor_1_find__T____Tensor_Tensor__T__">static member find: &#39;T -&gt; Tensor&lt;&#39;T&gt; -&gt; int64 list</a>
+        </td>
+        <td class="markdown level1 summary"><p>Finds the first occurence of the specfied value and returns its indices.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_findAxis__T____int____Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.findAxis('T -&gt; int -&gt; Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.findAxis.html#Tensor_Tensor_1_findAxis__T____int____Tensor_Tensor__T__">static member findAxis: &#39;T -&gt; int -&gt; Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;int64&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Finds the first occurence of the specfied value along the specified axis and returns its index.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_flatten_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.flatten(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.flatten.html#Tensor_Tensor_1_flatten_Tensor_Tensor__T__">static member flatten: Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Flattens the tensor into a (one-dimensional) vector.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_Floor_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.Floor(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.Floor.html#Tensor_Tensor_1_Floor_Tensor_Tensor__T__">static member Floor: Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Element-wise floor (round towards negative infinity).</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_gather_Tensor_Tensor_int64__option_list____Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.gather(Tensor.Tensor&lt;int64&gt; option list -&gt; Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.gather.html#Tensor_Tensor_1_gather_Tensor_Tensor_int64__option_list____Tensor_Tensor__T__">static member gather: Tensor&lt;int64&gt; option list -&gt; Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Selects elements from a tensor according to specified indices.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_get_Tensor_Tensor__T_____int64_list_" data-uid="Tensor.Tensor`1.get(Tensor.Tensor&lt;'T&gt; -&gt; int64 list)">
+          <a class="xref" href="Tensor.Tensor-1.get.html#Tensor_Tensor_1_get_Tensor_Tensor__T_____int64_list_">static member get: Tensor&lt;&#39;T&gt; -&gt; int64 list -&gt; &#39;T</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets the value of a single element of the tensor.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_GetHashCode_unit_" data-uid="Tensor.Tensor`1.GetHashCode(unit)">
+          <a class="xref" href="Tensor.Tensor-1.GetHashCode.html#Tensor_Tensor_1_GetHashCode_unit_">override member GetHashCode: unit -&gt; int</a>
+        </td>
+        <td class="markdown level1 summary"><p>Calculates the hash code of the tensor.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_identity_Tensor_Backend_ITensorDevice____int64_" data-uid="Tensor.Tensor`1.identity(Tensor.Backend.ITensorDevice -&gt; int64)">
+          <a class="xref" href="Tensor.Tensor-1.identity.html#Tensor_Tensor_1_identity_Tensor_Backend_ITensorDevice____int64_">static member identity: ITensorDevice -&gt; int64 -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Creates a new identity matrix.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_ifThenElse_Tensor_Tensor_bool_____Tensor_Tensor__T_____Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.ifThenElse(Tensor.Tensor&lt;bool&gt; -&gt; Tensor.Tensor&lt;'T&gt; -&gt; Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.ifThenElse.html#Tensor_Tensor_1_ifThenElse_Tensor_Tensor_bool_____Tensor_Tensor__T_____Tensor_Tensor__T__">static member ifThenElse: Tensor&lt;bool&gt; -&gt; Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Element-wise choice between two sources depending on a condition.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_insertAxis_int____Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.insertAxis(int -&gt; Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.insertAxis.html#Tensor_Tensor_1_insertAxis_int____Tensor_Tensor__T__">static member insertAxis: int -&gt; Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Insert a dimension of size one before the specifed dimension.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_invert_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.invert(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.invert.html#Tensor_Tensor_1_invert_Tensor_Tensor__T__">static member invert: Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>(Batch) inverts a matrix.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_isBroadcasted_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.isBroadcasted(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.isBroadcasted.html#Tensor_Tensor_1_isBroadcasted_Tensor_Tensor__T__">static member isBroadcasted: Tensor&lt;&#39;T&gt; -&gt; bool</a>
+        </td>
+        <td class="markdown level1 summary"><p>Checks if the specified tensor is broadcasted in at least one dimension.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_isClose_Tensor_Tensor__T____Tensor_Tensor__T_____T_option____T_option_" data-uid="Tensor.Tensor`1.isClose(Tensor.Tensor&lt;'T&gt; * Tensor.Tensor&lt;'T&gt; * 'T option * 'T option)">
+          <a class="xref" href="Tensor.Tensor-1.isClose.html#Tensor_Tensor_1_isClose_Tensor_Tensor__T____Tensor_Tensor__T_____T_option____T_option_">static member isClose: Tensor&lt;&#39;T&gt; * Tensor&lt;&#39;T&gt; * &#39;T option * &#39;T option -&gt; Tensor&lt;bool&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Element-wise check if two tensors have same (within machine precision) values.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_isFinite_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.isFinite(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.isFinite.html#Tensor_Tensor_1_isFinite_Tensor_Tensor__T__">static member isFinite: Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;bool&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Element-wise finity check (not -Inf, Inf or NaN).</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_layout_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.layout(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.layout.html#Tensor_Tensor_1_layout_Tensor_Tensor__T__">static member layout: Tensor&lt;&#39;T&gt; -&gt; TensorLayout</a>
+        </td>
+        <td class="markdown level1 summary"><p>Memory layout of the tensor.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_linspace_Tensor_Backend_ITensorDevice_____T_____T____int64_" data-uid="Tensor.Tensor`1.linspace(Tensor.Backend.ITensorDevice -&gt; 'T -&gt; 'T -&gt; int64)">
+          <a class="xref" href="Tensor.Tensor-1.linspace.html#Tensor_Tensor_1_linspace_Tensor_Backend_ITensorDevice_____T_____T____int64_">static member linspace: ITensorDevice -&gt; &#39;T -&gt; &#39;T -&gt; int64 -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Creates a new vector of given size filled with equaly spaced values.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_Log_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.Log(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.Log.html#Tensor_Tensor_1_Log_Tensor_Tensor__T__">static member Log: Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Element-wise natural logarithm.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_Log10_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.Log10(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.Log10.html#Tensor_Tensor_1_Log10_Tensor_Tensor__T__">static member Log10: Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Element-wise common logarithm.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_max_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.max(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.max.html#Tensor_Tensor_1_max_Tensor_Tensor__T__">static member max: Tensor&lt;&#39;T&gt; -&gt; &#39;T</a>
+        </td>
+        <td class="markdown level1 summary"><p>Calculates the maximum of all elements.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_maxAxis_int____Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.maxAxis(int -&gt; Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.maxAxis.html#Tensor_Tensor_1_maxAxis_int____Tensor_Tensor__T__">static member maxAxis: int -&gt; Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Calculates the maximum value of the elements along the specified axis.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_maxElemwise_Tensor_Tensor__T_____Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.maxElemwise(Tensor.Tensor&lt;'T&gt; -&gt; Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.maxElemwise.html#Tensor_Tensor_1_maxElemwise_Tensor_Tensor__T_____Tensor_Tensor__T__">static member maxElemwise: Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Element-wise maximum.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_maxTensor_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.maxTensor(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.maxTensor.html#Tensor_Tensor_1_maxTensor_Tensor_Tensor__T__">static member maxTensor: Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Calculates the maximum all elements returning a Tensor.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_mean_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.mean(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.mean.html#Tensor_Tensor_1_mean_Tensor_Tensor__T__">static member mean: Tensor&lt;&#39;T&gt; -&gt; &#39;T</a>
+        </td>
+        <td class="markdown level1 summary"><p>Calculates the mean of the tensor.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_meanAxis_int____Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.meanAxis(int -&gt; Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.meanAxis.html#Tensor_Tensor_1_meanAxis_int____Tensor_Tensor__T__">static member meanAxis: int -&gt; Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Calculates the mean of the elements along the specified axis.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_min_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.min(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.min.html#Tensor_Tensor_1_min_Tensor_Tensor__T__">static member min: Tensor&lt;&#39;T&gt; -&gt; &#39;T</a>
+        </td>
+        <td class="markdown level1 summary"><p>Calculates the minimum of all elements.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_minAxis_int____Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.minAxis(int -&gt; Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.minAxis.html#Tensor_Tensor_1_minAxis_int____Tensor_Tensor__T__">static member minAxis: int -&gt; Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Calculates the minimum value of the elements along the specified axis.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_minElemwise_Tensor_Tensor__T_____Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.minElemwise(Tensor.Tensor&lt;'T&gt; -&gt; Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.minElemwise.html#Tensor_Tensor_1_minElemwise_Tensor_Tensor__T_____Tensor_Tensor__T__">static member minElemwise: Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Element-wise minimum.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_minTensor_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.minTensor(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.minTensor.html#Tensor_Tensor_1_minTensor_Tensor_Tensor__T__">static member minTensor: Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Calculates the minimum all elements returning a Tensor.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_nDims_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.nDims(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.nDims.html#Tensor_Tensor_1_nDims_Tensor_Tensor__T__">static member nDims: Tensor&lt;&#39;T&gt; -&gt; int</a>
+        </td>
+        <td class="markdown level1 summary"><p>Dimensionality of the tensor.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_nElems_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.nElems(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.nElems.html#Tensor_Tensor_1_nElems_Tensor_Tensor__T__">static member nElems: Tensor&lt;&#39;T&gt; -&gt; int64</a>
+        </td>
+        <td class="markdown level1 summary"><p>Total number of elements within the tensor.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_NewOfType_int64_list___System_Type___Tensor_Backend_ITensorDevice___Tensor_TensorOrder_option_" data-uid="Tensor.Tensor`1.NewOfType(int64 list * System.Type * Tensor.Backend.ITensorDevice * Tensor.TensorOrder option)">
+          <a class="xref" href="Tensor.Tensor-1.NewOfType.html#Tensor_Tensor_1_NewOfType_int64_list___System_Type___Tensor_Backend_ITensorDevice___Tensor_TensorOrder_option_">static member NewOfType: int64 list * Type * ITensorDevice * TensorOrder option -&gt; ITensor</a>
+        </td>
+        <td class="markdown level1 summary"><p>Type-neutral function for creating a new, uninitialized tensor with a new storage.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_norm_Tensor_Tensor__T_____T_option_" data-uid="Tensor.Tensor`1.norm(Tensor.Tensor&lt;'T&gt; * 'T option)">
+          <a class="xref" href="Tensor.Tensor-1.norm.html#Tensor_Tensor_1_norm_Tensor_Tensor__T_____T_option_">static member norm: Tensor&lt;&#39;T&gt; * &#39;T option -&gt; &#39;T</a>
+        </td>
+        <td class="markdown level1 summary"><p>Calculates the norm of the (flattened) tensor.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_normAxis_int___Tensor_Tensor__T_____T_option_" data-uid="Tensor.Tensor`1.normAxis(int * Tensor.Tensor&lt;'T&gt; * 'T option)">
+          <a class="xref" href="Tensor.Tensor-1.normAxis.html#Tensor_Tensor_1_normAxis_int___Tensor_Tensor__T_____T_option_">static member normAxis: int * Tensor&lt;&#39;T&gt; * &#39;T option -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Calculates the norm along the specified axis.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_ofBlocks_Tensor_BlockTensor__T__" data-uid="Tensor.Tensor`1.ofBlocks(Tensor.BlockTensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.ofBlocks.html#Tensor_Tensor_1_ofBlocks_Tensor_BlockTensor__T__">static member ofBlocks: BlockTensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Builds a tensor out of tensor blocks.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_ofBlocks_Tensor_Tensor__T__list_list_list_" data-uid="Tensor.Tensor`1.ofBlocks(Tensor.Tensor&lt;'T&gt; list list list)">
+          <a class="xref" href="Tensor.Tensor-1.ofBlocks.html#Tensor_Tensor_1_ofBlocks_Tensor_Tensor__T__list_list_list_">static member ofBlocks: Tensor&lt;&#39;T&gt; list list list -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Builds a three dimensional tensor out of tensor blocks.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_ofBlocks_Tensor_Tensor__T__list_list_" data-uid="Tensor.Tensor`1.ofBlocks(Tensor.Tensor&lt;'T&gt; list list)">
+          <a class="xref" href="Tensor.Tensor-1.ofBlocks.html#Tensor_Tensor_1_ofBlocks_Tensor_Tensor__T__list_list_">static member ofBlocks: Tensor&lt;&#39;T&gt; list list -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Builds a matrix out of matrix blocks.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_ofBlocks_Tensor_Tensor__T__list_" data-uid="Tensor.Tensor`1.ofBlocks(Tensor.Tensor&lt;'T&gt; list)">
+          <a class="xref" href="Tensor.Tensor-1.ofBlocks.html#Tensor_Tensor_1_ofBlocks_Tensor_Tensor__T__list_">static member ofBlocks: Tensor&lt;&#39;T&gt; list -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Builds a vector out of vectors blocks.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_ones_Tensor_Backend_ITensorDevice____int64_list_" data-uid="Tensor.Tensor`1.ones(Tensor.Backend.ITensorDevice -&gt; int64 list)">
+          <a class="xref" href="Tensor.Tensor-1.ones.html#Tensor_Tensor_1_ones_Tensor_Backend_ITensorDevice____int64_list_">static member ones: ITensorDevice -&gt; int64 list -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Creates a new tensor filled with ones (1).</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_onesLike_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.onesLike(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.onesLike.html#Tensor_Tensor_1_onesLike_Tensor_Tensor__T__">static member onesLike: Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Creates a new tensor filled with ones using the specified tensor as template.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_padLeft_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.padLeft(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.padLeft.html#Tensor_Tensor_1_padLeft_Tensor_Tensor__T__">static member padLeft: Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Insert a dimension of size one as the first dimension.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_padRight_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.padRight(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.padRight.html#Tensor_Tensor_1_padRight_Tensor_Tensor__T__">static member padRight: Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Append a dimension of size one after the last dimension.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_padToSame_Tensor_Tensor__T__list_" data-uid="Tensor.Tensor`1.padToSame(Tensor.Tensor&lt;'T&gt; list)">
+          <a class="xref" href="Tensor.Tensor-1.padToSame.html#Tensor_Tensor_1_padToSame_Tensor_Tensor__T__list_">static member padToSame: Tensor&lt;&#39;T&gt; list -&gt; Tensor&lt;&#39;T&gt; list</a>
+        </td>
+        <td class="markdown level1 summary"><p>Pads all specified tensors from the left with dimensions of size one until they have the 
+same dimensionality.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_padToSame_Tensor_Tensor__TA____Tensor_Tensor__TB____Tensor_Tensor__TC__" data-uid="Tensor.Tensor`1.padToSame(Tensor.Tensor&lt;'TA&gt; * Tensor.Tensor&lt;'TB&gt; * Tensor.Tensor&lt;'TC&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.padToSame.html#Tensor_Tensor_1_padToSame_Tensor_Tensor__TA____Tensor_Tensor__TB____Tensor_Tensor__TC__">static member padToSame: Tensor&lt;&#39;TA&gt; * Tensor&lt;&#39;TB&gt; * Tensor&lt;&#39;TC&gt; -&gt; Tensor&lt;&#39;TA&gt; * Tensor&lt;&#39;TB&gt; * Tensor&lt;&#39;TC&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Pads all specified tensors from the left with dimensions of size one until they have the 
+same dimensionality.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_padToSame_Tensor_Tensor__TA____Tensor_Tensor__TB__" data-uid="Tensor.Tensor`1.padToSame(Tensor.Tensor&lt;'TA&gt; * Tensor.Tensor&lt;'TB&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.padToSame.html#Tensor_Tensor_1_padToSame_Tensor_Tensor__TA____Tensor_Tensor__TB__">static member padToSame: Tensor&lt;&#39;TA&gt; * Tensor&lt;&#39;TB&gt; -&gt; Tensor&lt;&#39;TA&gt; * Tensor&lt;&#39;TB&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Pads all specified tensors from the left with dimensions of size one until they have the 
+same dimensionality.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_permuteAxes_int_list____Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.permuteAxes(int list -&gt; Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.permuteAxes.html#Tensor_Tensor_1_permuteAxes_int_list____Tensor_Tensor__T__">static member permuteAxes: int list -&gt; Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Permutes the axes as specified.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_Pow__T___Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.Pow('T * Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.Pow.html#Tensor_Tensor_1_Pow__T___Tensor_Tensor__T__">static member Pow: &#39;T * Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Element-wise exponentiation with scalar.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_Pow_Tensor_Tensor__T_____T_" data-uid="Tensor.Tensor`1.Pow(Tensor.Tensor&lt;'T&gt; * 'T)">
+          <a class="xref" href="Tensor.Tensor-1.Pow.html#Tensor_Tensor_1_Pow_Tensor_Tensor__T_____T_">static member Pow: Tensor&lt;&#39;T&gt; * &#39;T -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Element-wise exponentiation with scalar.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_Pow_Tensor_Tensor__T____Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.Pow(Tensor.Tensor&lt;'T&gt; * Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.Pow.html#Tensor_Tensor_1_Pow_Tensor_Tensor__T____Tensor_Tensor__T__">static member Pow: Tensor&lt;&#39;T&gt; * Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Element-wise exponentiation.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_product_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.product(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.product.html#Tensor_Tensor_1_product_Tensor_Tensor__T__">static member product: Tensor&lt;&#39;T&gt; -&gt; &#39;T</a>
+        </td>
+        <td class="markdown level1 summary"><p>Calculates the product of all elements.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_productAxis_int____Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.productAxis(int -&gt; Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.productAxis.html#Tensor_Tensor_1_productAxis_int____Tensor_Tensor__T__">static member productAxis: int -&gt; Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Calculates the product of the elements along the specified axis.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_productTensor_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.productTensor(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.productTensor.html#Tensor_Tensor_1_productTensor_Tensor_Tensor__T__">static member productTensor: Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Calculates the product all elements returning a Tensor.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_pseudoInvert_Tensor_Tensor__T_____T_option_" data-uid="Tensor.Tensor`1.pseudoInvert(Tensor.Tensor&lt;'T&gt; * 'T option)">
+          <a class="xref" href="Tensor.Tensor-1.pseudoInvert.html#Tensor_Tensor_1_pseudoInvert_Tensor_Tensor__T_____T_option_">static member pseudoInvert: Tensor&lt;&#39;T&gt; * &#39;T option -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Computes the (batched) Moore-Penrose pseudo-inverse of the specified matrix.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_range_Tensor_Rng_list____Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.range(Tensor.Rng list -&gt; Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.range.html#Tensor_Tensor_1_range_Tensor_Rng_list____Tensor_Tensor__T__">static member range: Rng list -&gt; Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Get a slice (part) of the tensor.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_relayout_Tensor_Backend_TensorLayout____Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.relayout(Tensor.Backend.TensorLayout -&gt; Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.relayout.html#Tensor_Tensor_1_relayout_Tensor_Backend_TensorLayout____Tensor_Tensor__T__">static member relayout: TensorLayout -&gt; Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Creates a tensor with the specified layout sharing its storage with the original tensor.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_replicate_int____int64____Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.replicate(int -&gt; int64 -&gt; Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.replicate.html#Tensor_Tensor_1_replicate_int____int64____Tensor_Tensor__T__">static member replicate: int -&gt; int64 -&gt; Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Repeats the tensor along an axis.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_reshape_int64_list____Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.reshape(int64 list -&gt; Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.reshape.html#Tensor_Tensor_1_reshape_int64_list____Tensor_Tensor__T__">static member reshape: int64 list -&gt; Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Changes the shape of a tensor.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_reshapeView_int64_list____Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.reshapeView(int64 list -&gt; Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.reshapeView.html#Tensor_Tensor_1_reshapeView_int64_list____Tensor_Tensor__T__">static member reshapeView: int64 list -&gt; Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Creates a reshaped view of the tensor (without copying).</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_reverseAxis_int____Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.reverseAxis(int -&gt; Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.reverseAxis.html#Tensor_Tensor_1_reverseAxis_int____Tensor_Tensor__T__">static member reverseAxis: int -&gt; Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Reverses the elements in the specified dimension.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_Round_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.Round(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.Round.html#Tensor_Tensor_1_Round_Tensor_Tensor__T__">static member Round: Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Element-wise rounding.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_scalar_Tensor_Backend_ITensorDevice_____T_" data-uid="Tensor.Tensor`1.scalar(Tensor.Backend.ITensorDevice -&gt; 'T)">
+          <a class="xref" href="Tensor.Tensor-1.scalar.html#Tensor_Tensor_1_scalar_Tensor_Backend_ITensorDevice_____T_">static member scalar: ITensorDevice -&gt; &#39;T -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Creates a new zero-dimensional (scalar) tensor with the specified value.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_scalarLike_Tensor_ITensor_____T_" data-uid="Tensor.Tensor`1.scalarLike(Tensor.ITensor -&gt; 'T)">
+          <a class="xref" href="Tensor.Tensor-1.scalarLike.html#Tensor_Tensor_1_scalarLike_Tensor_ITensor_____T_">static member scalarLike: ITensor -&gt; &#39;T -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Creates a new zero-dimensional (scalar) tensor using the specified tensor as template and with 
+the specified value.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_scatter_Tensor_Tensor_int64__option_list____int64_list____Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.scatter(Tensor.Tensor&lt;int64&gt; option list -&gt; int64 list -&gt; Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.scatter.html#Tensor_Tensor_1_scatter_Tensor_Tensor_int64__option_list____int64_list____Tensor_Tensor__T__">static member scatter: Tensor&lt;int64&gt; option list -&gt; int64 list -&gt; Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Disperses elements from a source tensor to a new tensor according to the specified indices.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_set_Tensor_Tensor__T_____int64_list_____T_" data-uid="Tensor.Tensor`1.set(Tensor.Tensor&lt;'T&gt; -&gt; int64 list -&gt; 'T)">
+          <a class="xref" href="Tensor.Tensor-1.set.html#Tensor_Tensor_1_set_Tensor_Tensor__T_____int64_list_____T_">static member set: Tensor&lt;&#39;T&gt; -&gt; int64 list -&gt; &#39;T -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p>Sets the value of a single element of the tensor.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_Sgn_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.Sgn(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.Sgn.html#Tensor_Tensor_1_Sgn_Tensor_Tensor__T__">static member Sgn: Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Element-wise sign.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_shape_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.shape(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.shape.html#Tensor_Tensor_1_shape_Tensor_Tensor__T__">static member shape: Tensor&lt;&#39;T&gt; -&gt; int64 list</a>
+        </td>
+        <td class="markdown level1 summary"><p>Shape of the tensor.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_Sin_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.Sin(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.Sin.html#Tensor_Tensor_1_Sin_Tensor_Tensor__T__">static member Sin: Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Element-wise sine.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_Sinh_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.Sinh(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.Sinh.html#Tensor_Tensor_1_Sinh_Tensor_Tensor__T__">static member Sinh: Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Element-wise hyperbolic sine.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_Sqrt_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.Sqrt(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.Sqrt.html#Tensor_Tensor_1_Sqrt_Tensor_Tensor__T__">static member Sqrt: Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Element-wise square root.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_std_Tensor_Tensor__T____int64_option_" data-uid="Tensor.Tensor`1.std(Tensor.Tensor&lt;'T&gt; * int64 option)">
+          <a class="xref" href="Tensor.Tensor-1.std.html#Tensor_Tensor_1_std_Tensor_Tensor__T____int64_option_">static member std: Tensor&lt;&#39;T&gt; * int64 option -&gt; &#39;T</a>
+        </td>
+        <td class="markdown level1 summary"><p>Calculates the standard deviation of the tensor.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_stdAxis_int___Tensor_Tensor__T____int64_option_" data-uid="Tensor.Tensor`1.stdAxis(int * Tensor.Tensor&lt;'T&gt; * int64 option)">
+          <a class="xref" href="Tensor.Tensor-1.stdAxis.html#Tensor_Tensor_1_stdAxis_int___Tensor_Tensor__T____int64_option_">static member stdAxis: int * Tensor&lt;&#39;T&gt; * int64 option -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Calculates the standard deviation of the elements along the specified axis.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_sum_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.sum(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.sum.html#Tensor_Tensor_1_sum_Tensor_Tensor__T__">static member sum: Tensor&lt;&#39;T&gt; -&gt; &#39;T</a>
+        </td>
+        <td class="markdown level1 summary"><p>Sums all elements.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_sumAxis_int____Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.sumAxis(int -&gt; Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.sumAxis.html#Tensor_Tensor_1_sumAxis_int____Tensor_Tensor__T__">static member sumAxis: int -&gt; Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Sums the elements along the specified axis.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_sumTensor_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.sumTensor(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.sumTensor.html#Tensor_Tensor_1_sumTensor_Tensor_Tensor__T__">static member sumTensor: Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Sums all elements returning a Tensor.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_SVD_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.SVD(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.SVD.html#Tensor_Tensor_1_SVD_Tensor_Tensor__T__">static member SVD: Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt; * Tensor&lt;&#39;T&gt; * Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Computes the (batched) singular value decomposition (SVD) of the specified matrix.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_SVDWithoutUV_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.SVDWithoutUV(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.SVDWithoutUV.html#Tensor_Tensor_1_SVDWithoutUV_Tensor_Tensor__T__">static member SVDWithoutUV: Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Computes the (batched) singular values of the specified matrix.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_swapDim_int____int____Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.swapDim(int -&gt; int -&gt; Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.swapDim.html#Tensor_Tensor_1_swapDim_int____int____Tensor_Tensor__T__">static member swapDim: int -&gt; int -&gt; Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Swaps the specified dimensions of the tensor.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_symmetricEigenDecomposition_Tensor_MatrixPart____Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.symmetricEigenDecomposition(Tensor.MatrixPart -&gt; Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.symmetricEigenDecomposition.html#Tensor_Tensor_1_symmetricEigenDecomposition_Tensor_MatrixPart____Tensor_Tensor__T__">static member symmetricEigenDecomposition: MatrixPart -&gt; Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt; * Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Computes the (real) eigendecomposition of a symmetric matrix.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_Tan_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.Tan(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.Tan.html#Tensor_Tensor_1_Tan_Tensor_Tensor__T__">static member Tan: Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Element-wise tangent.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_Tanh_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.Tanh(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.Tanh.html#Tensor_Tensor_1_Tanh_Tensor_Tensor__T__">static member Tanh: Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Element-wise hyperbolic tangent.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_tensorProduct_Tensor_Tensor__T_____Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.tensorProduct(Tensor.Tensor&lt;'T&gt; -&gt; Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.tensorProduct.html#Tensor_Tensor_1_tensorProduct_Tensor_Tensor__T_____Tensor_Tensor__T__">static member tensorProduct: Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Computes the tensor product between two tensors.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_ToString_int64_" data-uid="Tensor.Tensor`1.ToString(int64)">
+          <a class="xref" href="Tensor.Tensor-1.ToString.html#Tensor_Tensor_1_ToString_int64_">member ToString: int64 -&gt; string</a>
+        </td>
+        <td class="markdown level1 summary"><p>String representation of the tensor limited to a specific number of elements per dimension.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_ToString_unit_" data-uid="Tensor.Tensor`1.ToString(unit)">
+          <a class="xref" href="Tensor.Tensor-1.ToString.html#Tensor_Tensor_1_ToString_unit_">override member ToString: unit -&gt; string</a>
+        </td>
+        <td class="markdown level1 summary"><p>String representation of the tensor limited to 10 elements per dimension.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_trace_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.trace(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.trace.html#Tensor_Tensor_1_trace_Tensor_Tensor__T__">static member trace: Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Calculates the trace of the matrix.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_traceAxis_int____int____Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.traceAxis(int -&gt; int -&gt; Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.traceAxis.html#Tensor_Tensor_1_traceAxis_int____int____Tensor_Tensor__T__">static member traceAxis: int -&gt; int -&gt; Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Calculates the trace along the specified axes.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_transfer_Tensor_Backend_ITensorDevice____Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.transfer(Tensor.Backend.ITensorDevice -&gt; Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.transfer.html#Tensor_Tensor_1_transfer_Tensor_Backend_ITensorDevice____Tensor_Tensor__T__">static member transfer: ITensorDevice -&gt; Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Transfers a tensor to the specifed device.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_TransferFrom_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.TransferFrom(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.TransferFrom.html#Tensor_Tensor_1_TransferFrom_Tensor_Tensor__T__">member TransferFrom: Tensor&lt;&#39;T&gt; -&gt; unit</a>
+        </td>
+        <td class="markdown level1 summary"><p>Transfers the specified tensor located on another device into this tensor.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_transpose_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.transpose(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.transpose.html#Tensor_Tensor_1_transpose_Tensor_Tensor__T__">static member transpose: Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>(Batched) transpose of a matrix.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_trueIdx_Tensor_Tensor_bool__" data-uid="Tensor.Tensor`1.trueIdx(Tensor.Tensor&lt;bool&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.trueIdx.html#Tensor_Tensor_1_trueIdx_Tensor_Tensor_bool__">static member trueIdx: Tensor&lt;bool&gt; -&gt; Tensor&lt;int64&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Finds the indices of all element that are true.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_trues_Tensor_Backend_ITensorDevice____int64_list_" data-uid="Tensor.Tensor`1.trues(Tensor.Backend.ITensorDevice -&gt; int64 list)">
+          <a class="xref" href="Tensor.Tensor-1.trues.html#Tensor_Tensor_1_trues_Tensor_Backend_ITensorDevice____int64_list_">static member trues: ITensorDevice -&gt; int64 list -&gt; Tensor&lt;bool&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Creates a new boolean tensor filled with trues.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_Truncate_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.Truncate(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.Truncate.html#Tensor_Tensor_1_Truncate_Tensor_Tensor__T__">static member Truncate: Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Element-wise truncation (rounding towards zero).</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_tryFind__T____Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.tryFind('T -&gt; Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.tryFind.html#Tensor_Tensor_1_tryFind__T____Tensor_Tensor__T__">static member tryFind: &#39;T -&gt; Tensor&lt;&#39;T&gt; -&gt; int64 list option</a>
+        </td>
+        <td class="markdown level1 summary"><p>Finds the first occurence of the specfied value and returns its indices.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_tryReshapeView_int64_list____Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.tryReshapeView(int64 list -&gt; Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.tryReshapeView.html#Tensor_Tensor_1_tryReshapeView_int64_list____Tensor_Tensor__T__">static member tryReshapeView: int64 list -&gt; Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt; option</a>
+        </td>
+        <td class="markdown level1 summary"><p>Tries to create a reshaped view of the tensor (without copying).</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_value_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.value(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.value.html#Tensor_Tensor_1_value_Tensor_Tensor__T__">static member value: Tensor&lt;&#39;T&gt; -&gt; &#39;T</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets the value of a zero-dimensional (scalar) tensor.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_var_Tensor_Tensor__T____int64_option_" data-uid="Tensor.Tensor`1.var(Tensor.Tensor&lt;'T&gt; * int64 option)">
+          <a class="xref" href="Tensor.Tensor-1.var.html#Tensor_Tensor_1_var_Tensor_Tensor__T____int64_option_">static member var: Tensor&lt;&#39;T&gt; * int64 option -&gt; &#39;T</a>
+        </td>
+        <td class="markdown level1 summary"><p>Calculates the variance of the tensor.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_varAxis_int___Tensor_Tensor__T____int64_option_" data-uid="Tensor.Tensor`1.varAxis(int * Tensor.Tensor&lt;'T&gt; * int64 option)">
+          <a class="xref" href="Tensor.Tensor-1.varAxis.html#Tensor_Tensor_1_varAxis_int___Tensor_Tensor__T____int64_option_">static member varAxis: int * Tensor&lt;&#39;T&gt; * int64 option -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Calculates the variance of the elements along the specified axis.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_zeros_Tensor_Backend_ITensorDevice____int64_list_" data-uid="Tensor.Tensor`1.zeros(Tensor.Backend.ITensorDevice -&gt; int64 list)">
+          <a class="xref" href="Tensor.Tensor-1.zeros.html#Tensor_Tensor_1_zeros_Tensor_Backend_ITensorDevice____int64_list_">static member zeros: ITensorDevice -&gt; int64 list -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Creates a new tensor filled with zeros (0).</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_zerosLike_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.zerosLike(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.zerosLike.html#Tensor_Tensor_1_zerosLike_Tensor_Tensor__T__">static member zerosLike: Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Creates a new tensor filled with zeros using the specified tensor as template.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="operators">Operators
+  </h3>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="Tensor_Tensor_1_op_Addition__T___Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.op_Addition('T * Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.op_Addition.html#Tensor_Tensor_1_op_Addition__T___Tensor_Tensor__T__">static member ( + ): &#39;T * Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Element-wise addition with scalar.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_op_Addition_Tensor_Tensor__T_____T_" data-uid="Tensor.Tensor`1.op_Addition(Tensor.Tensor&lt;'T&gt; * 'T)">
+          <a class="xref" href="Tensor.Tensor-1.op_Addition.html#Tensor_Tensor_1_op_Addition_Tensor_Tensor__T_____T_">static member ( + ): Tensor&lt;&#39;T&gt; * &#39;T -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Element-wise addition with scalar.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_op_Addition_Tensor_Tensor__T____Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.op_Addition(Tensor.Tensor&lt;'T&gt; * Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.op_Addition.html#Tensor_Tensor_1_op_Addition_Tensor_Tensor__T____Tensor_Tensor__T__">static member ( + ): Tensor&lt;&#39;T&gt; * Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Element-wise addition.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_op_AmpAmpAmpAmp_bool___Tensor_Tensor_bool__" data-uid="Tensor.Tensor`1.op_AmpAmpAmpAmp(bool * Tensor.Tensor&lt;bool&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.op_AmpAmpAmpAmp.html#Tensor_Tensor_1_op_AmpAmpAmpAmp_bool___Tensor_Tensor_bool__">static member ( &amp;&amp;&amp;&amp; ): bool * Tensor&lt;bool&gt; -&gt; Tensor&lt;bool&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Element-wise loigcal and with scalar.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_op_AmpAmpAmpAmp_Tensor_Tensor_bool____bool_" data-uid="Tensor.Tensor`1.op_AmpAmpAmpAmp(Tensor.Tensor&lt;bool&gt; * bool)">
+          <a class="xref" href="Tensor.Tensor-1.op_AmpAmpAmpAmp.html#Tensor_Tensor_1_op_AmpAmpAmpAmp_Tensor_Tensor_bool____bool_">static member ( &amp;&amp;&amp;&amp; ): Tensor&lt;bool&gt; * bool -&gt; Tensor&lt;bool&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Element-wise loigcal and with scalar.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_op_AmpAmpAmpAmp_Tensor_Tensor_bool____Tensor_Tensor_bool__" data-uid="Tensor.Tensor`1.op_AmpAmpAmpAmp(Tensor.Tensor&lt;bool&gt; * Tensor.Tensor&lt;bool&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.op_AmpAmpAmpAmp.html#Tensor_Tensor_1_op_AmpAmpAmpAmp_Tensor_Tensor_bool____Tensor_Tensor_bool__">static member ( &amp;&amp;&amp;&amp; ): Tensor&lt;bool&gt; * Tensor&lt;bool&gt; -&gt; Tensor&lt;bool&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Element-wise loigcal and.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_op_BarBarBarBar_bool___Tensor_Tensor_bool__" data-uid="Tensor.Tensor`1.op_BarBarBarBar(bool * Tensor.Tensor&lt;bool&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.op_BarBarBarBar.html#Tensor_Tensor_1_op_BarBarBarBar_bool___Tensor_Tensor_bool__">static member ( |||| ): bool * Tensor&lt;bool&gt; -&gt; Tensor&lt;bool&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Element-wise loigcal or with scalar.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_op_BarBarBarBar_Tensor_Tensor_bool____bool_" data-uid="Tensor.Tensor`1.op_BarBarBarBar(Tensor.Tensor&lt;bool&gt; * bool)">
+          <a class="xref" href="Tensor.Tensor-1.op_BarBarBarBar.html#Tensor_Tensor_1_op_BarBarBarBar_Tensor_Tensor_bool____bool_">static member ( |||| ): Tensor&lt;bool&gt; * bool -&gt; Tensor&lt;bool&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Element-wise loigcal or with scalar.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_op_BarBarBarBar_Tensor_Tensor_bool____Tensor_Tensor_bool__" data-uid="Tensor.Tensor`1.op_BarBarBarBar(Tensor.Tensor&lt;bool&gt; * Tensor.Tensor&lt;bool&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.op_BarBarBarBar.html#Tensor_Tensor_1_op_BarBarBarBar_Tensor_Tensor_bool____Tensor_Tensor_bool__">static member ( |||| ): Tensor&lt;bool&gt; * Tensor&lt;bool&gt; -&gt; Tensor&lt;bool&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Element-wise loigcal or.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_op_Division__T___Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.op_Division('T * Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.op_Division.html#Tensor_Tensor_1_op_Division__T___Tensor_Tensor__T__">static member ( / ): &#39;T * Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Element-wise division with scalar.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_op_Division_Tensor_Tensor__T_____T_" data-uid="Tensor.Tensor`1.op_Division(Tensor.Tensor&lt;'T&gt; * 'T)">
+          <a class="xref" href="Tensor.Tensor-1.op_Division.html#Tensor_Tensor_1_op_Division_Tensor_Tensor__T_____T_">static member ( / ): Tensor&lt;&#39;T&gt; * &#39;T -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Element-wise division with scalar.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_op_Division_Tensor_Tensor__T____Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.op_Division(Tensor.Tensor&lt;'T&gt; * Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.op_Division.html#Tensor_Tensor_1_op_Division_Tensor_Tensor__T____Tensor_Tensor__T__">static member ( / ): Tensor&lt;&#39;T&gt; * Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Element-wise division.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_op_DotMultiply_Tensor_Tensor__T____Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.op_DotMultiply(Tensor.Tensor&lt;'T&gt; * Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.op_DotMultiply.html#Tensor_Tensor_1_op_DotMultiply_Tensor_Tensor__T____Tensor_Tensor__T__">static member ( .* ): Tensor&lt;&#39;T&gt; * Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Computes the (batched) matrix product, (batched) matrix-vector product or scalar product.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_op_EqualsEqualsEqualsEquals__T___Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.op_EqualsEqualsEqualsEquals('T * Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.op_EqualsEqualsEqualsEquals.html#Tensor_Tensor_1_op_EqualsEqualsEqualsEquals__T___Tensor_Tensor__T__">static member ( ==== ): &#39;T * Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;bool&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Element-wise equality test with scalar.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_op_EqualsEqualsEqualsEquals_Tensor_Tensor__T_____T_" data-uid="Tensor.Tensor`1.op_EqualsEqualsEqualsEquals(Tensor.Tensor&lt;'T&gt; * 'T)">
+          <a class="xref" href="Tensor.Tensor-1.op_EqualsEqualsEqualsEquals.html#Tensor_Tensor_1_op_EqualsEqualsEqualsEquals_Tensor_Tensor__T_____T_">static member ( ==== ): Tensor&lt;&#39;T&gt; * &#39;T -&gt; Tensor&lt;bool&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Element-wise equality test with scalar.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_op_EqualsEqualsEqualsEquals_Tensor_Tensor__T____Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.op_EqualsEqualsEqualsEquals(Tensor.Tensor&lt;'T&gt; * Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.op_EqualsEqualsEqualsEquals.html#Tensor_Tensor_1_op_EqualsEqualsEqualsEquals_Tensor_Tensor__T____Tensor_Tensor__T__">static member ( ==== ): Tensor&lt;&#39;T&gt; * Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;bool&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Element-wise equality test.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_op_GreaterGreaterEqualsEquals__T___Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.op_GreaterGreaterEqualsEquals('T * Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.op_GreaterGreaterEqualsEquals.html#Tensor_Tensor_1_op_GreaterGreaterEqualsEquals__T___Tensor_Tensor__T__">static member ( &gt;&gt;== ): &#39;T * Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;bool&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Element-wise greater-than-or-equal test with scalar.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_op_GreaterGreaterEqualsEquals_Tensor_Tensor__T_____T_" data-uid="Tensor.Tensor`1.op_GreaterGreaterEqualsEquals(Tensor.Tensor&lt;'T&gt; * 'T)">
+          <a class="xref" href="Tensor.Tensor-1.op_GreaterGreaterEqualsEquals.html#Tensor_Tensor_1_op_GreaterGreaterEqualsEquals_Tensor_Tensor__T_____T_">static member ( &gt;&gt;== ): Tensor&lt;&#39;T&gt; * &#39;T -&gt; Tensor&lt;bool&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Element-wise greater-than-or-equal test with scalar.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_op_GreaterGreaterEqualsEquals_Tensor_Tensor__T____Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.op_GreaterGreaterEqualsEquals(Tensor.Tensor&lt;'T&gt; * Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.op_GreaterGreaterEqualsEquals.html#Tensor_Tensor_1_op_GreaterGreaterEqualsEquals_Tensor_Tensor__T____Tensor_Tensor__T__">static member ( &gt;&gt;== ): Tensor&lt;&#39;T&gt; * Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;bool&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Element-wise greater-than-or-equal test.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_op_GreaterGreaterGreaterGreater__T___Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.op_GreaterGreaterGreaterGreater('T * Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.op_GreaterGreaterGreaterGreater.html#Tensor_Tensor_1_op_GreaterGreaterGreaterGreater__T___Tensor_Tensor__T__">static member ( &gt;&gt;&gt;&gt; ): &#39;T * Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;bool&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Element-wise greater-than test with scalar.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_op_GreaterGreaterGreaterGreater_Tensor_Tensor__T_____T_" data-uid="Tensor.Tensor`1.op_GreaterGreaterGreaterGreater(Tensor.Tensor&lt;'T&gt; * 'T)">
+          <a class="xref" href="Tensor.Tensor-1.op_GreaterGreaterGreaterGreater.html#Tensor_Tensor_1_op_GreaterGreaterGreaterGreater_Tensor_Tensor__T_____T_">static member ( &gt;&gt;&gt;&gt; ): Tensor&lt;&#39;T&gt; * &#39;T -&gt; Tensor&lt;bool&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Element-wise greater-than test with scalar.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_op_GreaterGreaterGreaterGreater_Tensor_Tensor__T____Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.op_GreaterGreaterGreaterGreater(Tensor.Tensor&lt;'T&gt; * Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.op_GreaterGreaterGreaterGreater.html#Tensor_Tensor_1_op_GreaterGreaterGreaterGreater_Tensor_Tensor__T____Tensor_Tensor__T__">static member ( &gt;&gt;&gt;&gt; ): Tensor&lt;&#39;T&gt; * Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;bool&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Element-wise greater-than test.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_op_HatHatHatHat_bool___Tensor_Tensor_bool__" data-uid="Tensor.Tensor`1.op_HatHatHatHat(bool * Tensor.Tensor&lt;bool&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.op_HatHatHatHat.html#Tensor_Tensor_1_op_HatHatHatHat_bool___Tensor_Tensor_bool__">static member ( ^^^^ ): bool * Tensor&lt;bool&gt; -&gt; Tensor&lt;bool&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Element-wise loigcal xor with scalar.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_op_HatHatHatHat_Tensor_Tensor_bool____bool_" data-uid="Tensor.Tensor`1.op_HatHatHatHat(Tensor.Tensor&lt;bool&gt; * bool)">
+          <a class="xref" href="Tensor.Tensor-1.op_HatHatHatHat.html#Tensor_Tensor_1_op_HatHatHatHat_Tensor_Tensor_bool____bool_">static member ( ^^^^ ): Tensor&lt;bool&gt; * bool -&gt; Tensor&lt;bool&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Element-wise loigcal xor with scalar.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_op_HatHatHatHat_Tensor_Tensor_bool____Tensor_Tensor_bool__" data-uid="Tensor.Tensor`1.op_HatHatHatHat(Tensor.Tensor&lt;bool&gt; * Tensor.Tensor&lt;bool&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.op_HatHatHatHat.html#Tensor_Tensor_1_op_HatHatHatHat_Tensor_Tensor_bool____Tensor_Tensor_bool__">static member ( ^^^^ ): Tensor&lt;bool&gt; * Tensor&lt;bool&gt; -&gt; Tensor&lt;bool&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Element-wise loigcal xor.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_op_LessLessEqualsEquals__T___Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.op_LessLessEqualsEquals('T * Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.op_LessLessEqualsEquals.html#Tensor_Tensor_1_op_LessLessEqualsEquals__T___Tensor_Tensor__T__">static member ( &lt;&lt;== ): &#39;T * Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;bool&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Element-wise less-than-or-equal test with scalar.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_op_LessLessEqualsEquals_Tensor_Tensor__T_____T_" data-uid="Tensor.Tensor`1.op_LessLessEqualsEquals(Tensor.Tensor&lt;'T&gt; * 'T)">
+          <a class="xref" href="Tensor.Tensor-1.op_LessLessEqualsEquals.html#Tensor_Tensor_1_op_LessLessEqualsEquals_Tensor_Tensor__T_____T_">static member ( &lt;&lt;== ): Tensor&lt;&#39;T&gt; * &#39;T -&gt; Tensor&lt;bool&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Element-wise less-than-or-equal test with scalar.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_op_LessLessEqualsEquals_Tensor_Tensor__T____Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.op_LessLessEqualsEquals(Tensor.Tensor&lt;'T&gt; * Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.op_LessLessEqualsEquals.html#Tensor_Tensor_1_op_LessLessEqualsEquals_Tensor_Tensor__T____Tensor_Tensor__T__">static member ( &lt;&lt;== ): Tensor&lt;&#39;T&gt; * Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;bool&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Element-wise less-than-or-equal test.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_op_LessLessGreaterGreater__T___Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.op_LessLessGreaterGreater('T * Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.op_LessLessGreaterGreater.html#Tensor_Tensor_1_op_LessLessGreaterGreater__T___Tensor_Tensor__T__">static member ( &lt;&lt;&gt;&gt; ): &#39;T * Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;bool&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Element-wise not-equality test with scalar.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_op_LessLessGreaterGreater_Tensor_Tensor__T_____T_" data-uid="Tensor.Tensor`1.op_LessLessGreaterGreater(Tensor.Tensor&lt;'T&gt; * 'T)">
+          <a class="xref" href="Tensor.Tensor-1.op_LessLessGreaterGreater.html#Tensor_Tensor_1_op_LessLessGreaterGreater_Tensor_Tensor__T_____T_">static member ( &lt;&lt;&gt;&gt; ): Tensor&lt;&#39;T&gt; * &#39;T -&gt; Tensor&lt;bool&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Element-wise not-equality test with scalar.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_op_LessLessGreaterGreater_Tensor_Tensor__T____Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.op_LessLessGreaterGreater(Tensor.Tensor&lt;'T&gt; * Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.op_LessLessGreaterGreater.html#Tensor_Tensor_1_op_LessLessGreaterGreater_Tensor_Tensor__T____Tensor_Tensor__T__">static member ( &lt;&lt;&gt;&gt; ): Tensor&lt;&#39;T&gt; * Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;bool&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Element-wise not-equality test.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_op_LessLessLessLess__T___Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.op_LessLessLessLess('T * Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.op_LessLessLessLess.html#Tensor_Tensor_1_op_LessLessLessLess__T___Tensor_Tensor__T__">static member ( &lt;&lt;&lt;&lt; ): &#39;T * Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;bool&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Element-wise less-than test with scalar.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_op_LessLessLessLess_Tensor_Tensor__T_____T_" data-uid="Tensor.Tensor`1.op_LessLessLessLess(Tensor.Tensor&lt;'T&gt; * 'T)">
+          <a class="xref" href="Tensor.Tensor-1.op_LessLessLessLess.html#Tensor_Tensor_1_op_LessLessLessLess_Tensor_Tensor__T_____T_">static member ( &lt;&lt;&lt;&lt; ): Tensor&lt;&#39;T&gt; * &#39;T -&gt; Tensor&lt;bool&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Element-wise less-than test with scalar.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_op_LessLessLessLess_Tensor_Tensor__T____Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.op_LessLessLessLess(Tensor.Tensor&lt;'T&gt; * Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.op_LessLessLessLess.html#Tensor_Tensor_1_op_LessLessLessLess_Tensor_Tensor__T____Tensor_Tensor__T__">static member ( &lt;&lt;&lt;&lt; ): Tensor&lt;&#39;T&gt; * Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;bool&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Element-wise less-than test.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_op_Modulus__T___Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.op_Modulus('T * Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.op_Modulus.html#Tensor_Tensor_1_op_Modulus__T___Tensor_Tensor__T__">static member ( % ): &#39;T * Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Element-wise division with scalar.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_op_Modulus_Tensor_Tensor__T_____T_" data-uid="Tensor.Tensor`1.op_Modulus(Tensor.Tensor&lt;'T&gt; * 'T)">
+          <a class="xref" href="Tensor.Tensor-1.op_Modulus.html#Tensor_Tensor_1_op_Modulus_Tensor_Tensor__T_____T_">static member ( % ): Tensor&lt;&#39;T&gt; * &#39;T -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Element-wise remainder of division with scalar.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_op_Modulus_Tensor_Tensor__T____Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.op_Modulus(Tensor.Tensor&lt;'T&gt; * Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.op_Modulus.html#Tensor_Tensor_1_op_Modulus_Tensor_Tensor__T____Tensor_Tensor__T__">static member ( % ): Tensor&lt;&#39;T&gt; * Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Element-wise remainder of division.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_op_Multiply__T___Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.op_Multiply('T * Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.op_Multiply.html#Tensor_Tensor_1_op_Multiply__T___Tensor_Tensor__T__">static member ( * ): &#39;T * Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Element-wise multiplication with scalar.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_op_Multiply_Tensor_Tensor__T_____T_" data-uid="Tensor.Tensor`1.op_Multiply(Tensor.Tensor&lt;'T&gt; * 'T)">
+          <a class="xref" href="Tensor.Tensor-1.op_Multiply.html#Tensor_Tensor_1_op_Multiply_Tensor_Tensor__T_____T_">static member ( * ): Tensor&lt;&#39;T&gt; * &#39;T -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Element-wise multiplication with scalar.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_op_Multiply_Tensor_Tensor__T____Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.op_Multiply(Tensor.Tensor&lt;'T&gt; * Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.op_Multiply.html#Tensor_Tensor_1_op_Multiply_Tensor_Tensor__T____Tensor_Tensor__T__">static member ( * ): Tensor&lt;&#39;T&gt; * Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Element-wise multiplication.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_op_Subtraction__T___Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.op_Subtraction('T * Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.op_Subtraction.html#Tensor_Tensor_1_op_Subtraction__T___Tensor_Tensor__T__">static member ( - ): &#39;T * Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Element-wise substraction with scalar.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_op_Subtraction_Tensor_Tensor__T_____T_" data-uid="Tensor.Tensor`1.op_Subtraction(Tensor.Tensor&lt;'T&gt; * 'T)">
+          <a class="xref" href="Tensor.Tensor-1.op_Subtraction.html#Tensor_Tensor_1_op_Subtraction_Tensor_Tensor__T_____T_">static member ( - ): Tensor&lt;&#39;T&gt; * &#39;T -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Element-wise substraction with scalar.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_op_Subtraction_Tensor_Tensor__T____Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.op_Subtraction(Tensor.Tensor&lt;'T&gt; * Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.op_Subtraction.html#Tensor_Tensor_1_op_Subtraction_Tensor_Tensor__T____Tensor_Tensor__T__">static member ( - ): Tensor&lt;&#39;T&gt; * Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Element-wise substraction.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_op_TwiddleTwiddleTwiddleTwiddle_Tensor_Tensor_bool__" data-uid="Tensor.Tensor`1.op_TwiddleTwiddleTwiddleTwiddle(Tensor.Tensor&lt;bool&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.op_TwiddleTwiddleTwiddleTwiddle.html#Tensor_Tensor_1_op_TwiddleTwiddleTwiddleTwiddle_Tensor_Tensor_bool__">static member ( ~~~~ ): Tensor&lt;bool&gt; -&gt; Tensor&lt;bool&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Element-wise logical negation.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_op_UnaryNegation_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.op_UnaryNegation(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.op_UnaryNegation.html#Tensor_Tensor_1_op_UnaryNegation_Tensor_Tensor__T__">static member ( ~- ): Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Element-wise negation.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Tensor_Tensor_1_op_UnaryPlus_Tensor_Tensor__T__" data-uid="Tensor.Tensor`1.op_UnaryPlus(Tensor.Tensor&lt;'T&gt;)">
+          <a class="xref" href="Tensor.Tensor-1.op_UnaryPlus.html#Tensor_Tensor_1_op_UnaryPlus_Tensor_Tensor__T__">static member ( ~+ ): Tensor&lt;&#39;T&gt; -&gt; Tensor&lt;&#39;T&gt;</a>
+        </td>
+        <td class="markdown level1 summary"><p>Element-wise prefix plus.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="seealso">See Also</h3>
+  <div class="seealso">
+      <div><a class="xref" href="Tensor.ITensor.html">ITensor</a></div>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

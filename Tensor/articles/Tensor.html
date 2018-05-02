@@ -1,0 +1,935 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Tensor at a glance | Tensor for F# </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Tensor at a glance | Tensor for F# ">
+    <meta name="generator" content="docfx 2.35.0.0">
+    
+    <link rel="shortcut icon" href="../images/tensor.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/tensor.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="tensor-at-a-glance">Tensor at a glance</h1>
+
+<p>This page provides an overview of most commonly used tensor functions by category.</p>
+<p>For a complete, alphabetical reference of all tensor functions see <a class="xref" href="../api/Tensor.Tensor-1.html">Tensor&lt;&#39;T&gt;</a> and the device-specific functions in <a class="xref" href="../api/Tensor.HostTensor.html">HostTensor</a> and <a class="xref" href="../api/Tensor.CudaTensor.html">CudaTensor</a>.</p>
+<h2 id="creation-functions">Creation functions</h2>
+<p>Use these functions to create a new tensor.</p>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.arange.html">arange</a></td>
+<td>Creates a new vector filled with equaly spaced values using a specifed increment.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.counting.html">counting</a></td>
+<td>Creates a new vector filled with the integers from zero to the specified maximum.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.empty.html">empty</a></td>
+<td>Creates a new, empty tensor with the given number of dimensions.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.falses.html">falses</a></td>
+<td>Creates a new boolean tensor filled with falses.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.filled.html">filled</a></td>
+<td>Creates a new tensor filled with the specified value.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.identity.html">identity</a></td>
+<td>Creates a new identity matrix.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.ones.html">ones</a></td>
+<td>Creates a new tensor filled with ones (1).</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.onesLike.html">onesLike</a></td>
+<td>Creates a new tensor filled with ones using the specified tensor as template.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.linspace.html">linspace</a></td>
+<td>Creates a new vector of given size filled with equaly spaced values.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.scalar.html">scalar</a></td>
+<td>Creates a new zero-dimensional (scalar) tensor with the specified value.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.scalarLike.html">scalarLike</a></td>
+<td>Creates a new zero-dimensional (scalar) tensor using the specified tensor as template and with  the specified value.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.trues.html">trues</a></td>
+<td>Creates a new boolean tensor filled with trues.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.zeros.html">zeros</a></td>
+<td>Creates a new tensor filled with zeros (0).</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.zerosLike.html">zerosLike</a></td>
+<td>Creates a new tensor filled with zeros using the specified tensor as template.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="slicing-and-element-access-functions">Slicing and element access functions</h2>
+<p>Use these functions to slice tensors or access individual elements of them.</p>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.Item.html">Item</a></td>
+<td>Accesses a slice (part) of the tensor.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.M.html">M</a></td>
+<td>Picks elements from a tensor using one or more boolean mask tensors.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.value.html">Value</a></td>
+<td>Gets the value of a zero-dimensional (scalar) tensor.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="element-wise-operations">Element-wise operations</h2>
+<p>These mathematical operations are applied element-wise to each element of the tensor(s).</p>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.op_UnaryNegation.html">( ~- )</a></td>
+<td>Element-wise negation.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.op_Addition.html">( + )</a></td>
+<td>Element-wise addition.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.op_Subtraction.html">( - )</a></td>
+<td>Element-wise substraction.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.op_Multiply.html">( * )</a></td>
+<td>Element-wise multiplication.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.op_Division.html">( / )</a></td>
+<td>Element-wise division.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.op_Modulus.html">( % )</a></td>
+<td>Element-wise remainder of division.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.Abs.html">Abs</a></td>
+<td>Element-wise absolute value.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.Acos.html">Acos</a></td>
+<td>Element-wise arccosine (inverse cosine).</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.Asin.html">Asin</a></td>
+<td>Element-wise arcsine (inverse sine).</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.Atan.html">Atan</a></td>
+<td>Element-wise arctanget (inverse tangent).</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.Ceiling.html">Ceiling</a></td>
+<td>Element-wise ceiling (round towards positive infinity).</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.Cos.html">Cos</a></td>
+<td>Element-wise cosine.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.Cosh.html">Cosh</a></td>
+<td>Element-wise hyperbolic cosine.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.Exp.html">Exp</a></td>
+<td>Element-wise exponential function.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.Floor.html">Floor</a></td>
+<td>Element-wise floor (round towards negative infinity).</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.Log.html">Log</a></td>
+<td>Element-wise natural logarithm.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.Log10.html">Log10</a></td>
+<td>Element-wise common logarithm.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.Pow.html">Pow</a></td>
+<td>Element-wise exponentiation.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.Round.html">Round</a></td>
+<td>Element-wise rounding.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.Sgn.html">Sgn</a></td>
+<td>Element-wise sign.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.Sin.html">Sin</a></td>
+<td>Element-wise sine.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.Sinh.html">Sinh</a></td>
+<td>Element-wise hyperbolic sine.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.Sqrt.html">Sqrt</a></td>
+<td>Element-wise square root.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.Tan.html">Tan</a></td>
+<td>Element-wise tangent.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.Tanh.html">Tanh</a></td>
+<td>Element-wise hyperbolic tangent.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.Truncate.html">Truncate</a></td>
+<td>Element-wise truncation (rounding towards zero).</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tensor-operations">Tensor operations</h2>
+<p>These functions perform various operations on one or more tensors.</p>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.concat.html">concat</a></td>
+<td>Concatenates tensors along an axis.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.copy.html">copy</a></td>
+<td>Returns a copy of the tensor.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.diag.html">diag</a></td>
+<td>Returns a view of the diagonal of the matrix.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.diagAxis.html">diagAxis</a></td>
+<td>Returns a view of the diagonal along the given axes.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.diagMat.html">diagMat</a></td>
+<td>Creates a matrix with the specified diagonal.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.diagMatAxis.html">diagMatAxis</a></td>
+<td>Creates a tensor with the specified diagonal along the given axes.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.diff.html">diff</a></td>
+<td>Calculates the difference between adjoining elements of the vector.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.diffAxis.html">diffAxis</a></td>
+<td>Calculates the difference between adjoining elements along the specified axes.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.ofBlocks.html">ofBlocks</a></td>
+<td>Builds a tensor out of tensor blocks.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.replicate.html">replicate</a></td>
+<td>Repeats the tensor along an axis.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.T.html">T</a></td>
+<td>Transpose of a matrix.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="linear-algebra-functions">Linear algebra functions</h2>
+<p>Use these functions to perform basic linear algebra operations on tensors.</p>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.op_DotMultiply.html">( .* )</a></td>
+<td>Computes the (batched) matrix product, (batched) matrix-vector product or scalar product.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.norm.html">norm</a></td>
+<td>Calculates the norm of the (flattened) tensor.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.normAxis.html">normAxis</a></td>
+<td>Calculates the norm along the specified axis.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.invert.html">invert</a></td>
+<td>(Batch) inverts a matrix.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.pseudoInvert.html">pseudoInvert</a></td>
+<td>Computes the (batched) Moore-Penrose pseudo-inverse of the specified matrix.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.SVD.html">SVD</a></td>
+<td>Computes the (batched) singular value decomposition (SVD) of the specified matrix.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.symmetricEigenDecomposition.html">symmetricEigenDecomposition</a></td>
+<td>Computes the (real) eigendecomposition of a symmetric matrix.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.tensorProduct.html">tensorProduct</a></td>
+<td>Computes the tensor product between two tensors.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="shape-functions">Shape functions</h2>
+<p>Use these functions to work with the shape and memory layout of a tensor.</p>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.atLeastND.html">atLeastND</a></td>
+<td>Pads the tensor from the left with size-one dimensions until it has at least the specified number of dimensions.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.broadcastDim.html">broadcastDim</a></td>
+<td>Broadcast a dimension to a specified size.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.broadcastTo.html">broadcastTo</a></td>
+<td>Broadcasts the specified tensor to the specified shape.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.broadcastToSame.html">broadcastToSame</a></td>
+<td>Broadcasts all specified tensors to have the same shape.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.broadcastToSameInDims.html">broadcastToSameInDims</a></td>
+<td>Broadcasts all specified tensors to have the same size in the specified dimensions.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.cutLeft.html">cutLeft</a></td>
+<td>Removes the first dimension.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.cutRight.html">cutRight</a></td>
+<td>Removes the last dimension.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.flatten.html">flatten</a></td>
+<td>Flattens the tensor into a (one-dimensional) vector.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.insertAxis.html">insertAxis</a></td>
+<td>Insert a dimension of size one before the specifed dimension.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.isBroadcasted.html">isBroadcasted</a></td>
+<td>Checks if the specified tensor is broadcasted in at least one dimension.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.layout.html">Layout</a></td>
+<td>Memory layout of the tensor.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.nDims.html">NDims</a></td>
+<td>Dimensionality of the tensor.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.nElems.html">NElems</a></td>
+<td>Total number of elements within the tensor.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.padLeft.html">padLeft</a></td>
+<td>Insert a dimension of size one as the first dimension.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.padRight.html">padRight</a></td>
+<td>Append a dimension of size one after the last dimension.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.padToSame.html">padToSame</a></td>
+<td>Pads all specified tensors from the left with dimensions of size one until they have the  same dimensionality.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.permuteAxes.html">permuteAxes</a></td>
+<td>Permutes the axes as specified.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.reshape.html">reshape</a></td>
+<td>Changes the shape of a tensor.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.reverseAxis.html">reverseAxis</a></td>
+<td>Reverses the elements in the specified dimension.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.relayout.html">relayout</a></td>
+<td>Creates a tensor with the specified layout sharing its storage with the original tensor.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.shape.html">Shape</a></td>
+<td>Shape of the tensor.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.swapDim.html">swapDim</a></td>
+<td>Swaps the specified dimensions of the tensor.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="data-type-functions">Data type functions</h2>
+<p>Use these functions to query or change the data type of the elements of a tensor.</p>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.convert.html">convert</a></td>
+<td>Convert the elements of a tensor to the specifed type.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.dataType.html">DataType</a></td>
+<td>Type of data stored within the tensor.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="device-and-storage-functions">Device and storage functions</h2>
+<p>Use these functions to query or change the storage device of a tensor.</p>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.dev.html">Dev</a></td>
+<td>Device the data of tensor is stored on.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.Storage.html">Storage</a></td>
+<td>The storage object that holds the data of this tensor.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.transfer.html">transfer</a></td>
+<td>Transfers a tensor to the specifed device.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="comparison-functions">Comparison functions</h2>
+<p>Use these functions to perform comparisons of tensors. The results are mostly boolean tensors.</p>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.op_EqualsEqualsEqualsEquals.html">( ==== )</a></td>
+<td>Element-wise equality test.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.op_LessLessLessLess.html">( &lt;&lt;&lt;&lt; )</a></td>
+<td>Element-wise less-than test.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.op_LessLessEqualsEquals.html">( &lt;&lt;== )</a></td>
+<td>Element-wise less-than-or-equal test.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.op_GreaterGreaterGreaterGreater.html">( &gt;&gt;&gt;&gt; )</a></td>
+<td>Element-wise greater-than test.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.op_GreaterGreaterEqualsEquals.html">( &gt;&gt;== )</a></td>
+<td>Element-wise greater-than-or-equal test.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.op_LessLessGreaterGreater.html">( &lt;&lt;&gt;&gt; )</a></td>
+<td>Element-wise not-equality test.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.almostEqual.html">almostEqual</a></td>
+<td>Checks if two tensors have the same (within machine precision) values in all elements.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.isClose.html">isClose</a></td>
+<td>Element-wise check if two tensors have same (within machine precision) values.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.isFinite.html">isFinite</a></td>
+<td>Element-wise finity check (not -Inf, Inf or NaN).</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.maxElemwise.html">maxElemwise</a></td>
+<td>Element-wise maximum.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.minElemwise.html">minElemwise</a></td>
+<td>Element-wise minimum.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.allFinite.html">allFinite</a></td>
+<td>Checks that all elements of the tensor are finite.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="logical-functions">Logical functions</h2>
+<p>Use these functions to work with boolean tensors.</p>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.op_TwiddleTwiddleTwiddleTwiddle.html">( ~~~~ )</a></td>
+<td>Element-wise logical negation.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.op_AmpAmpAmpAmp.html">( &amp;&amp;&amp;&amp; )</a></td>
+<td>Element-wise loigcal and.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.op_BarBarBarBar.html">( |||| )</a></td>
+<td>Element-wise loigcal or.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.op_HatHatHatHat.html">( ^^^^ )</a></td>
+<td>Element-wise loigcal xor.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.all.html">all</a></td>
+<td>Checks if all elements of the tensor are true.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.allAxis.html">allAxis</a></td>
+<td>Checks if all elements along the specified axis are true.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.allElems.html">allElems</a></td>
+<td>Gets a sequence of all all elements within the tensor.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.allTensor.html">allTensor</a></td>
+<td>Checks if all elements of the tensor are true returning the result as a tensor.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.any.html">any</a></td>
+<td>Checks if any elements of the tensor are true.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.anyAxis.html">anyAxis</a></td>
+<td>Checks if any element along the specified axis is true.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.anyTensor.html">anyTensor</a></td>
+<td>Checks if any element of the tensor is true returning the result as a tensor.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.countTrue.html">countTrue</a></td>
+<td>Counts the elements being true.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.countTrueAxis.html">countTrueAxis</a></td>
+<td>Counts the elements being true along the specified axis.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.ifThenElse.html">ifThenElse</a></td>
+<td>Element-wise choice between two sources depending on a condition.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="index-functions">Index functions</h2>
+<p>These functions return tensor of indices or work with them.</p>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.allIdx.html">allIdx</a></td>
+<td>Gets a sequence of all indices to enumerate all elements within the tensor.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.argMax.html">argMax</a></td>
+<td>Finds the indicies of the maximum value of the tensor.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.argMaxAxis.html">argMaxAxis</a></td>
+<td>Finds the index of the maximum value along the specified axis.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.argMin.html">argMin</a></td>
+<td>Finds the indicies of the minimum value of the tensor.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.argMinAxis.html">argMinAxis</a></td>
+<td>Finds the index of the minimum value along the specified axis.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.find.html">find</a></td>
+<td>Finds the first occurence of the specfied value and returns its indices.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.findAxis.html">findAxis</a></td>
+<td>Finds the first occurence of the specfied value along the specified axis and returns its index.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.gather.html">gather</a></td>
+<td>Selects elements from a tensor according to specified indices.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.scatter.html">scatter</a></td>
+<td>Disperses elements from a source tensor to a new tensor according to the specified indices.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.trueIdx.html">trueIdx</a></td>
+<td>Finds the indices of all element that are true.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="reduction-functions">Reduction functions</h2>
+<p>These functions perform operations on tensors that reduce their dimensionality.</p>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.max.html">max</a></td>
+<td>Calculates the maximum of all elements.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.maxAxis.html">maxAxis</a></td>
+<td>Calculates the maximum value of the elements along the specified axis.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.min.html">min</a></td>
+<td>Calculates the minimum of all elements.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.minAxis.html">minAxis</a></td>
+<td>Calculates the minimum value of the elements along the specified axis.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.mean.html">mean</a></td>
+<td>Calculates the mean of the tensor.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.meanAxis.html">meanAxis</a></td>
+<td>Calculates the mean of the elements along the specified axis.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.product.html">product</a></td>
+<td>Calculates the product of all elements.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.productAxis.html">productAxis</a></td>
+<td>Calculates the product of the elements along the specified axis.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.std.html">std</a></td>
+<td>Calculates the standard deviation of the tensor.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.stdAxis.html">stdAxis</a></td>
+<td>Calculates the standard deviation of the elements along the specified axis.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.sum.html">sum</a></td>
+<td>Sums all elements.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.sumAxis.html">sumAxis</a></td>
+<td>Sums the elements along the specified axis.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.var.html">var</a></td>
+<td>Calculates the variance of the tensor.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.varAxis.html">varAxis</a></td>
+<td>Calculates the variance of the elements along the specified axis.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.trace.html">trace</a></td>
+<td>Calculates the trace of the matrix.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.Tensor-1.traceAxis.html">traceAxis</a></td>
+<td>Calculates the trace along the specified axes.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="functional-operations-host-only">Functional operations (host only)</h2>
+<p>Use these functions to perform operations that are common in functional programming languages. They require the tensor to be stored in host memory.</p>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="xref" href="../api/Tensor.HostTensor.foldAxis.html">HostTensor.foldAxis</a></td>
+<td>Applies to specified function to all elements of the tensor, threading an accumulator through the  computation.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.HostTensor.init.html">HostTensor.init</a></td>
+<td>Creates a new tensor with values returned by the specified function.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.HostTensor.map.html">HostTensor.map</a></td>
+<td>Applies to specified function to all elements of the tensor.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.HostTensor.map2.html">HostTensor.map2</a></td>
+<td>Applies to specified function to all elements of the two tensors.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.HostTensor.mapi.html">HostTensor.mapi</a></td>
+<td>Applies to specified indexed function to all elements of the tensor.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.HostTensor.mapi2.html">HostTensor.mapi2</a></td>
+<td>Applies to specified indexed function to all elements of the two tensors.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="data-exchange-host-only">Data exchange (host only)</h2>
+<p>Use these functions to convert tensors to and from other storage modalities. They require the tensor to be stored in host memory.</p>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="xref" href="../api/Tensor.HostTensor.ofArray.html">HostTensor.ofArray</a></td>
+<td>Creates a one-dimensional tensor copying the specified data.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.HostTensor.ofList.html">HostTensor.ofList</a></td>
+<td>Creates a one-dimensional tensor from the specified list.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.HostTensor.ofSeq.html">HostTensor.ofSeq</a></td>
+<td>Creates a one-dimensional tensor from the specified sequence.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.HostTensor.read.html">HostTensor.read</a></td>
+<td>Reads a tensor from the specified HDF5 object path in an HDF5 file.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.HostTensor.readUntyped.html">HostTensor.readUntyped</a></td>
+<td>Reads a tensor with unspecified data type from the specified HDF5 object path in an HDF5 file.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.HostTensor.toArray.html">HostTensor.toArray</a></td>
+<td>Creates an array from a one-dimensional tensor.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.HostTensor.toList.html">HostTensor.toList</a></td>
+<td>Creates a list from a one-dimensional tensor.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.HostTensor.toSeq.html">HostTensor.toSeq</a></td>
+<td>A sequence of all elements contained in the tensor.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.HostTensor.usingArray.html">HostTensor.usingArray</a></td>
+<td>Creates a one-dimensional tensor referencing the specified data.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.HostTensor.write.html">HostTensor.write</a></td>
+<td>Writes the tensor into the HDF5 file under the specfied HDF5 object path.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="random-number-generation-host-only">Random number generation (host only)</h2>
+<p>Use these functions to generate tensors filled with random numbers.</p>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="xref" href="../api/Tensor.HostTensor.randomInt.html">HostTensor.randomInt</a></td>
+<td>Creates a tensor filled with random integer numbers from a uniform distribution.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.HostTensor.randomNormal.html">HostTensor.randomNormal</a></td>
+<td>Creates a tensor filled with random numbers from a normale distribution.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Tensor.HostTensor.randomUniform.html">HostTensor.randomUniform</a></td>
+<td>Creates a tensor filled with random floating-point numbers from a uniform distribution.</td>
+</tr>
+</tbody>
+</table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/DeepMLNet/DeepNet/blob/018df6c3f0e2ae11d0b2e0d3b3257bb0b88de366/Tensor/Tensor.Docs/articles/Tensor.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
