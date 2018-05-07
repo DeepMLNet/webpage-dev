@@ -92,11 +92,7 @@
 </ul>
 </li>
 <li>For Linux<ul>
-<li>The library <code>libgomp.so.1</code> must be installed. (install on Ubuntu by running <code>apt install libgomp1</code>)</li>
-</ul>
-</li>
-<li>For MacOS<ul>
-<li><a href="https://support.hdfgroup.org/HDF5/">HDF5 libraries</a> (install from <a href="https://brew.sh/">Homebrew</a> by running <code>brew install hdf5</code>)</li>
+<li>The library <code>libgomp.so.1</code> must be installed. (install on Ubuntu by running <code>sudo apt install libgomp1</code>)</li>
 </ul>
 </li>
 <li>For GPU acceleration (optional)<ul>
@@ -106,22 +102,10 @@
 </li>
 </ul>
 <h2 id="installation">Installation</h2>
-<p>The library is provided as a NuGet package.
-Since we have made modifications (porting to .NET core) to our dependencies and these changes have not yet been merged upstream, a <a href="https://myget.org/">MyGet</a> feed is currently used to deliever the library and its modified dependencies.
-Once all necessary modifications have been merged upstream, the Tensor library will be delivered via standard <a href="https://nuget.org">NuGet</a>.</p>
-<p>For MacOS you must make sure that the HDF5 libraries are installed on your system.
-They can be installed via <a href="https://brew.sh/">Homebrew</a> by running <code>brew install hdf5</code>.</p>
-<p>The library is deliverd in two NuGet packages.
-The <a href="https://www.myget.org/feed/coreports/package/nuget/Tensor">Tensor NuGet package</a> provides the <a class="xref" href="../api/Tensor.Tensor-1.html">Tensor&lt;&#39;T&gt;</a> type and all core functions.
-Additional algorithms and data exchange methods are provided in the <a href="https://www.myget.org/feed/coreports/package/nuget/Tensor.Algorithm">Tensor.Algorithm NuGet package</a>.</p>
-<p>The packages can be installed into your project by performing the following steps.</p>
-<ol>
-<li><p>Add the NuGet feed <a href="https://www.myget.org/feed/Packages/coreports">https://www.myget.org/feed/Packages/coreports</a> to your project. 
-This can be done by adding the line <code>&lt;add key=&quot;CorePorts&quot; value=&quot;https://www.myget.org/F/coreports/api/v3/index.json&quot;/&gt;</code> to the <code>packageSources</code> section of your project <code>NuGet.config</code> file.</p>
-</li>
-<li><p>Install the <code>Tensor</code> and <code>Tensor.Algorithm</code> using the NuGet package manager (either via command line or graphical interface).</p>
-</li>
-</ol>
+<p>The library is delivered in two NuGet packages.
+The <a href="https://www.nuget.org/packages/Tensor">Tensor NuGet package</a> provides the <a class="xref" href="../api/Tensor.Tensor-1.html">Tensor&lt;&#39;T&gt;</a> type and all core functions.
+Additional algorithms and data exchange methods are provided in the <a href="https://www.nuget.org/packages/Tensor.Algorithm">Tensor.Algorithm NuGet package</a>.</p>
+<p>The packages can be installed into your project by installing the <code>Tensor</code> and <code>Tensor.Algorithm</code> packages using the NuGet package manager (either via command line or graphical interface).</p>
 <h2 id="skeleton-project-for-net-core">Skeleton project for .NET Core</h2>
 <p>In the course of this tutorial you will use the following skeleton project for experimentation.
 We assume that you are using <a href="https://www.microsoft.com/net/learn/get-started">.NET Core 2.0</a> on either Linux or Windows for the rest of the tutorial.</p>
@@ -129,14 +113,7 @@ We assume that you are using <a href="https://www.microsoft.com/net/learn/get-st
 <pre><code>$ mkdir tutorial
 $ cd tutorial
 $ dotnet new console -lang F#
-</code></pre><p>Then, create the file <code>NuGet.config</code> in the project directory with the following contents.</p>
-<pre><code class="lang-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-&lt;configuration&gt;
-    &lt;packageSources&gt;
-        &lt;add key=&quot;CorePorts&quot; value=&quot;https://www.myget.org/F/coreports/api/v3/index.json&quot; /&gt;
-    &lt;/packageSources&gt;
-&lt;/configuration&gt;
-</code></pre><p>Finally run the following commands to install the Tensor library into your project.</p>
+</code></pre><p>Then, run the following commands to install the Tensor library into your project.</p>
 <pre><code>$ dotnet add package Tensor
 $ dotnet add package Tensor.Algorithm
 </code></pre><h3 id="basic-verificiation-test">Basic verificiation test</h3>
@@ -166,7 +143,7 @@ This is useful if you want to modify the Tensor library itself or for debugging.
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/DeepMLNet/DeepNet/blob/bff8e268cca6f275b3a382c08631513bf42dd89b/Tensor/Tensor.Docs/articles/Guide-Installation.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/DeepMLNet/DeepNet/blob/ddb3e12bae562cd19a3263f7285ef13838fa70cd/Tensor/Tensor.Docs/articles/Guide-Installation.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>
