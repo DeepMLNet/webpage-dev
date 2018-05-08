@@ -77,19 +77,19 @@
 <p>A <em>tensor</em> is an n-dimensional array of an arbitrary data type (for example <code>single</code> or <code>double</code>).
 Tensors of data type <code>&#39;T</code> are implemented by the <a class="xref" href="api/Tensor.Tensor-1.html">Tensor&lt;&#39;T&gt;</a> type.</p>
 <p>A tensor can be either stored in host memory or in the memory of a GPU computing device.
-Currenty only nVidia cards implementing the <a href="https://developer.nvidia.com/cuda-zone">CUDA API</a> are supported.
+Currently only nVidia cards implementing the <a href="https://developer.nvidia.com/cuda-zone">CUDA API</a> are supported.
 The API for host and GPU stored tensors is mostly equal, thus a program can make use of GPU accelerated operations without porting effort.</p>
 <p>The tensor library provides functionality similar to <a href="http://docs.scipy.org/doc/numpy-1.10.0/reference/arrays.html">Numpy&#39;s Ndarray</a> and <a href="http://www.mathworks.com/help/matlab/matrices-and-arrays.html">MATLAB arrays</a>, including vector-wise operations, reshaping, slicing, broadcasting, masked assignment, reduction operations and BLAS operations.</p>
 <p>This open source library is written in <a href="http://fsharp.org/">F#</a> and targets the <a href="https://github.com/dotnet/standard/blob/master/docs/versions/netstandard2.0.md">.NET Standard 2.0 platform</a> with Linux, MacOS and Microsoft Windows as supported operating systems.</p>
 <h3 id="features-provided-by-the-core-tensor-library">Features provided by the core Tensor library</h3>
 <ul>
 <li>Core features<ul>
-<li>n-dimensional arrays (tensors) in host memory or on CUDA GPUs </li>
+<li>n-dimensional arrays (tensors) in host memory or on CUDA GPUs</li>
 <li>element-wise operations (addition, multiplication, absolute value, etc.)</li>
 <li>basic linear algebra operations (dot product, SVD decomposition, matrix inverse, etc.)</li>
 <li>reduction operations (sum, product, average, maximum, arg max, etc.)</li>
-<li>logic operations (comparision, and, or, etc.)</li>
-<li>views, slicing, reshaping, broadcasting (similar to NumPy) </li>
+<li>logic operations (comparison, and, or, etc.)</li>
+<li>views, slicing, reshaping, broadcasting (similar to NumPy)</li>
 <li>scatter and gather by indices</li>
 <li>standard functional operations (map, fold, etc.)</li>
 </ul>
@@ -100,7 +100,7 @@ The API for host and GPU stored tensors is mostly equal, thus a program can make
 </ul>
 </li>
 <li>Performance<ul>
-<li>host: SIMD and Intel MKL accelerated operations </li>
+<li>host: SIMD and Intel MKL accelerated operations</li>
 <li>CUDA GPU: all operations performed locally on GPU and cuBLAS used for matrix operations</li>
 </ul>
 </li>
@@ -110,7 +110,7 @@ The API for host and GPU stored tensors is mostly equal, thus a program can make
 <li>Matrix algebra (integer, rational)<ul>
 <li>Row echelon form</li>
 <li>Smith normal form</li>
-<li>Kernel, cokernel and (pseudo-)inverse</li>
+<li>Kernel, co-kernel and (pseudo-)inverse</li>
 </ul>
 </li>
 <li>Matrix decomposition (floating point)<ul>
@@ -150,7 +150,7 @@ We also provide <a class="xref" href="api/Tensor.html">full reference documentat
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/DeepMLNet/DeepNet/blob/0c000a79a4d5a7b9c1adcdd29ad9dfbc622ca8e8/Tensor/Tensor.Docs/index.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/DeepMLNet/DeepNet/blob/9081ccb4398fa4d98aba4306d255c69fe30cdb7a/Tensor/Tensor.Docs/index.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>
